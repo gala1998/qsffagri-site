@@ -130,20 +130,30 @@
     /* Hero：保留大图，但内层加白色半透明底，适配白色主题 */
     .hero {
       position: relative;
-      min-height: 58vh;
-      display: grid;
-      place-items: center;
-      background:
-        url("https://images.unsplash.com/photo-1520006403909-838d6b92c22e?q=80&w=1600&auto=format&fit=crop") center/cover no-repeat;
+      width: 100%;
+      aspect-ratio: 1035 / 768;
+      /* 保持原始比例 */
+      background: url("images/shapan.jpg") center/contain no-repeat;
       border-bottom: 1px solid var(--line);
+
+      display: flex;
+      /* 关键：启用 flex 布局 */
+      align-items: center;
+      /* 垂直居中 */
+      justify-content: center;
+      /* 水平居中 */
     }
+
+
 
     .hero .inner {
       text-align: center;
-      padding: 72px 20px;
-      background: rgba(255, 255, 255, .86);
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.86);
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+      max-width: 900px;
+      /* 限制宽度，避免太宽 */
     }
 
     .eyebrow {
