@@ -499,29 +499,7 @@
 <body>
 
   <!-- 顶部导航（白底黑字 + Logo 图/文） -->
-  <div class="topbar">
-    <div class="container nav">
-      <a href="/" class="logo" aria-label="Home" style="text-decoration:none">
-        <img src="images/logo.png" alt="Company Logo" style="height:50px; display:block;">
-        <div style="display:flex; flex-direction:column; line-height:1.2;">
-          <span style="font-size:18px; font-weight:700; color:#000;">QSFF Agri</span>
-          <span style="font-size:12px; color:#555; letter-spacing:1px;">Poultry Industry Solutions</span>
-        </div>
-      </a>
-
-      <nav class="menu">
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#projects">Projects</a>
-        <a href="#products">Products</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#news">News</a>
-        <a href="#contact" class="cta-btn">Contact</a>
-      </nav>
-
-      <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-    </div>
-  </div>
+  <div data-include="/partials/header.html"></div>
 
   <!-- Hero Banner -->
   <header class="hero" id="home">
@@ -845,51 +823,18 @@
   </section>
 
   <!-- 页脚（黑底保留） -->
-  <footer>
-    <div class="cols">
-      <div class="col">
-        <h2>Product</h2>
-        <ul>
-          <li>Broiler Production</li>
-          <li>Layer Production</li>
-          <li>Meat Duck Production</li>
-          <li>Laying Duck Production</li>
-          <li>Steel Structure Houses</li>
-        </ul>
-      </div>
-      <div class="col">
-        <h2>Solutions</h2>
-        <ul>
-          <li>3 Million Broiler Industrial Park – Argentina</li>
-          <li>30,000 Broiler House – Nicaragua</li>
-          <li>150,000 Broiler House – China</li>
-          <li>100,000 Layer House – Kenya</li>
-          <li>120,000 Layer House – Vietnam</li>
-          <li>High-End Food Industrial Park – China</li>
-        </ul>
-      </div>
-      <div class="col">
-        <h2>Contact Us</h2>
-        <p><strong>WhatsApp:</strong><br>
-          +86 159 6531 0998 (English)<br>
-          +86 195 1164 9597 (Français)<br>
-          +7 915 217 3078 (Русский)
-        </p>
-        <p><strong>Email:</strong><br>
-          <a href="mailto:weichaozq@163.com" style="color:var(--brand)">weichaozq@163.com</a>
-        </p>
-        <p><strong>Address:</strong><br>
-          Room 601, Building 2, Yaozhou Furuida Zhimei Town,<br>
-          Licang District, Qingdao, Shandong, China
-        </p>
-      </div>
-    </div>
-    <div class="social">
-      <b>Follow Us</b>
-      <a href="#">Facebook</a>
-      <a href="#">TikTok</a>
-    </div>
-  </footer>
+  <div data-include="/partials/footer.html"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const slots = document.querySelectorAll('[data-include]');
+      for (const el of slots) {
+        const file = el.getAttribute('data-include');
+        const res = await fetch(file);
+        el.innerHTML = await res.text();
+      }
+    });
+  </script>
 
 </body>
 
