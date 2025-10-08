@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prepared & Cooked Foods — QSFF Agri</title>
+    <meta name="description"
+        content="QSFF Agri provides turnkey prepared food production lines — marinated, fried, steamed, roasted, and braised — for modern food processing industries.">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <style>
+        :root {
+            --brand: #2fbf4a;
+            --brand-dark: #0f7a2b;
+            --bg: #fff;
+            --text: #000;
+            --muted: #555;
+            --card: #fff;
+            --line: #ddd;
+            --max: 1200px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            line-height: 1.6
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: none
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .container {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        section {
+            padding: 56px 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px
+        }
+
+        .bar {
+            width: 32px;
+            height: 3px;
+            background: var(--brand)
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/7;
+            background: url("images/cooked/hero.jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero .inner {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+            max-width: 900px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--brand-dark);
+            background: rgba(47, 191, 74, .12);
+            border: 1px solid rgba(47, 191, 74, .35);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            letter-spacing: .6px;
+            text-transform: uppercase
+        }
+
+        .hero h2 {
+            margin: 18px auto 12px;
+            font-size: 40px;
+            line-height: 1.2
+        }
+
+        .hero p {
+            margin: 0 auto 18px;
+            max-width: 780px;
+            color: var(--muted);
+            font-size: 16px
+        }
+
+        /* Split layout */
+        .split {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 28px
+        }
+
+        @media (max-width:900px) {
+            .split {
+                grid-template-columns: 1fr
+            }
+        }
+
+        /* Grid cards */
+        .grid {
+            display: grid;
+            gap: 18px
+        }
+
+        .grid4 {
+            grid-template-columns: repeat(3, 1fr)
+        }
+
+        @media (max-width:1000px) {
+            .grid4 {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width:640px) {
+            .grid4 {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 18px;
+            transition: transform .18s ease, box-shadow .18s ease, border-color .18s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, .06);
+            border-color: rgba(47, 191, 74, .45);
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(180deg, rgba(47, 191, 74, .08), transparent)
+        }
+
+        .cta-box {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .05);
+        }
+
+        @media (max-width:800px) {
+            .cta-box {
+                flex-direction: column;
+                align-items: flex-start
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 页眉 -->
+    <div data-include="/partials/header.html"></div>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="inner container">
+            <span class="eyebrow">Prepared & Cooked Foods</span>
+            <h2>Integrated Cooked Food Production Lines</h2>
+            <p>Marinated · Fried · Steamed · Roasted · Braised — Full-process automation from raw meat to ready meal.
+            </p>
+        </div>
+    </header>
+
+    <!-- 概述 -->
+    <section>
+        <div class="container split">
+            <div>
+                <div class="section-title"><span class="bar"></span>
+                    <h3>About Prepared & Cooked Foods</h3>
+                </div>
+                <p class="muted">
+                    QSFF Agri offers complete solutions for the cooked-food industry, covering marination, frying,
+                    steaming,
+                    roasting, and braising. Our lines ensure consistent quality, efficient energy use, and food safety
+                    compliance.
+                </p>
+                <ul class="muted" style="padding-left:20px">
+                    <li>Custom-designed production lines by category</li>
+                    <li>Automated temperature & humidity control</li>
+                    <li>Integrated sterilization & packaging section</li>
+                    <li>Optimized layout for hygiene and workflow</li>
+                </ul>
+            </div>
+            <img src="images/cooked/螺旋式蒸烤一体机.png" alt="Steam-Roast Line">
+        </div>
+    </section>
+
+    <!-- 分类展示 -->
+    <section>
+        <div class="container">
+            <div class="section-title"><span class="bar"></span>
+                <h3>Cooked Food Categories & Equipment</h3>
+            </div>
+
+            <div class="grid grid4">
+                <div class="card">
+                    <h3>Marinated Products</h3>
+                    <p class="muted">Vacuum tumblers and marinators ensure even flavor penetration and tender texture.
+                    </p>
+                    <img src="images/cooked/真空滚揉机.png" alt="Vacuum Tumbler">
+                </div>
+
+                <div class="card">
+                    <h3>Fried Products</h3>
+                    <p class="muted">Continuous fryers for uniform color and crispness with oil filtering systems.</p>
+                    <img src="images/cooked/连续式油炸机.png" alt="Continuous Fryer">
+                </div>
+
+                <div class="card">
+                    <h3>Steamed / Boiled Products</h3>
+                    <p class="muted">Steam ovens, forming machines, sausage filling and tying systems.</p>
+                    <img src="images/cooked/熏蒸炉.png" alt="Steam Oven">
+                </div>
+
+                <div class="card">
+                    <h3>Roasted Products</h3>
+                    <p class="muted">Spiral and continuous steam-roast lines for premium cooked meat.</p>
+                    <img src="images/cooked/螺旋式蒸烤一体机.png" alt="Steam-Roast Line">
+                </div>
+
+                <div class="card">
+                    <h3>Braised / Stewed Products</h3>
+                    <p class="muted">Braised pots and vacuum sterilizers for deep flavor and long shelf life.</p>
+                    <img src="images/cooked/卤煮锅.png" alt="Braised Pot">
+                </div>
+
+                <div class="card">
+                    <h3>Public Equipment</h3>
+                    <p class="muted">Injection machines, choppers, mixers, grinders, and vacuum packers.</p>
+                    <img src="images/cooked/真空包装机1.png" alt="Vacuum Packaging">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 杀菌与包装 -->
+    <section>
+        <div class="container split">
+            <img src="images/cooked/高温灭菌机.png" alt="Sterilization Line">
+            <div>
+                <div class="section-title"><span class="bar"></span>
+                    <h3>Sterilization & Packaging</h3>
+                </div>
+                <p class="muted">
+                    The final section integrates boiling, sterilization, cooling, and vacuum sealing.
+                    QSFF Agri’s high-temperature retort and automatic vacuum packaging systems ensure product safety,
+                    long shelf life, and freshness.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系 CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-box">
+                <div>
+                    <h3 style="margin:0 0 6px">Interested in Cooked Food Solutions?</h3>
+                    <p class="muted" style="margin:0">Tell us your project details — we’ll design and quote a turnkey
+                        line.</p>
+                </div>
+                <div style="display:flex;gap:12px;flex-wrap:wrap">
+                    <a class="btn btn-primary" href="mailto:weichaozq@163.com">Email: weichaozq@163.com</a>
+                    <a class="btn" href="https://wa.me/8615965310998" target="_blank">WhatsApp +86 159 6531 0998</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <div data-include="/partials/footer.html"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const slots = document.querySelectorAll('[data-include]');
+            for (const el of slots) {
+                const file = el.getAttribute('data-include');
+                const res = await fetch(file);
+                el.innerHTML = await res.text();
+            }
+        });
+    </script>
+</body>
+
+</html>
