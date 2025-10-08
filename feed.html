@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QSFF Agri — Feed Systems (EPCO)</title>
+    <meta name="description"
+        content="QSFF Agri Feed Systems: mixer, hammer mill, rotary screener, pellet mill, cooler, crumbler, bucket elevator, conveyors, batching, dust collection, liquid dosing and silos. EPCO delivery." />
+    <style>
+        :root {
+            --brand: #2fbf4a;
+            --brand-dark: #0f7a2b;
+            --bg: #fff;
+            --text: #000;
+            --muted: #555;
+            --card: #fff;
+            --line: #ddd;
+            --max: 1200px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            line-height: 1.6
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: none
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        .container {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        /* 顶部导航 */
+        .topbar {
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 50
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .menu {
+            display: flex;
+            gap: 24px
+        }
+
+        .menu a {
+            font-weight: 600
+        }
+
+        .cta-btn {
+            background: var(--brand);
+            color: #000;
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 700
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: #000
+        }
+
+        @media (max-width:900px) {
+            .menu {
+                display: none
+            }
+
+            .hamburger {
+                display: flex
+            }
+        }
+
+        /* 页面头部 */
+        .hero {
+            background: linear-gradient(180deg, rgba(47, 191, 74, .08), transparent);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .hero .wrap {
+            padding: 42px 0
+        }
+
+        .breadcrumbs {
+            font-size: 14px;
+            color: var(--muted)
+        }
+
+        .breadcrumbs a {
+            color: #0f7a2b
+        }
+
+        .hero h1 {
+            margin: 10px 0 6px;
+            font-size: 32px
+        }
+
+        .hero p {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        /* 卡片栅格 */
+        .grid {
+            display: grid;
+            gap: 18px
+        }
+
+        .grid3 {
+            grid-template-columns: repeat(3, 1fr)
+        }
+
+        @media (max-width:1000px) {
+            .grid3 {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width:640px) {
+            .grid3 {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .machine {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column
+        }
+
+        .m-img {
+            position: relative;
+            width: 100%;
+            padding-top: 62%
+        }
+
+        /* 16:10 视觉更饱满 */
+        .m-img img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .m-body {
+            padding: 14px 14px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1
+        }
+
+        .m-title {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700
+        }
+
+        .m-desc {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        .m-meta {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .m-link {
+            font-weight: 600;
+            color: #0f7a2b;
+            border-bottom: 1px dashed rgba(47, 191, 74, .5)
+        }
+
+        .badge {
+            font-size: 12px;
+            color: #0f7a2b;
+            background: rgba(47, 191, 74, .1);
+            border: 1px solid rgba(47, 191, 74, .35);
+            padding: 2px 8px;
+            border-radius: 999px
+        }
+
+        section {
+            padding: 42px 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        /* 页脚 */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 50px 10%
+        }
+
+        footer .cols {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap
+        }
+
+        footer .col {
+            flex: 1;
+            min-width: 220px;
+            margin: 20px
+        }
+
+        footer h2 {
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--brand);
+            display: inline-block
+        }
+
+        footer ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            line-height: 2
+        }
+
+        footer .social {
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid #222;
+            padding-top: 20px
+        }
+
+        footer .social a {
+            margin: 0 10px;
+            color: #fff
+        }
+    </style>
+    <script>function toggleMenu() { document.querySelector('.menu')?.classList.toggle('open') }</script>
+</head>
+
+<body>
+
+    <!-- 顶部导航（与首页一致） -->
+    <div class="topbar">
+        <div class="container nav">
+            <a href="index.html" class="logo" aria-label="Home">
+                <img src="images/logo.png" alt="QSFF Agri" style="height:50px">
+                <div style="display:flex;flex-direction:column;line-height:1.2">
+                    <span style="font-size:18px;font-weight:700;color:#000">QSFF Agri</span>
+                    <span style="font-size:12px;color:#555;letter-spacing:1px">Poultry Industry Solutions</span>
+                </div>
+            </a>
+            <nav class="menu">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About Us</a>
+                <a href="index.html#products">EPCO Scope</a>
+                <a href="index.html#solutions">Solutions</a>
+                <a href="index.html#news">News</a>
+                <a href="index.html#contact" class="cta-btn">Contact</a>
+            </nav>
+            <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+
+    <!-- 页面头 -->
+    <header class="hero">
+        <div class="container wrap">
+            <div class="breadcrumbs"><a href="index.html">Home</a> · <a href="index.html#products">EPCO Scope</a> ·
+                <b>Feed Systems</b>
+            </div>
+            <h1>Feed Systems</h1>
+            <p>Core equipment for modern feed mills — engineered and delivered under EPCO.</p>
+        </div>
+    </header>
+
+    <!-- 设备列表 -->
+    <section>
+        <div class="container">
+            <div class="grid grid3">
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/mixer.jpg" alt="Mixer"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Mixer</h3>
+                        <p class="m-desc">Uniform blending of micro & macro ingredients with short cycle time.</p>
+                        <div class="m-meta"><span class="badge">Core</span><a class="m-link" href="#contact">Get details
+                                →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/hammer-mill.jpg" alt="Hammer Mill"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Hammer Mill</h3>
+                        <p class="m-desc">High-efficiency grinding with adjustable screens and dust control.</p>
+                        <div class="m-meta"><span class="badge">Grinding</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/screener.jpg" alt="Rotary Screener"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Rotary Screener</h3>
+                        <p class="m-desc">Precise classification to improve pellet quality and consistency.</p>
+                        <div class="m-meta"><span class="badge">Screening</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/pellet-mill.jpg" alt="Pellet Mill"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Pellet Mill</h3>
+                        <p class="m-desc">Stable throughput and durability; conditioning for better PDI.</p>
+                        <div class="m-meta"><span class="badge">Pelletizing</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/cooler.jpg" alt="Counterflow Cooler"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Counterflow Cooler</h3>
+                        <p class="m-desc">Gentle cooling to target moisture and temperature.</p>
+                        <div class="m-meta"><span class="badge">Cooling</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/crumbler.jpg" alt="Crumbler"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Crumbler</h3>
+                        <p class="m-desc">Uniform crumbles for starter feeds with minimal fines.</p>
+                        <div class="m-meta"><span class="badge">Crushing</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/bucket-elevator.jpg" alt="Bucket Elevator"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Bucket Elevator</h3>
+                        <p class="m-desc">Vertical conveying with wear protection and explosion relief.</p>
+                        <div class="m-meta"><span class="badge">Conveying</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/conveyor.jpg" alt="Chain/ Screw Conveyor"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Chain / Screw Conveyor</h3>
+                        <p class="m-desc">Reliable material transfer across process sections.</p>
+                        <div class="m-meta"><span class="badge">Conveying</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/batching-scale.jpg" alt="Batching & Weighing"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Batching & Weighing</h3>
+                        <p class="m-desc">Accurate dosing for consistent formula and quality.</p>
+                        <div class="m-meta"><span class="badge">Dosing</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/dust-collector.jpg" alt="Dust Collector"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Dust Collector</h3>
+                        <p class="m-desc">Central dust removal to protect environment and workers.</p>
+                        <div class="m-meta"><span class="badge">Filtration</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/liquid-dosing.jpg" alt="Liquid Dosing"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Liquid Dosing</h3>
+                        <p class="m-desc">Oil, enzymes and additives dosing with inline control.</p>
+                        <div class="m-meta"><span class="badge">Add-on</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/silo.jpg" alt="Silos"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Silos</h3>
+                        <p class="m-desc">Steel storage with aeration and level monitoring.</p>
+                        <div class="m-meta"><span class="badge">Storage</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚（与首页一致） -->
+    <footer>
+        <div class="cols">
+            <div class="col">
+                <h2>Product</h2>
+                <ul>
+                    <li>Broiler Production</li>
+                    <li>Layer Production</li>
+                    <li>Meat Duck Production</li>
+                    <li>Steel Structure Houses</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h2>Solutions</h2>
+                <ul>
+                    <li>3M Broiler Industrial Park – Argentina</li>
+                    <li>30,000 Broiler House – Nicaragua</li>
+                    <li>High-End Food Industrial Park – China</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h2>Contact Us</h2>
+                <p><b>WhatsApp:</b> +86 159 6531 0998 (English)<br>
+                    +86 195 1164 9597 (Français) · +86 198 5323 3307 (Русский)</p>
+                <p><b>Email:</b> <a href="mailto:weichaozq@163.com" style="color:var(--brand)">weichaozq@163.com</a></p>
+                <p><b>Address:</b> Licang District, Qingdao, Shandong, China</p>
+            </div>
+        </div>
+        <div class="social"><b>Follow Us</b> <a href="#">Facebook</a> <a href="#">TikTok</a></div>
+    </footer>
+</body>
+
+</html>
