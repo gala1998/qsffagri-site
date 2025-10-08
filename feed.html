@@ -274,6 +274,21 @@
             margin: 0 10px;
             color: #fff
         }
+
+        .subhead {
+            margin: 34px 0 14px;
+            font-size: 20px;
+            font-weight: 800;
+            border-left: 4px solid var(--brand);
+            padding-left: 10px;
+        }
+
+        .note {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: -6px;
+            margin-bottom: 12px;
+        }
     </style>
     <script>function toggleMenu() { document.querySelector('.menu')?.classList.toggle('open') }</script>
 </head>
@@ -316,129 +331,290 @@
     <!-- 设备列表 -->
     <section>
         <div class="container">
+
+            <!-- ① 接收与清理 -->
+            <h2 class="subhead">Receiving & Cleaning</h2>
+            <p class="note">Pre-cleaning and material distribution before grinding/mixing.</p>
             <div class="grid grid3">
-
                 <article class="machine">
-                    <div class="m-img"><img src="images/feed/mixer.jpg" alt="Mixer"></div>
+                    <div class="m-img"><img src="images/feed/圆筒初清筛.jpg" alt="Cylindrical Pre-cleaner"></div>
                     <div class="m-body">
-                        <h3 class="m-title">Mixer</h3>
-                        <p class="m-desc">Uniform blending of micro & macro ingredients with short cycle time.</p>
-                        <div class="m-meta"><span class="badge">Core</span><a class="m-link" href="#contact">Get details
-                                →</a></div>
-                    </div>
-                </article>
-
-                <article class="machine">
-                    <div class="m-img"><img src="images/feed/hammer-mill.jpg" alt="Hammer Mill"></div>
-                    <div class="m-body">
-                        <h3 class="m-title">Hammer Mill</h3>
-                        <p class="m-desc">High-efficiency grinding with adjustable screens and dust control.</p>
-                        <div class="m-meta"><span class="badge">Grinding</span><a class="m-link" href="#contact">Get
+                        <h3 class="m-title">Cylindrical Pre-cleaner</h3>
+                        <p class="m-desc">Removes large impurities at intake.</p>
+                        <div class="m-meta"><span class="badge">Cleaning</span><a class="m-link" href="#contact">Get
                                 details →</a></div>
                     </div>
                 </article>
 
                 <article class="machine">
-                    <div class="m-img"><img src="images/feed/screener.jpg" alt="Rotary Screener"></div>
+                    <div class="m-img"><img src="images/feed/粉料清理筛.png" alt="Powder Cleaning Screener"></div>
                     <div class="m-body">
-                        <h3 class="m-title">Rotary Screener</h3>
-                        <p class="m-desc">Precise classification to improve pellet quality and consistency.</p>
+                        <h3 class="m-title">Powder Cleaning Screener</h3>
+                        <p class="m-desc">Fine screening for powder/meal before batching.</p>
                         <div class="m-meta"><span class="badge">Screening</span><a class="m-link" href="#contact">Get
                                 details →</a></div>
                     </div>
                 </article>
 
                 <article class="machine">
-                    <div class="m-img"><img src="images/feed/pellet-mill.jpg" alt="Pellet Mill"></div>
+                    <div class="m-img"><img src="images/feed/分配器.png" alt="Distributor"></div>
                     <div class="m-body">
-                        <h3 class="m-title">Pellet Mill</h3>
-                        <p class="m-desc">Stable throughput and durability; conditioning for better PDI.</p>
-                        <div class="m-meta"><span class="badge">Pelletizing</span><a class="m-link" href="#contact">Get
+                        <h3 class="m-title">Distributor</h3>
+                        <p class="m-desc">Routes raw materials to target bins/silos.</p>
+                        <div class="m-meta"><span class="badge">Routing</span><a class="m-link" href="#contact">Get
                                 details →</a></div>
                     </div>
                 </article>
 
                 <article class="machine">
-                    <div class="m-img"><img src="images/feed/cooler.jpg" alt="Counterflow Cooler"></div>
+                    <div class="m-img"><img src="images/feed/永磁筒.png" alt="Permanent Magnet Drum"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Permanent Magnet Drum</h3>
+                        <p class="m-desc">Removes ferrous metal to protect downstream equipment.</p>
+                        <div class="m-meta"><span class="badge">Safety</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/原料散装仓.png" alt="Bulk Raw Material Bin"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Bulk Raw Material Bin</h3>
+                        <p class="m-desc">Buffer storage with level monitoring.</p>
+                        <div class="m-meta"><span class="badge">Storage</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- ② 粉碎 -->
+            <h2 class="subhead">Grinding</h2>
+            <div class="grid grid3">
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/水滴宽腔粉碎机.jpg" alt="Wide-chamber Hammer Mill"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Wide-chamber Hammer Mill</h3>
+                        <p class="m-desc">High efficiency grinding with lower fines and energy.</p>
+                        <div class="m-meta"><span class="badge">Core</span><a class="m-link" href="#contact">Get details
+                                →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/超微粉碎机.png" alt="Ultra-fine Grinder"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Ultra-fine Grinder</h3>
+                        <p class="m-desc">Micron-size milling for special formulas.</p>
+                        <div class="m-meta"><span class="badge">Micronizing</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/碟式粉碎机.png" alt="Disc Mill"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Disc Mill</h3>
+                        <p class="m-desc">Alternative grinding for cereals/maize.</p>
+                        <div class="m-meta"><span class="badge">Grinding</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- ③ 混合 & 调质 -->
+            <h2 class="subhead">Mixing & Conditioning</h2>
+            <div class="grid grid3">
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/单轴高效混合机.jpg" alt="Single-shaft Mixer"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Single-shaft Mixer</h3>
+                        <p class="m-desc">Fast batch mixing with high homogeneity (CV).</p>
+                        <div class="m-meta"><span class="badge">Mixing</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/双轴桨叶混合机.png" alt="Double-shaft Paddle Mixer"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Double-shaft Paddle Mixer</h3>
+                        <p class="m-desc">Gentle mixing for fragile materials/additives.</p>
+                        <div class="m-meta"><span class="badge">Mixing</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/调制器.png" alt="Conditioner"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Conditioner</h3>
+                        <p class="m-desc">Steam conditioning for better pellet quality (PDI).</p>
+                        <div class="m-meta"><span class="badge">Conditioning</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/保质器.png" alt="Retentioner"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Retentioner</h3>
+                        <p class="m-desc">Extended retention time to improve starch gelatinization.</p>
+                        <div class="m-meta"><span class="badge">Conditioning</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- ④ 输送 -->
+            <h2 class="subhead">Conveying</h2>
+            <div class="grid grid3">
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/斗式提升机.png" alt="Bucket Elevator"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Bucket Elevator</h3>
+                        <p class="m-desc">Vertical conveying with anti-wear protection.</p>
+                        <div class="m-meta"><span class="badge">Conveying</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/刮板输送机.png" alt="Drag Chain Conveyor"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Drag Chain Conveyor</h3>
+                        <p class="m-desc">Gentle horizontal transfer; low residue.</p>
+                        <div class="m-meta"><span class="badge">Conveying</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/螺旋输送机.png" alt="Screw Conveyor"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Screw Conveyor</h3>
+                        <p class="m-desc">Compact conveying for powders and meals.</p>
+                        <div class="m-meta"><span class="badge">Conveying</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/皮带喂料机.png" alt="Belt Feeder"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Belt Feeder</h3>
+                        <p class="m-desc">Uniform feeding for grinding or batching.</p>
+                        <div class="m-meta"><span class="badge">Feeding</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/叶轮喂料器.png" alt="Rotary Airlock Feeder"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Rotary Airlock Feeder</h3>
+                        <p class="m-desc">Airlock feeding for dust-tight transfer.</p>
+                        <div class="m-meta"><span class="badge">Feeding</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- ⑤ 制粒后处理 / 冷却 & 粉碎 -->
+            <h2 class="subhead">Post-pelleting: Cooling & Crumbling</h2>
+            <div class="grid grid3">
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/翻板冷却器.png" alt="Counterflow Cooler"></div>
                     <div class="m-body">
                         <h3 class="m-title">Counterflow Cooler</h3>
-                        <p class="m-desc">Gentle cooling to target moisture and temperature.</p>
+                        <p class="m-desc">Gentle cooling to target moisture & temperature.</p>
                         <div class="m-meta"><span class="badge">Cooling</span><a class="m-link" href="#contact">Get
                                 details →</a></div>
                     </div>
                 </article>
 
                 <article class="machine">
-                    <div class="m-img"><img src="images/feed/crumbler.jpg" alt="Crumbler"></div>
+                    <div class="m-img"><img src="images/feed/叶轮冷却器.jpg" alt="Rotary Drum Cooler"></div>
                     <div class="m-body">
-                        <h3 class="m-title">Crumbler</h3>
-                        <p class="m-desc">Uniform crumbles for starter feeds with minimal fines.</p>
-                        <div class="m-meta"><span class="badge">Crushing</span><a class="m-link" href="#contact">Get
+                        <h3 class="m-title">Rotary Drum Cooler</h3>
+                        <p class="m-desc">Optional cooler for specific products.</p>
+                        <div class="m-meta"><span class="badge">Cooling</span><a class="m-link" href="#contact">Get
                                 details →</a></div>
                     </div>
                 </article>
 
                 <article class="machine">
-                    <div class="m-img"><img src="images/feed/bucket-elevator.jpg" alt="Bucket Elevator"></div>
+                    <div class="m-img"><img src="images/feed/三辊破碎机.png" alt="Three-roll Crumbler"></div>
                     <div class="m-body">
-                        <h3 class="m-title">Bucket Elevator</h3>
-                        <p class="m-desc">Vertical conveying with wear protection and explosion relief.</p>
-                        <div class="m-meta"><span class="badge">Conveying</span><a class="m-link" href="#contact">Get
+                        <h3 class="m-title">Three-roll Crumbler</h3>
+                        <p class="m-desc">Uniform crumbles for starter feed, minimal fines.</p>
+                        <div class="m-meta"><span class="badge">Crumbling</span><a class="m-link" href="#contact">Get
+                                details →</a></div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- ⑥ 计量/阀门/分路 -->
+            <h2 class="subhead">Valves & Dosing</h2>
+            <div class="grid grid3">
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/气动三通.png" alt="Pneumatic Three-way Diverter"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Pneumatic Three-way Diverter</h3>
+                        <p class="m-desc">Automatically switches flow between lines.</p>
+                        <div class="m-meta"><span class="badge">Flow-switch</span><a class="m-link" href="#contact">Get
                                 details →</a></div>
                     </div>
                 </article>
 
                 <article class="machine">
-                    <div class="m-img"><img src="images/feed/conveyor.jpg" alt="Chain/ Screw Conveyor"></div>
+                    <div class="m-img"><img src="images/feed/气动阀门.png" alt="Pneumatic Valve"></div>
                     <div class="m-body">
-                        <h3 class="m-title">Chain / Screw Conveyor</h3>
-                        <p class="m-desc">Reliable material transfer across process sections.</p>
-                        <div class="m-meta"><span class="badge">Conveying</span><a class="m-link" href="#contact">Get
+                        <h3 class="m-title">Pneumatic Valve</h3>
+                        <p class="m-desc">Remote control for precise dosing and routing.</p>
+                        <div class="m-meta"><span class="badge">Control</span><a class="m-link" href="#contact">Get
                                 details →</a></div>
                     </div>
                 </article>
+            </div>
 
+            <!-- ⑦ 除尘/干燥 -->
+            <h2 class="subhead">Dust Control & Drying</h2>
+            <div class="grid grid3">
                 <article class="machine">
-                    <div class="m-img"><img src="images/feed/batching-scale.jpg" alt="Batching & Weighing"></div>
+                    <div class="m-img"><img src="images/feed/脉冲除尘器.png" alt="Pulse Dust Collector"></div>
                     <div class="m-body">
-                        <h3 class="m-title">Batching & Weighing</h3>
-                        <p class="m-desc">Accurate dosing for consistent formula and quality.</p>
-                        <div class="m-meta"><span class="badge">Dosing</span><a class="m-link" href="#contact">Get
-                                details →</a></div>
-                    </div>
-                </article>
-
-                <article class="machine">
-                    <div class="m-img"><img src="images/feed/dust-collector.jpg" alt="Dust Collector"></div>
-                    <div class="m-body">
-                        <h3 class="m-title">Dust Collector</h3>
-                        <p class="m-desc">Central dust removal to protect environment and workers.</p>
+                        <h3 class="m-title">Pulse Dust Collector</h3>
+                        <p class="m-desc">Central dust removal for cleaner, safer plant.</p>
                         <div class="m-meta"><span class="badge">Filtration</span><a class="m-link" href="#contact">Get
                                 details →</a></div>
                     </div>
                 </article>
 
                 <article class="machine">
-                    <div class="m-img"><img src="images/feed/liquid-dosing.jpg" alt="Liquid Dosing"></div>
+                    <div class="m-img"><img src="images/feed/循环烘干机.png" alt="Recirculating Dryer"></div>
                     <div class="m-body">
-                        <h3 class="m-title">Liquid Dosing</h3>
-                        <p class="m-desc">Oil, enzymes and additives dosing with inline control.</p>
-                        <div class="m-meta"><span class="badge">Add-on</span><a class="m-link" href="#contact">Get
+                        <h3 class="m-title">Recirculating Dryer</h3>
+                        <p class="m-desc">Controlled drying for special products.</p>
+                        <div class="m-meta"><span class="badge">Drying</span><a class="m-link" href="#contact">Get
                                 details →</a></div>
                     </div>
                 </article>
-
-                <article class="machine">
-                    <div class="m-img"><img src="images/feed/silo.jpg" alt="Silos"></div>
-                    <div class="m-body">
-                        <h3 class="m-title">Silos</h3>
-                        <p class="m-desc">Steel storage with aeration and level monitoring.</p>
-                        <div class="m-meta"><span class="badge">Storage</span><a class="m-link" href="#contact">Get
-                                details →</a></div>
-                    </div>
-                </article>
-
             </div>
+
+            <!-- ⑧ 筛分（分级）可放到任一环节 -->
+            <h2 class="subhead">Screening & Classification</h2>
+            <div class="grid grid3">
+                <article class="machine">
+                    <div class="m-img"><img src="images/feed/回转分级筛.png" alt="Rotary Classifier Screener"></div>
+                    <div class="m-body">
+                        <h3 class="m-title">Rotary Classifier Screener</h3>
+                        <p class="m-desc">Grading and fines removal to stabilize quality.</p>
+                        <div class="m-meta"><span class="badge">Classification</span><a class="m-link"
+                                href="#contact">Get details →</a></div>
+                    </div>
+                </article>
+            </div>
+
         </div>
     </section>
 
