@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>饲料工程·核心设备 | QSFF Agri</title>
+  <meta name="description" content="QSFF Agri 饲料工程核心设备：接收与清理、粉碎、混合与调质、制粒、冷却与粉碎、输送、计量阀门、除尘干燥、筛分与配料。支持EPCO交付与按需选型。" />
+  <style>
+    :root{
+      --bg:#0b0d12;          /* 背景色：深色科技感 */
+      --panel:#0f1420;       /* 面板底色 */
+      --card:#111827;
+      --muted:#92a0b3;
+      --text:#e8eef7;
+      --brand:#48d39f;       /* 主色：青绿色 */
+      --brand-2:#67b1ff;     /* 辅色：蓝色 */
+      --ring:rgba(103,177,255,.35);
+      --max:1200px;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+
+    /* 顶部栏 */
+    header.top{
+      position:sticky;top:0;z-index:40;
+      backdrop-filter:saturate(140%) blur(10px);
+      background:linear-gradient(180deg, rgba(15,20,32,.9), rgba(15,20,32,.7));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .top-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;gap:18px;padding:14px 20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 0 20px var(--ring)}
+    .top-nav{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}
+    .top-nav a{opacity:.86}
+    .cta{padding:.55rem .95rem;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b0d12;font-weight:700}
+
+    /* 英雄区 */
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
+    .hero:before{content:"";position:absolute;inset:-30% -30% auto -30%;height:420px;background:radial-gradient(circle at 30% 10%, rgba(72,211,159,.25), transparent 55%),radial-gradient(circle at 80% 0, rgba(103,177,255,.18), transparent 50%);}    
+    .hero-inner{max-width:var(--max);margin:0 auto;padding:56px 20px 34px}
+    .breadcrumbs{color:var(--muted);font-size:.9rem}
+    h1{font-size:2rem;margin:.35rem 0 0}
+    .sub{color:var(--muted);max-width:900px}
+
+    /* 筛选条 */
+    .filters{max-width:var(--max);margin:18px auto 0;padding:0 20px 8px;display:flex;gap:10px;flex-wrap:wrap}
+    .chip{padding:.5rem .8rem;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--muted);cursor:pointer;user-select:none;transition:.2s}
+    .chip:hover{border-color:var(--brand);color:var(--text)}
+    .chip.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b0d12;border-color:transparent}
+    .search{margin-left:auto;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:8px 12px;border-radius:999px}
+    .search input{background:transparent;border:none;color:var(--text);outline:none;min-width:220px}
+
+    /* 卡片栅格 */
+    .wrap{max-width:var(--max);margin:0 auto;padding:26px 20px 80px}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+    @media (max-width:1100px){.grid{grid-template-columns:repeat(8,1fr)}}
+    @media (max-width:720px){.grid{grid-template-columns:repeat(4,1fr)}}
+
+    .card{grid-column:span 3;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s, box-shadow .2s}
+    .card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+    .thumb{position:relative;padding-top:62%;overflow:hidden}
+    .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05)}
+    .badge{position:absolute;left:12px;top:12px;background:rgba(72,211,159,.18);border:1px solid rgba(72,211,159,.45);color:var(--text);font-size:.75rem;padding:.25rem .5rem;border-radius:999px;backdrop-filter:blur(4px)}
+    .body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:8px}
+    .title{font-weight:800;letter-spacing:.2px}
+    .desc{color:var(--muted);font-size:.95rem;min-height:2.4em}
+    .meta{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+    .pill{font-size:.75rem;color:var(--muted);border:1px solid rgba(255,255,255,.12);padding:.25rem .5rem;border-radius:6px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:.55rem .8rem;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b0d12;font-weight:700}
+
+    /* 模态层 */
+    .modal{position:fixed;inset:0;background:rgba(8,10,14,.75);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px;z-index:60}
+    .modal.open{display:flex}
+    .sheet{max-width:980px;width:100%;background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:18px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+    .sheet-head{position:relative}
+    .sheet-head img{width:100%;height:380px;object-fit:cover}
+    .sheet-head .close{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.45);color:#fff;border:none;border-radius:999px;width:40px;height:40px;font-size:20px;cursor:pointer}
+    .sheet-body{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;padding:18px}
+    @media (max-width:900px){.sheet-body{grid-template-columns:1fr}}
+    .specs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .spec{background:#0c1220;border:1px solid rgba(255,255,255,.06);padding:8px 10px;border-radius:10px}
+
+    /* 页脚 */
+    footer{border-top:1px solid rgba(255,255,255,.06);color:var(--muted);text-align:center;padding:34px 20px}
+
+    /* 小返回顶部按钮 */
+    .toTop{position:fixed;right:18px;bottom:18px;background:rgba(72,211,159,.9);color:#0b0d12;border:none;border-radius:999px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-weight:900;cursor:pointer;box-shadow:0 10px 20px rgba(0,0,0,.3)}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand"><span class="dot"></span>QSFF Agri · Feed Systems</div>
+      <nav class="top-nav">
+        <a href="/">首页</a>
+        <a href="#mixing">混合&调质</a>
+        <a href="#pellet">制粒线</a>
+        <a href="#contact" class="cta">获取报价</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="breadcrumbs">EPCO 一体化交付 / <strong>饲料厂核心设备</strong></div>
+      <h1>从接收到出料的全流程设备库</h1>
+      <p class="sub">按工段快速筛选，查看高清大图与关键参数。支持一键生成询价清单，工程化接入现有工艺流程。</p>
+    </div>
+    <div class="filters" id="filters">
+      <div class="chip active" data-cat="all">全部</div>
+      <div class="chip" data-cat="接收清理">接收&清理</div>
+      <div class="chip" data-cat="粉碎">粉碎</div>
+      <div class="chip" data-cat="混合调质">混合&调质</div>
+      <div class="chip" data-cat="制粒">制粒</div>
+      <div class="chip" data-cat="膨化挤压">膨化&挤压</div>
+      <div class="chip" data-cat="稳定化">稳定化</div>
+      <div class="chip" data-cat="喷涂包衣">喷涂&包衣</div>
+      <div class="chip" data-cat="冷却粉碎">冷却&破碎</div>
+      <div class="chip" data-cat="输送">输送</div>
+      <div class="chip" data-cat="计量阀门">计量&阀门</div>
+      <div class="chip" data-cat="除尘干燥">除尘&干燥</div>
+      <div class="chip" data-cat="筛分分级">筛分&分级</div>
+      <div class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" placeholder="搜索设备/型号/工段…" />
+      </div>
+    </div>
+      <div class="chip" data-cat="接收清理">接收&清理</div>
+      <div class="chip" data-cat="粉碎">粉碎</div>
+      <div class="chip" data-cat="混合调质">混合&调质</div>
+      <div class="chip" data-cat="制粒">制粒</div>
+      <div class="chip" data-cat="冷却粉碎">冷却&破碎</div>
+      <div class="chip" data-cat="输送">输送</div>
+      <div class="chip" data-cat="计量阀门">计量&阀门</div>
+      <div class="chip" data-cat="除尘干燥">除尘&干燥</div>
+      <div class="chip" data-cat="筛分分级">筛分&分级</div>
+      <div class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" placeholder="搜索设备/型号/工段…" />
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <!-- 详情模态框 -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="sheet">
+      <div class="sheet-head">
+        <img id="mImg" alt=""/>
+        <button class="close" aria-label="关闭" onclick="closeModal()">✕</button>
+      </div>
+      <div class="sheet-body">
+        <div>
+          <div class="badge" id="mCat"></div>
+          <h2 id="mTitle" style="margin:.5rem 0 0"></h2>
+          <p id="mDesc" class="sub" style="margin:.5rem 0 1rem"></p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a id="quoteBtn" class="btn">加入询价单</a>
+            <a id="downloadBtn" class="pill" target="_blank">下载大图</a>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin:.2rem 0 .6rem">关键参数 / 应用亮点</h3>
+          <div id="mSpecs" class="specs"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="toTop" title="返回顶部" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <footer id="contact">
+    如需详细参数表、工艺选型与配套方案，请联系：sales@qsffagri.com · +86‑0000‑000000
+  </footer>
+
+  <script>
+    // === 数据区：将你的产品按需补充（图片路径基于 /images/feed/） ===
+    const products = [
+      {name:'圆筒初清筛', en:'Cylindrical Pre-cleaner', cat:'接收清理', img:'images/feed/圆筒初清筛.jpg', desc:'原料接收端去除大杂，保护下游设备。', specs:['适用：玉米/小麦/豆粕等','处理量4–25t/h（按原料而异）','筛网快拆'], badge:'Cleaning'},
+      {name:'TCXT永磁筒套', en:'TCXT Series Permanent Magnet Sleeve', cat:'接收清理', img:'images/feed/TCXT永磁筒套.png', desc:'强力永磁，去除铁磁性杂质，保护下游设备。', specs:['产量20–100t/h','不锈钢外壳','抽屉式清理'], badge:'Safety'},
+      {name:'TCQY圆筒初清筛', en:'TCQY Series Cylinder Precleaner', cat:'接收清理', img:'images/feed/TCQY圆筒初清筛.png', desc:'适用于玉米等散装原料的初清除杂。', specs:['产量10–120t/h','结构紧凑、维护便捷','适配多种料斗'], badge:'Cleaning'},
+
+      {name:'水滴宽腔粉碎机', en:'Wide-chamber Hammer Mill', cat:'粉碎', img:'images/feed/水滴宽腔粉碎机.jpg', desc:'能耗更低、细粉率低，适合全价料粉碎。', specs:['产能3–13t/h','转子动平衡，低振','易损件快换'], badge:'Core'},
+      {name:'超微粉碎机SWFL', en:'SWFL Series Ultra-fine Grinder', cat:'粉碎', img:'images/feed/超微粉碎机.png', desc:'微粉化至60–200目，适用于水产/特种饲料。', specs:['粒度60–200目','分级轮可调','低噪节能'], badge:'Micron'},
+      {name:'碟式粉碎机', en:'Disc Mill', cat:'粉碎', img:'images/feed/碟式粉碎机.png', desc:'谷物类粉碎的经济型方案。', specs:['均匀粒度','耐磨盘齿','维护简便'], badge:'Grinding'},
+
+      {name:'SJHS单轴混合机', en:'SJHS Single-shaft Mixer', cat:'混合调质', img:'images/feed/单轴高效混合机.jpg', desc:'60–90s快速混合，CV≤5%。', specs:['有效容积0.5–3.0m³','大开门残留低','可配液体喷涂'], badge:'Mixing'},
+      {name:'SLHSJ双轴桨叶混合机', en:'SLHSJ Twin-shaft Paddle Mixer', cat:'混合调质', img:'images/feed/双轴桨叶混合机.png', desc:'柔性翻动，对热敏物料友好。', specs:['批量500–4000kg','CV≤5%','轴端密封可靠'], badge:'Mixing'},
+      {name:'KDBZ熟化器', en:'KDBZ Series Hygienizer', cat:'混合调质', img:'images/feed/KDBZ熟化器.png', desc:'高温熟化杀菌，提升PDI与消化率。', specs:['产量4–35t/h','主电机4–7.5kW','有效保温3–5min'], badge:'Conditioning'},
+      {name:'KDTZ调质器', en:'KDTZ Series Conditioner', cat:'混合调质', img:'images/feed/KDTZ调质器.png', desc:'多点喷汽/喷液，提升制粒稳定性。', specs:['产量7–35t/h','主电机4–18.5kW','有效保温3–3.5min'], badge:'Conditioning'},
+      {name:'TZSC双轴差速调质器', en:'TZSC Different Diameter Conditioner', cat:'混合调质', img:'images/feed/TZSC双轴调质器.png', desc:'三段工艺，适配高水分/高油脂配方。', specs:['产量0.1–35t/h','主电机3–30kW','多段温控'], badge:'Conditioning'},
+
+      {name:'KDZL双电机环模制粒机', en:'KDZL Dual-motor Pellet Mill', cat:'制粒', img:'images/feed/双电机环模制粒机.png', desc:'三角带+齿轮复合传动，能效高、振动小。', specs:['产量2–10+t/h','主电机30–160kW','多种喂料器/调质器'], badge:'Pelletizing'},
+      {name:'KDZL单电机制粒机', en:'KDZL Single-motor Pellet Mill', cat:'制粒', img:'images/feed/KDZL单电机制粒机.png', desc:'结构紧凑，适配中小产能制粒线。', specs:['产量5–120t/h(系列)','主电机90–400kW'], badge:'Pelletizing'},
+
+      {name:'KDTE双螺杆膨化机', en:'KDTE Twin-screw Extruder (Aquafeed)', cat:'膨化挤压', img:'images/feed/KDTE双螺杆膨化机.png', desc:'水产/宠物通用型，高熟化度，密封好。', specs:['主电机30–710kW','螺杆Φ56–176mm','浮/沉性0.03–12h'], badge:'Extrusion'},
+      {name:'KDTE双螺杆膨化机(宠物)', en:'KDTE Twin-screw Extruder (Pet Food)', cat:'膨化挤压', img:'images/feed/KDTE双螺杆宠物膨化机.png', desc:'宠物食品专用，成型佳、密度可控。', specs:['主电机30–710kW','螺杆Φ56–176mm'], badge:'Extrusion'},
+      {name:'KDSE单螺杆膨化机', en:'KDSE Single-screw Extruder', cat:'膨化挤压', img:'images/feed/KDSE单螺杆膨化机.png', desc:'经济型方案，能耗低。', specs:['主电机90–400kW','螺杆Φ135–265mm'], badge:'Extrusion'},
+      {name:'KDYE原料膨化机', en:'KDYE Raw Material Extruder', cat:'膨化挤压', img:'images/feed/KDYE原料膨化机.png', desc:'豆粕/玉米胚芽等预处理，提高吸收率。', specs:['主电机75–400kW','产能1.0–14.2t/h'], badge:'Extrusion'},
+      {name:'KDMG密度控制仪', en:'KDMG Density Controller', cat:'混合调质', img:'images/feed/KDMG密度控制仪.png', desc:'蒸汽调质前后密度/含水/温度在线控制。', specs:['切刀3–7mm','切刀12–18片','最大蒸汽压3.5Bar'], badge:'Control'},
+
+      {name:'TWDF稳压器', en:'TWDF Stabilizer', cat:'稳定化', img:'images/feed/TWDF稳压器.png', desc:'颗粒后熟化稳压，提升耐水性和PDI。', specs:['产量1–10t/h','加热保温结构','温度灵活可调'], badge:'Stabilizer'},
+      {name:'KDPZ卧式双轴真空喷涂', en:'KDPZ Twin-shaft Vacuum Coater', cat:'喷涂包衣', img:'images/feed/KDPZ双轴真空喷涂.png', desc:'双腔真空喷涂，渗透率高，适合高含油配方。', specs:['产量4–10t/h','双腔真空设计','易清洁'], badge:'Coating'},
+      {name:'KDVM真空喷涂', en:'KDVM Vacuum Coating System', cat:'喷涂包衣', img:'images/feed/KDVM真空喷涂.png', desc:'立式真空滚筒，添加量5–35%，CV≤5%。', specs:['批量3–20t/h','真空度≤-20mBar','添加6–12min'], badge:'Coating'},
+      {name:'KDPJ常压喷涂', en:'KDPJ Normobaric Coating', cat:'喷涂包衣', img:'images/feed/KDPJ常压喷涂.png', desc:'常压喷涂，结构紧凑，易维护。', specs:['产量4–15t/h','多点喷液','自清洁设计'], badge:'Coating'},
+      {name:'KDPTP油脂喷涂系统', en:'KDPTP Oil Coating System', cat:'喷涂包衣', img:'images/feed/KDPTP油脂喷涂系统.png', desc:'喷涂均匀度高，回油回收，节能降耗。', specs:['产量10–20t/h','喷液电机2.2–4.0kW','液体输送泵0.55–1.5kW'], badge:'Coating'},
+
+      {name:'SLNF/TLNF板式逆流冷却器', en:'SLNF/TLNF Plate-type Counterflow Cooler', cat:'冷却粉碎', img:'images/feed/板式逆流冷却器.png', desc:'板式结构，冷却均匀，裂粒少。', specs:['产量3–90t/h','温差3–5℃','能耗低'], badge:'Cooling'},
+      {name:'SKLN滑阀式逆流冷却器', en:'SKLN Slide-type Counterflow Cooler', cat:'冷却粉碎', img:'images/feed/SKLN逆流冷却器.png', desc:'经典结构，维护方便，适配多规格。', specs:['产量4–45t/h','功率0.75–2.2kW'], badge:'Cooling'},
+      {name:'TNLY叶轮逆流冷却器', en:'TNLY Impeller-type Counterflow Cooler', cat:'冷却粉碎', img:'images/feed/TNLY叶轮逆流冷却器.png', desc:'叶轮卸料，物料流动更平稳。', specs:['产量8–20t/h','能耗低'], badge:'Cooling'},
+      {name:'KDSL三辊破碎机', en:'KDSL Series Crumbler', cat:'冷却粉碎', img:'images/feed/KDSL破碎机.png', desc:'三辊/二辊可选，粒度均匀。', specs:['产量3–200t/h','旁通装置','维护便捷'], badge:'Crumbler'},
+      {name:'MPSG蛋鸡料破碎机', en:'MPSG Layer Feed Cracker', cat:'冷却粉碎', img:'images/feed/MPSG蛋鸡料破碎机.png', desc:'提高均匀度，降低返粉。', specs:['处理量0.8–1.5t/h','主电机75–150kW'], badge:'Cracker'},
+
+      {name:'KDHD卧式烘干机', en:'KDHD Horizontal Dryer', cat:'除尘干燥', img:'images/feed/KDHD卧式烘干机.png', desc:'功能模块化，浮/沉料兼容，能耗低。', specs:['产量2.5–10t/h','成品水分稳定±0.75%','回风节能'], badge:'Drying'},
+      {name:'KDVD立式烘干机', en:'KDVD Vertical Dryer', cat:'除尘干燥', img:'images/feed/KDVD立式烘干机.png', desc:'立式仓式多层风道，热效率高，占地小。', specs:['产量1–15t/h','多段热风循环','能耗低'], badge:'Drying'},
+      {name:'TBLM高压脉冲袋收尘(筒/方)', en:'TBLM High-pressure Pulse Bag Filter', cat:'除尘干燥', img:'images/feed/TBLM高压除尘.png', desc:'高效除尘，适配库顶/转运点。', specs:['风量82–35700m³/h','脉冲清灰','易维护'], badge:'Filtration'},
+
+      {name:'TQLZ振动分级筛', en:'TQLZ Vibration Sifter', cat:'筛分分级', img:'images/feed/TQLZ振动分级筛.png', desc:'结构紧凑、能耗低，适配配料前分级。', specs:['产量14–80t/h','筛面面积可选','低噪'], badge:'Screening'},
+      {name:'SFJH回转分级筛', en:'SFJH Series Sifter', cat:'筛分分级', img:'images/feed/SFJH回转分级筛.png', desc:'三层筛面，分级效率高。', specs:['产量6–50t/h','动力5.5–7.5kW'], badge:'Screening'},
+
+      {name:'TDTG斗式提升机', en:'TDTG Bucket Elevator', cat:'输送', img:'images/feed/TDTG斗式提升机.png', desc:'垂直提升，防偏/防跑偏设计。', specs:['输送量25–930m³/h','防逆止装置','检修方便'], badge:'Conveying'},
+      {name:'TGSS埋刮板输送机', en:'TGSS En-masse Conveyor', cat:'输送', img:'images/feed/TGSS埋刮板输送机.png', desc:'密闭输送，残留低。', specs:['产量35–700m³/h','耐磨刮板','水平/斜槽可选'], badge:'Conveying'},
+      {name:'TLSS螺旋输送机', en:'TLSS Screw Conveyor', cat:'输送', img:'images/feed/TLSS螺旋输送机.png', desc:'粉料短距输送，结构紧凑。', specs:['产量10–260m³/h','多角度安装','维护方便'], badge:'Conveying'},
+      {name:'KDWL喂料器', en:'KDWL Series Feeder', cat:'输送', img:'images/feed/KDWL喂料器.png', desc:'变频定量喂料，稳定可靠。', specs:['产量4–80t/h','功率2.2–3.0kW','基座1200mm'], badge:'Feeding'},
+
+      {name:'TFPX旋转分配器', en:'TFPX Rotary Spout Distributor', cat:'计量阀门', img:'images/feed/TFPX旋转分配器.png', desc:'多路定向分料，密封好，维护便。', specs:['产量30–60m³/h','电动/气动驱动','定位精准'], badge:'Flow'},
+      {name:'TZMQ闸门', en:'TZMQ Gate Valve', cat:'计量阀门', img:'images/feed/TZMQ闸门.png', desc:'适用于粉/粒料的启闭控制。', specs:['产量150–1600m³/h(系列)','结构紧凑','密封可靠'], badge:'Control'},
+      {name:'KDST/KDSTC气动三通', en:'KDST/KDSTC Pneumatic 3-way', cat:'计量阀门', img:'images/feed/KDST三通.png', desc:'自动切换物料流向，支持远程控制。', specs:['产量40–80m³/h','法兰接口','动作可靠'], badge:'Flow'},
+      {name:'TBDQ气动四通', en:'TBDQ Pneumatic 4-way', cat:'计量阀门', img:'images/feed/TBDQ四通.png', desc:'多仓库/多线分料场景的经济方案。', specs:['产量40–50m³/h','结构紧凑','维护便捷'], badge:'Flow'},
+      {name:'LCS微机控制定量包装秤', en:'LCS Micro Automatic Bagging', cat:'计量阀门', img:'images/feed/LCS定量包装秤.png', desc:'袋装成品计量与缝包，自动化高。', specs:['单批次20–50kg','包装速度100–400bag/h','多型号可选'], badge:'Packing'}
+    ];
+
+    // === 渲染 ===
+    const grid = document.getElementById('grid');
+    function render(list){
+      grid.innerHTML = '';
+      list.forEach((p,i)=>{
+        const item = document.createElement('article');
+        item.className='card';
+        item.innerHTML = `
+          <div class="thumb"><img loading="lazy" src="${p.img}" alt="${p.name}"><span class="badge">${p.badge||p.cat}</span></div>
+          <div class="body">
+            <div class="title">${p.name} <span style="color:var(--muted);font-weight:600"> · ${p.en||''}</span></div>
+            <div class="desc">${p.desc||''}</div>
+            <div class="meta">
+              <span class="pill">${p.cat}</span>
+              <a class="btn" href="#" data-idx="${i}">查看详情</a>
+            </div>
+          </div>`;
+        item.querySelector('.btn').addEventListener('click', e=>{e.preventDefault();openModal(p)});
+        grid.appendChild(item);
+      });
+    }
+
+    // 初始渲染
+    render(products);
+
+    // 筛选
+    const chips = document.querySelectorAll('.chip');
+    chips.forEach(ch=>{
+      ch.addEventListener('click', ()=>{
+        chips.forEach(c=>c.classList.remove('active'));
+        ch.classList.add('active');
+        const cat = ch.dataset.cat;
+        const kw = document.getElementById('q').value.trim().toLowerCase();
+        let list = products.filter(p=>cat==='all' || p.cat===cat);
+        if(kw){
+          list = list.filter(p=>[p.name,p.en,p.desc,...(p.specs||[])].join(' ').toLowerCase().includes(kw));
+        }
+        render(list);
+      })
+    })
+
+    // 搜索
+    document.getElementById('q').addEventListener('input', e=>{
+      const kw = e.target.value.trim().toLowerCase();
+      const cat = document.querySelector('.chip.active').dataset.cat;
+      let list = products.filter(p=>cat==='all' || p.cat===cat);
+      if(kw){ list = list.filter(p=>[p.name,p.en,p.desc,...(p.specs||[])].join(' ').toLowerCase().includes(kw)); }
+      render(list);
+    });
+
+    // 模态逻辑
+    const modal = document.getElementById('modal');
+    const mImg = document.getElementById('mImg');
+    const mCat = document.getElementById('mCat');
+    const mTitle = document.getElementById('mTitle');
+    const mDesc = document.getElementById('mDesc');
+    const mSpecs = document.getElementById('mSpecs');
+    const quoteBtn = document.getElementById('quoteBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    function openModal(p){
+      mImg.src = p.img; mImg.alt = p.name;
+      mCat.textContent = p.cat;
+      mTitle.textContent = `${p.name} · ${p.en||''}`;
+      mDesc.textContent = p.desc||'';
+      mSpecs.innerHTML = '';
+      (p.specs||[]).forEach(s=>{
+        const div=document.createElement('div');
+        div.className='spec';
+        div.textContent=s; mSpecs.appendChild(div);
+      })
+      quoteBtn.onclick = ()=>{ alert(`已将【${p.name}】加入询价单，稍后在页脚联系我们。`)}
+      downloadBtn.href = p.img; downloadBtn.textContent = '查看原图';
+      modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+    }
+    function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
+    window.closeModal = closeModal;
+    modal.addEventListener('click', e=>{ if(e.target===modal) closeModal(); });
+  </script>
+</body>
+</html>
