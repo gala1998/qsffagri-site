@@ -1,28 +1,31 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>饲料工程·核心设备 | QSFF Agri</title>
-    <meta name="description" content="QSFF Agri 饲料工程核心设备：接收与清理、粉碎、混合与调质、制粒、冷却与粉碎、输送、计量阀门、除尘干燥、筛分与配料。支持EPCO交付与按需选型。" />
+    <title>Feed Plant · Core Equipment | QSFF Agri</title>
+    <meta name="description"
+        content="QSFF Agri feed-plant core equipment: receiving & cleaning, grinding, mixing & conditioning, pelleting & extrusion, cooling & crumbling, conveying, dosing & valves, drying & dedusting, sifting & grading. EPCO-ready and on-demand selection." />
     <style>
         :root {
-            --bg: #0b0d12;
-            /* 背景色：深色科技感 */
-            --panel: #0f1420;
-            /* 面板底色 */
-            --card: #111827;
-            --muted: #92a0b3;
-            --text: #e8eef7;
-            --brand: #48d39f;
-            /* 主色：青绿色 */
-            --brand-2: #67b1ff;
-            /* 辅色：蓝色 */
-            --ring: rgba(103, 177, 255, .35);
+            --bg: #ffffff;
+            /* light theme base */
+            --text: #222;
+            /* primary text */
+            --muted: #555;
+            /* secondary text */
+            --border: #e5e7eb;
+            /* soft borders */
+            --brand: #22ffbb;
+            /* mint */
+            --brand-2: #00dd66;
+            /* green */
+            --brand-grad: linear-gradient(135deg, var(--brand), var(--brand-2));
+            --card: #fff;
             --max: 1200px;
-            --radius: 16px;
-            --shadow: 0 10px 30px rgba(0, 0, 0, .25);
+            --radius: 18px;
+            --shadow: 0 10px 28px rgba(0, 0, 0, .08);
         }
 
         * {
@@ -35,7 +38,7 @@
             padding: 0;
             background: var(--bg);
             color: var(--text);
-            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial
         }
 
         img {
@@ -48,14 +51,14 @@
             text-decoration: none
         }
 
-        /* 顶部栏 */
+        /* header */
         header.top {
             position: sticky;
             top: 0;
-            z-index: 40;
-            backdrop-filter: saturate(140%) blur(10px);
-            background: linear-gradient(180deg, rgba(15, 20, 32, .9), rgba(15, 20, 32, .7));
-            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            z-index: 50;
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: saturate(120%) blur(6px)
         }
 
         .top-inner {
@@ -63,64 +66,58 @@
             margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 16px;
             padding: 14px 20px
         }
 
         .brand {
+            font-weight: 800;
+            letter-spacing: .2px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 800;
-            letter-spacing: .3px
+            gap: .6rem
         }
 
         .brand .dot {
             width: 10px;
             height: 10px;
             border-radius: 999px;
-            background: linear-gradient(135deg, var(--brand), var(--brand-2));
-            box-shadow: 0 0 20px var(--ring)
+            background: var(--brand-2);
+            box-shadow: 0 0 20px rgba(0, 221, 102, .35)
         }
 
         .top-nav {
             margin-left: auto;
             display: flex;
-            gap: 18px;
+            gap: 12px;
             flex-wrap: wrap
         }
 
         .top-nav a {
-            opacity: .86
+            padding: .55rem .8rem;
+            border-radius: 10px
+        }
+
+        .top-nav a:hover {
+            background: var(--brand-grad);
+            color: #fff
         }
 
         .cta {
-            padding: .55rem .95rem;
-            border-radius: 999px;
-            background: linear-gradient(135deg, var(--brand), var(--brand-2));
-            color: #0b0d12;
+            background: var(--brand-grad);
+            color: #fff;
             font-weight: 700
         }
 
-        /* 英雄区 */
+        /* hero */
         .hero {
-            position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid rgba(255, 255, 255, .06)
-        }
-
-        .hero:before {
-            content: "";
-            position: absolute;
-            inset: -30% -30% auto -30%;
-            height: 420px;
-            background: radial-gradient(circle at 30% 10%, rgba(72, 211, 159, .25), transparent 55%), radial-gradient(circle at 80% 0, rgba(103, 177, 255, .18), transparent 50%);
+            border-bottom: 1px solid var(--border)
         }
 
         .hero-inner {
             max-width: var(--max);
             margin: 0 auto;
-            padding: 56px 20px 34px
+            padding: 48px 20px 14px
         }
 
         .breadcrumbs {
@@ -130,7 +127,7 @@
 
         h1 {
             font-size: 2rem;
-            margin: .35rem 0 0
+            margin: .25rem 0 0
         }
 
         .sub {
@@ -138,35 +135,36 @@
             max-width: 900px
         }
 
-        /* 筛选条 */
+        /* filters */
         .filters {
             max-width: var(--max);
-            margin: 18px auto 0;
-            padding: 0 20px 8px;
+            margin: 12px auto 0;
+            padding: 0 20px 12px;
             display: flex;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap
         }
 
         .chip {
-            padding: .5rem .8rem;
-            border: 1px solid rgba(255, 255, 255, .12);
-            border-radius: 999px;
-            color: var(--muted);
+            padding: .5rem .9rem;
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            background: #fff;
+            color: var(--text);
             cursor: pointer;
-            user-select: none;
-            transition: .2s
+            transition: .15s
         }
 
         .chip:hover {
-            border-color: var(--brand);
-            color: var(--text)
+            border-color: #00dd66;
+            color: #00aa55
         }
 
         .chip.active {
-            background: linear-gradient(135deg, var(--brand), var(--brand-2));
-            color: #0b0d12;
-            border-color: transparent
+            background: var(--brand-grad);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, .08)
         }
 
         .search {
@@ -174,25 +172,30 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, .06);
-            border: 1px solid rgba(255, 255, 255, .1);
+            border: 1px solid var(--border);
             padding: 8px 12px;
-            border-radius: 999px
+            border-radius: 12px;
+            background: #fff
+        }
+
+        .search:focus-within {
+            border-color: #00dd66;
+            box-shadow: 0 0 0 3px rgba(34, 255, 187, .18)
         }
 
         .search input {
             background: transparent;
             border: none;
-            color: var(--text);
             outline: none;
-            min-width: 220px
+            min-width: 220px;
+            color: var(--text)
         }
 
-        /* 卡片栅格 */
+        /* grid */
         .wrap {
             max-width: var(--max);
             margin: 0 auto;
-            padding: 26px 20px 80px
+            padding: 22px 20px 70px
         }
 
         .grid {
@@ -216,18 +219,18 @@
         .card {
             grid-column: span 3;
             background: var(--card);
-            border: 1px solid rgba(255, 255, 255, .06);
+            border: 1px solid var(--border);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: transform .2s, box-shadow .2s
+            transition: transform .15s ease, box-shadow .15s ease
         }
 
         .card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 18px 40px rgba(0, 0, 0, .35)
+            box-shadow: 0 16px 32px rgba(0, 0, 0, .12)
         }
 
         .thumb {
@@ -241,33 +244,29 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            filter: saturate(1.05)
+            object-fit: cover
         }
 
         .badge {
             position: absolute;
             left: 12px;
             top: 12px;
-            background: rgba(72, 211, 159, .18);
-            border: 1px solid rgba(72, 211, 159, .45);
-            color: var(--text);
+            background: var(--brand-grad);
+            color: #fff;
             font-size: .75rem;
-            padding: .25rem .5rem;
-            border-radius: 999px;
-            backdrop-filter: blur(4px)
+            padding: .25rem .6rem;
+            border-radius: 10px
         }
 
         .body {
-            padding: 14px 14px 16px;
+            padding: 14px;
             display: flex;
             flex-direction: column;
             gap: 8px
         }
 
         .title {
-            font-weight: 800;
-            letter-spacing: .2px
+            font-weight: 800
         }
 
         .desc {
@@ -286,7 +285,7 @@
         .pill {
             font-size: .75rem;
             color: var(--muted);
-            border: 1px solid rgba(255, 255, 255, .12);
+            border: 1px solid var(--border);
             padding: .25rem .5rem;
             border-radius: 6px
         }
@@ -297,17 +296,17 @@
             gap: 8px;
             padding: .55rem .8rem;
             border-radius: 10px;
-            background: linear-gradient(135deg, var(--brand), var(--brand-2));
-            color: #0b0d12;
+            background: var(--brand-grad);
+            color: #fff;
             font-weight: 700
         }
 
-        /* 模态层 */
+        /* modal */
         .modal {
             position: fixed;
             inset: 0;
-            background: rgba(8, 10, 14, .75);
-            backdrop-filter: blur(6px);
+            background: rgba(0, 0, 0, .45);
+            backdrop-filter: blur(3px);
             display: none;
             align-items: center;
             justify-content: center;
@@ -322,11 +321,11 @@
         .sheet {
             max-width: 980px;
             width: 100%;
-            background: var(--card);
-            border: 1px solid rgba(255, 255, 255, .12);
-            border-radius: 18px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 30px 70px rgba(0, 0, 0, .45)
+            box-shadow: 0 30px 70px rgba(0, 0, 0, .2)
         }
 
         .sheet-head {
@@ -335,7 +334,7 @@
 
         .sheet-head img {
             width: 100%;
-            height: 380px;
+            height: 360px;
             object-fit: cover
         }
 
@@ -343,7 +342,7 @@
             position: absolute;
             top: 12px;
             right: 12px;
-            background: rgba(0, 0, 0, .45);
+            background: rgba(0, 0, 0, .55);
             color: #fff;
             border: none;
             border-radius: 999px;
@@ -373,27 +372,25 @@
         }
 
         .spec {
-            background: #0c1220;
-            border: 1px solid rgba(255, 255, 255, .06);
+            background: #f8fafc;
+            border: 1px solid var(--border);
             padding: 8px 10px;
             border-radius: 10px
         }
 
-        /* 页脚 */
         footer {
-            border-top: 1px solid rgba(255, 255, 255, .06);
+            border-top: 1px solid var(--border);
             color: var(--muted);
             text-align: center;
-            padding: 34px 20px
+            padding: 28px 20px
         }
 
-        /* 小返回顶部按钮 */
         .toTop {
             position: fixed;
             right: 18px;
             bottom: 18px;
-            background: rgba(72, 211, 159, .9);
-            color: #0b0d12;
+            background: var(--brand-2);
+            color: #fff;
             border: none;
             border-radius: 999px;
             width: 44px;
@@ -403,228 +400,7 @@
             justify-content: center;
             font-weight: 900;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, .3)
-        }
-    </style>
-    <style id="theme-override">
-        :root {
-            --brand: #22FFBB;
-            /* from #2fb */
-            --brand-strong: #00DD66;
-            /* from #0d6/#0f7 */
-            --bg: #ffffff;
-            /* from #fff */
-            --text: #222222;
-            /* from #222 */
-            --muted: #555555;
-            /* from #555 */
-            --border: #dddddd;
-            /* from #ddd */
-            --footer-bg: #000000;
-            /* from #000 */
-            --footer-text: #ffffff;
-            /* from #fff */
-            --brand-gradient: linear-gradient(135deg, var(--brand), var(--brand-strong));
-            color-scheme: light only;
-        }
-
-        /* --- Global reset to align with main site --- */
-        html,
-        body {
-            background: var(--bg);
-            color: var(--text);
-        }
-
-        a {
-            color: var(--text);
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: var(--brand-strong);
-        }
-
-        /* --- Header (support multiple class names) --- */
-        header,
-        .header,
-        .site-header,
-        .topbar {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-            backdrop-filter: saturate(120%) blur(6px);
-        }
-
-        header .brand,
-        .site-header .brand,
-        .topbar .brand {
-            display: flex;
-            align-items: center;
-            gap: .6rem;
-            font-weight: 700;
-        }
-
-        header .nav a,
-        .site-header nav a,
-        .topbar nav a {
-            padding: .75rem 1rem;
-            border-radius: .6rem;
-            transition: .2s ease;
-        }
-
-        header .nav a:hover,
-        .site-header nav a:hover,
-        .topbar nav a:hover {
-            background: var(--brand-gradient);
-            color: #fff;
-        }
-
-        /* --- Primary button --- */
-        .btn,
-        button.btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: .5rem;
-            padding: .6rem 1rem;
-            border-radius: 12px;
-            border: 1px solid var(--brand-strong);
-            background: var(--brand-gradient);
-            color: #fff;
-            font-weight: 600;
-            box-shadow: 0 8px 18px rgba(0, 0, 0, .08);
-        }
-
-        .btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 10px 22px rgba(0, 0, 0, .12);
-        }
-
-        /* --- Filter chips --- */
-        .filters {
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-            padding: .5rem 0;
-            flex-wrap: wrap;
-        }
-
-        .filters .chip {
-            border: 1px solid var(--border);
-            color: var(--text);
-            padding: .45rem .9rem;
-            border-radius: 9999px;
-            cursor: pointer;
-            background: #fff;
-            transition: .15s ease;
-        }
-
-        .filters .chip:hover {
-            border-color: var(--brand-strong);
-            color: var(--brand-strong);
-        }
-
-        .filters .chip.active {
-            background: var(--brand-gradient);
-            color: #fff;
-            border-color: transparent;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, .08);
-        }
-
-        .filters .search {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-            border: 1px solid var(--border);
-            padding: .4rem .7rem;
-            border-radius: 12px;
-            background: #fff;
-        }
-
-        .filters .search:focus-within {
-            border-color: var(--brand-strong);
-            box-shadow: 0 0 0 3px rgba(34, 255, 187, .18);
-        }
-
-        .filters .search input {
-            border: none;
-            outline: none;
-            background: transparent;
-            color: var(--text);
-        }
-
-        /* --- Cards --- */
-        .card {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
-            overflow: hidden;
-            transition: transform .15s ease, box-shadow .15s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 28px rgba(0, 0, 0, .12);
-        }
-
-        .card .title {
-            font-weight: 700;
-            color: var(--text);
-        }
-
-        .badge {
-            background: var(--brand-gradient);
-            color: #fff;
-            padding: .25rem .6rem;
-            border-radius: 10px;
-            font-size: .75rem;
-        }
-
-        /* --- Modal --- */
-        .modal-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, .45);
-            backdrop-filter: blur(2px);
-        }
-
-        .modal {
-            background: #fff;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            box-shadow: 0 24px 48px rgba(0, 0, 0, .18);
-        }
-
-        .modal header {
-            border-bottom: 1px solid var(--border);
-            background: #fff;
-        }
-
-        .modal .cta .btn-primary {
-            background: var(--brand-gradient);
-        }
-
-        /* --- Footer unify with main site --- */
-        footer,
-        .footer,
-        .site-footer {
-            background: var(--footer-bg);
-            color: var(--footer-text);
-            padding: 3rem 1rem;
-            margin-top: 3rem;
-        }
-
-        footer a {
-            color: var(--footer-text);
-            opacity: .9;
-        }
-
-        footer a:hover {
-            opacity: 1;
-            color: #fff;
+            box-shadow: 0 10px 18px rgba(0, 0, 0, .18)
         }
     </style>
 </head>
@@ -634,34 +410,35 @@
         <div class="top-inner">
             <div class="brand"><span class="dot"></span>QSFF Agri · Feed Systems</div>
             <nav class="top-nav">
-                <a href="/">首页</a>
-                <a href="#mixing">混合&调质</a>
-                <a href="#pellet">制粒线</a>
-                <a href="#contact" class="cta">获取报价</a>
+                <a href="/">Home</a>
+                <a href="#mixing">Mixing & Conditioning</a>
+                <a href="#pellet">Pelleting</a>
+                <a href="#contact" class="cta">Get a Quote</a>
             </nav>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-inner">
-            <div class="breadcrumbs">EPCO 一体化交付 / <strong>饲料厂核心设备</strong></div>
-            <h1>从接收到出料的全流程设备库</h1>
-            <p class="sub">按工段快速筛选，查看高清大图与关键参数。支持一键生成询价清单，工程化接入现有工艺流程。</p>
+            <div class="breadcrumbs">EPCO Delivery / <strong>Core Equipment Library</strong></div>
+            <h1>From Intake to Packing — All Key Units</h1>
+            <p class="sub">Filter by process, view large images and key specs. Build an RFQ list in one click and plug
+                into your existing flow sheet.</p>
         </div>
         <div class="filters" id="filters">
             <div class="chip active" data-cat="All">All</div>
-            <div class="chip" data-cat="Receiving &amp; Cleaning">Receiving &amp; Cleaning</div>
+            <div class="chip" data-cat="Receiving & Cleaning">Receiving & Cleaning</div>
             <div class="chip" data-cat="Grinding">Grinding</div>
-            <div class="chip" data-cat="Mixing &amp; Conditioning">Mixing &amp; Conditioning</div>
+            <div class="chip" data-cat="Mixing & Conditioning">Mixing & Conditioning</div>
             <div class="chip" data-cat="Pelleting">Pelleting</div>
             <div class="chip" data-cat="Extrusion">Extrusion</div>
             <div class="chip" data-cat="Stabilization">Stabilization</div>
             <div class="chip" data-cat="Coating">Coating</div>
-            <div class="chip" data-cat="Cooling &amp; Crumbling">Cooling &amp; Crumbling</div>
+            <div class="chip" data-cat="Cooling & Crumbling">Cooling & Crumbling</div>
             <div class="chip" data-cat="Conveying">Conveying</div>
-            <div class="chip" data-cat="Dosing &amp; Valves">Dosing &amp; Valves</div>
-            <div class="chip" data-cat="Drying &amp; Dedusting">Drying &amp; Dedusting</div>
-            <div class="chip" data-cat="Sifting &amp; Grading">Sifting &amp; Grading</div>
+            <div class="chip" data-cat="Dosing & Valves">Dosing & Valves</div>
+            <div class="chip" data-cat="Drying & Dedusting">Drying & Dedusting</div>
+            <div class="chip" data-cat="Sifting & Grading">Sifting & Grading</div>
             <div class="search">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" stroke="currentColor"
@@ -670,55 +447,18 @@
                 <input id="q" placeholder="Search equipment / model / process…" />
             </div>
         </div>
-        <div class="chip" data-cat="接收清理">接收&清理</div>
-        <div class="chip" data-cat="粉碎">粉碎</div>
-        <div class="chip" data-cat="混合调质">混合&调质</div>
-        <div class="chip" data-cat="制粒">制粒</div>
-        <div class="chip" data-cat="膨化挤压">膨化&挤压</div>
-        <div class="chip" data-cat="稳定化">稳定化</div>
-        <div class="chip" data-cat="喷涂包衣">喷涂&包衣</div>
-        <div class="chip" data-cat="冷却粉碎">冷却&破碎</div>
-        <div class="chip" data-cat="输送">输送</div>
-        <div class="chip" data-cat="计量阀门">计量&阀门</div>
-        <div class="chip" data-cat="除尘干燥">除尘&干燥</div>
-        <div class="chip" data-cat="筛分分级">筛分&分级</div>
-        <div class="search">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" />
-            </svg>
-            <input id="q" placeholder="搜索设备/型号/工段…" />
-        </div>
-        </div>
-        <div class="chip" data-cat="接收清理">接收&清理</div>
-        <div class="chip" data-cat="粉碎">粉碎</div>
-        <div class="chip" data-cat="混合调质">混合&调质</div>
-        <div class="chip" data-cat="制粒">制粒</div>
-        <div class="chip" data-cat="冷却粉碎">冷却&破碎</div>
-        <div class="chip" data-cat="输送">输送</div>
-        <div class="chip" data-cat="计量阀门">计量&阀门</div>
-        <div class="chip" data-cat="除尘干燥">除尘&干燥</div>
-        <div class="chip" data-cat="筛分分级">筛分&分级</div>
-        <div class="search">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" />
-            </svg>
-            <input id="q" placeholder="搜索设备/型号/工段…" />
-        </div>
-        </div>
     </section>
 
     <main class="wrap">
         <div id="grid" class="grid"></div>
     </main>
 
-    <!-- 详情模态框 -->
+    <!-- detail modal -->
     <div class="modal" id="modal" aria-hidden="true">
         <div class="sheet">
             <div class="sheet-head">
                 <img id="mImg" alt="" />
-                <button class="close" aria-label="关闭" onclick="closeModal()">✕</button>
+                <button class="close" aria-label="Close" onclick="closeModal()">✕</button>
             </div>
             <div class="sheet-body">
                 <div>
@@ -726,82 +466,98 @@
                     <h2 id="mTitle" style="margin:.5rem 0 0"></h2>
                     <p id="mDesc" class="sub" style="margin:.5rem 0 1rem"></p>
                     <div style="display:flex;gap:10px;flex-wrap:wrap">
-                        <a id="quoteBtn" class="btn">加入询价单</a>
-                        <a id="downloadBtn" class="pill" target="_blank">下载大图</a>
+                        <a id="quoteBtn" class="btn">Add to RFQ</a>
+                        <a id="downloadBtn" class="pill" target="_blank">Open Image</a>
                     </div>
                 </div>
                 <div>
-                    <h3 style="margin:.2rem 0 .6rem">关键参数 / 应用亮点</h3>
+                    <h3 style="margin:.2rem 0 .6rem">Key Specs / Application Notes</h3>
                     <div id="mSpecs" class="specs"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <button class="toTop" title="返回顶部" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <button class="toTop" title="Back to top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
 
     <footer id="contact">
-        如需详细参数表、工艺选型与配套方案，请联系：sales@qsffagri.com · +86‑0000‑000000
+        Need full spec sheets, process selection, or matched auxiliaries? Contact: sales@qsffagri.com · +86‑0000‑000000
     </footer>
 
     <script>
-        // === 数据区：将你的产品按需补充（图片路径基于 /images/feed/） ===
+        // === Data: image paths MUST match your /images/feed/ filenames exactly (Chinese filenames kept) ===
         const products = [
-            { name: '圆筒初清筛', en: 'Cylindrical Pre-cleaner', cat: 'Receiving & Cleaning', img: 'images/feed/圆筒初清筛.jpg', desc: 'Remove large impurities at intake to protect downstream equipment.', specs: ['For corn / wheat / soybean meal', 'Capacity 4–25 t/h (by material)', 'Quick-release screens'], badge: 'Cleaning' },
-            { name: 'TCXT永磁筒套', en: 'TCXT Series Permanent Magnet Sleeve', cat: 'Receiving & Cleaning', img: 'images/feed/TCXT永磁筒套.png', desc: 'High‑intensity magnetic separation to remove ferromagnetic impurities.', specs: ['Capacity 20–100 t/h', 'Stainless steel housing', 'Drawer–type cleaning'], badge: 'Safety' },
-            { name: 'TCQY圆筒初清筛', en: 'TCQY Series Cylinder Precleaner', cat: 'Receiving & Cleaning', img: 'images/feed/TCQY圆筒初清筛.png', desc: 'Initial screening for bulk grains at receiving.', specs: ['Capacity 10–120 t/h', 'Compact layout', 'Easy maintenance'], badge: 'Cleaning' },
+            // Receiving & Cleaning
+            { en: 'Cylindrical Pre-cleaner', cat: 'Receiving & Cleaning', img: 'images/feed/圆筒初清筛.png', desc: 'Intake scalping to remove large impurities and protect downstream equipment.', specs: ['By material: corn / wheat / soybean meal', 'Quick-release screens', 'Compact footprint'], badge: 'Cleaning' },
+            { en: 'Permanent Magnet Sleeve (TCXT)', cat: 'Receiving & Cleaning', img: 'images/feed/永磁筒.png', desc: 'High-intensity magnetic separation for ferrous impurities.', specs: ['Stainless-steel body', 'Drawer-type cleaning', '20–100 t/h typical'], badge: 'Safety' },
 
-            { name: '水滴宽腔粉碎机', en: 'Wide‑chamber Hammer Mill', cat: 'Grinding', img: 'images/feed/水滴宽腔粉碎机.jpg', desc: 'Lower energy consumption with reduced fines; ideal for complete feed grinding.', specs: ['Capacity 3–13 t/h (by recipe & model)', 'Dynamic rotor balancing, low vibration', 'Quick‑change wearing parts'], badge: 'Core' },
-            { name: 'SWFL超微粉碎机', en: 'SWFL Series Ultra‑fine Grinder', cat: 'Grinding', img: 'images/feed/超微粉碎机.png', desc: 'Micro‑grinding to 60–200 mesh for aqua & specialty feeds.', specs: ['60–200 mesh', 'Adjustable classifier wheel', 'Low noise & power'], badge: 'Micron' },
-            { name: '碟式粉碎机', en: 'Disc Mill', cat: 'Grinding', img: 'images/feed/碟式粉碎机.png', desc: 'Cost‑effective solution for cereal grinding.', specs: ['Uniform particle size', 'Wear‑resistant discs', 'Easy service'], badge: 'Grinding' },
+            // Conveying
+            { en: 'Bucket Elevator (TDTG)', cat: 'Conveying', img: 'images/feed/斗式提升机.png', desc: 'Vertical conveying with anti-backstop & belt tracking.', specs: ['25–930 m³/h', 'Easy maintenance', 'Multiple heads'], badge: 'Conveying' },
+            { en: 'Screw Conveyor (TLSS)', cat: 'Conveying', img: 'images/feed/螺旋输送机.png', desc: 'Short-distance powder transport; flexible installation.', specs: ['10–260 m³/h', 'Horizontal/Inclined', 'Low maintenance'], badge: 'Conveying' },
+            { en: 'En-masse Conveyor (TGSS)', cat: 'Conveying', img: 'images/feed/埋刮板输送机.png', desc: 'Enclosed, low residue transport for powder & pellets.', specs: ['35–700 m³/h', 'Wear-resistant flights', 'Dust-tight'], badge: 'Conveying' },
+            { en: 'U-trough Drag Conveyor (TGSU)', cat: 'Conveying', img: 'images/feed/U型刮板输送机.png', desc: 'U-trough layout for gentle conveying and easy cleaning.', specs: ['Multi-point inlet/outlet', 'Horizontal/Inclined', 'Low residue'], badge: 'Conveying' },
+            { en: 'Rotary Spout Distributor (TFPX)', cat: 'Dosing & Valves', img: 'images/feed/旋转分配器.png', desc: 'Multi-way distribution with excellent sealing.', specs: ['Accurate positioning', 'Electric/pneumatic actuation'], badge: 'Flow' },
+            { en: 'Impeller Feeder', cat: 'Conveying', img: 'images/feed/叶轮喂料器.png', desc: 'Stable feeding for powdery materials.', specs: ['Compact design', 'Easy maintenance'], badge: 'Feeding' },
+            { en: 'Impeller Feeder (Alt Model)', cat: 'Conveying', img: 'images/feed/叶轮喂料器(2).png', desc: 'Alternate impeller feeder model.', specs: ['Stable dosing', 'Compact footprint'], badge: 'Feeding' },
+            { en: 'KDWL Series Feeder', cat: 'Conveying', img: 'images/feed/喂料器.png', desc: 'VFD-controlled dosing; reliable and stable.', specs: ['4–80 t/h by model', '2.2–3.0 kW drive'], badge: 'Feeding' },
+            { en: 'Wind Sifter Feeder', cat: 'Conveying', img: 'images/feed/风选喂料器.png', desc: 'Air-assisted feeding & pre-cleaning.', specs: ['Reduce fines', 'Improve uniformity'], badge: 'Feeding' },
 
-            { name: 'SJHS单轴混合机', en: 'SJHS Single‑shaft Paddle Mixer', cat: 'Mixing & Conditioning', img: 'images/feed/单轴高效混合机.jpg', desc: 'Fast mixing 60–90 s with CV ≤ 5%.', specs: ['Effective volume 0.5–3.0 m³', 'Large bottom doors, low residue', 'Liquid addition ready'], badge: 'Mixing' },
-            { name: 'SLHSJ双轴桨叶混合机', en: 'SLHSJ Twin‑shaft Paddle Mixer', cat: 'Mixing & Conditioning', img: 'images/feed/双轴桨叶混合机.png', desc: 'Gentle fluidized mixing; ideal for heat‑sensitive materials.', specs: ['Batch 0.5–4.0 t', 'CV ≤ 5%', 'Reliable shaft seals'], badge: 'Mixing' },
-            { name: 'KDBZ熟化器', en: 'KDBZ Series Hygienizer', cat: 'Mixing & Conditioning', img: 'images/feed/KDBZ熟化器.png', desc: 'High‑temperature hygienization to enhance PDI and digestibility.', specs: ['Capacity 4–35 t/h', 'Main motor 4–7.5 kW', 'Effective holding 3–5 min'], badge: 'Conditioning' },
-            { name: 'KDTZ调质器', en: 'KDTZ Series Conditioner', cat: 'Mixing & Conditioning', img: 'images/feed/KDTZ调质器.png', desc: 'Multiple steam/liquid injection points for stable pelleting/extrusion.', specs: ['Capacity 7–35 t/h', 'Motor 4.0–18.5 kW', 'Holding 3–3.5 min'], badge: 'Conditioning' },
-            { name: 'TZSC双轴差速调质器', en: 'TZSC Different Diameter Conditioner', cat: 'Mixing & Conditioning', img: 'images/feed/TZSC双轴调质器.png', desc: 'Three‑stage conditioning for high‑moisture/high‑fat recipes.', specs: ['Capacity 0.1–35 t/h', 'Motor 3–30 kW', 'Multi‑zone temperature control'], badge: 'Conditioning' },
+            // Grinding (placeholders kept for completeness if present in folder)
+            { en: 'Crumbler', cat: 'Cooling & Crumbling', img: 'images/feed/破碎机.png', desc: 'Crumbing pellets for starter feed stages.', specs: ['Uniform particle size', 'By-pass available'], badge: 'Crumbler' },
+            { en: 'Disc Mill / Coarse Grinder', cat: 'Grinding', img: 'images/feed/粗粉碎机.png', desc: 'Coarse-size reduction for premix/raw.', specs: ['Uniform size', 'Easy service'], badge: 'Grinding' },
+            { en: 'Flake Grinder', cat: 'Grinding', img: 'images/feed/颗粒粉碎机.png', desc: 'Post-pellet size correction.', specs: ['Low vibration', 'Long life parts'], badge: 'Grinding' },
+            { en: 'Ultra-fine Grinder (SWFL)', cat: 'Grinding', img: 'images/feed/超微粉碎机.png', desc: '60–200 mesh for aqua/specialty feeds.', specs: ['Adjustable classifier', 'Low power'], badge: 'Micron' },
 
-            { name: 'KDZL双电机环模制粒机', en: 'KDZL Dual‑motor Pellet Mill', cat: 'Pelleting', img: 'images/feed/双电机环模制粒机.png', desc: 'Belt + gear drive, high efficiency and low vibration.', specs: ['Capacity 2–10+ t/h', 'Main motor 30–160 kW', 'Multiple feeder/conditioner options'], badge: 'Pelletizing' },
-            { name: 'KDZL单电机制粒机', en: 'KDZL Single‑motor Pellet Mill', cat: 'Pelleting', img: 'images/feed/KDZL单电机制粒机.png', desc: 'Compact layout for small/medium capacity lines.', specs: ['Capacity 5–120 t/h (series)', 'Main motor 90–400 kW'], badge: 'Pelletizing' },
+            // Mixing & Conditioning
+            { en: 'Single-shaft Paddle Mixer', cat: 'Mixing & Conditioning', img: 'images/feed/单轴混合机.png', desc: 'Fast mixing 60–90 s; CV ≤ 5%.', specs: ['Large bottom doors', 'Low residue', 'Liquid addition ready'], badge: 'Mixing' },
+            { en: 'Twin-shaft Differential Conditioner', cat: 'Mixing & Conditioning', img: 'images/feed/双轴差速调质器.png', desc: 'Stable temperature and moisture for pelleting.', specs: ['Multi-zone control', 'Steam/liquid injection'], badge: 'Conditioning' },
+            { en: 'Conditioner (KDTZ)', cat: 'Mixing & Conditioning', img: 'images/feed/调质器.png', desc: 'Robust conditioner for stable pelleting/extrusion.', specs: ['3–3.5 min holding', '4.0–18.5 kW'], badge: 'Conditioning' },
+            { en: 'Self-lubricating Twin-shaft Mixer', cat: 'Mixing & Conditioning', img: 'images/feed/自润滑双轴混合机.png', desc: 'Twin-shaft mixing with self-lube bearings.', specs: ['Gentle mixing', 'Low residue'], badge: 'Mixing' },
+            { en: 'Direct-coupled Twin-shaft Mixer', cat: 'Mixing & Conditioning', img: 'images/feed/双电机直联式双轴混合机.png', desc: 'Direct-coupled drives for high reliability.', specs: ['Large discharge doors', 'Short cycle time'], badge: 'Mixing' },
 
-            { name: 'KDTE双螺杆膨化机', en: 'KDTE Twin‑screw Extruder (Aquafeed)', cat: 'Extrusion', img: 'images/feed/KDTE双螺杆膨化机.png', desc: 'For aqua & pet food; high cooking degree and tight sealing.', specs: ['Main motor 30–710 kW', 'Screw Ø56–176 mm', 'Floating/sinking time 0.03–12 h'], badge: 'Extrusion' },
-            { name: 'KDTE双螺杆膨化机(宠物)', en: 'KDTE Twin‑screw Extruder (Pet Food)', cat: 'Extrusion', img: 'images/feed/KDTE双螺杆宠物膨化机.png', desc: 'Dedicated for pet food; wide capacity range and great shaping.', specs: ['Main motor 30–710 kW', 'Screw Ø56–176 mm', 'Density control ready'], badge: 'Extrusion' },
-            { name: 'KDSE单螺杆膨化机', en: 'KDSE Single‑screw Extruder', cat: 'Extrusion', img: 'images/feed/KDSE单螺杆膨化机.png', desc: 'Economic solution with low energy consumption.', specs: ['Main motor 90–400 kW', 'Screw Ø135–265 mm', 'Floating/sinking 0.3–6.0 h'], badge: 'Extrusion' },
-            { name: 'KDYE原料膨化机', en: 'KDYE Raw Material Extruder', cat: 'Extrusion', img: 'images/feed/KDYE原料膨化机.png', desc: 'Pre‑treatment of soybean meal, corn germ, paddy etc. to improve digestibility.', specs: ['Main motor 75–400 kW', 'Throughput 1.0–14.2 t/h', 'Steam/water injection optional'], badge: 'Extrusion' },
-            { name: 'KDMG密度控制仪', en: 'KDMG Density Controller', cat: 'Mixing & Conditioning', img: 'images/feed/KDMG密度控制仪.png', desc: 'Online control of density/moisture/temperature before & after conditioning.', specs: ['Knife 3–7 mm', '12–18 blades', 'Max steam pressure 3.5 bar'], badge: 'Control' },
+            // Pelleting
+            { en: 'Single-motor Pellet Mill', cat: 'Pelleting', img: 'images/feed/单马达制粒机.png', desc: 'Compact, efficient pelleting.', specs: ['Flexible conditioner options', 'Low vibration'], badge: 'Pelletizing' },
+            { en: 'Gear Pellet Mill', cat: 'Pelleting', img: 'images/feed/齿轮制粒机.png', desc: 'High-torque transmission for stable output.', specs: ['30–160 kW main motor', 'Efficient drive'], badge: 'Pelletizing' },
 
-            { name: 'TWDF稳压器', en: 'TWDF Stabilizer', cat: 'Stabilization', img: 'images/feed/TWDF稳压器.png', desc: 'Post‑pellet conditioning to improve durability and water stability.', specs: ['Capacity 1–10 t/h', 'Insulated & heated chamber', 'Adjustable retention'], badge: 'Stabilizer' },
-            { name: 'KDPZ卧式双轴真空喷涂', en: 'KDPZ Twin‑shaft Vacuum Coater', cat: 'Coating', img: 'images/feed/KDPZ双轴真空喷涂.png', desc: 'Dual‑chamber vacuum coating with high penetration for high‑fat formulas.', specs: ['Capacity 4–10 t/h', 'Dual‑chamber design', 'Easy cleaning'], badge: 'Coating' },
-            { name: 'KDVM真空喷涂', en: 'KDVM Vacuum Coating System', cat: 'Coating', img: 'images/feed/KDVM真空喷涂.png', desc: 'Vertical vacuum drum; 5–35% liquid addition; CV ≤ 5%.', specs: ['Batch 3–20 t/h', 'Vacuum ≤ −20 mbar', 'Addition time 6–12 min'], badge: 'Coating' },
-            { name: 'KDPJ常压喷涂', en: 'KDPJ Normobaric Coating', cat: 'Coating', img: 'images/feed/KDPJ常压喷涂.png', desc: 'Normobaric coating, compact and easy to maintain.', specs: ['Capacity 4–15 t/h', 'Multi‑point spraying', 'Self‑cleaning design'], badge: 'Coating' },
-            { name: 'KDPTP油脂喷涂系统', en: 'KDPTP Oil Coating System', cat: 'Coating', img: 'images/feed/KDPTP油脂喷涂系统.png', desc: 'High uniformity with oil recovery to save energy.', specs: ['Capacity 10–20 t/h', 'Oil pump 2.2–4.0 kW', 'Liquid transfer 0.55–1.5 kW'], badge: 'Coating' },
+            // Extrusion
+            { en: 'Single-screw Extruder', cat: 'Extrusion', img: 'images/feed/单螺杆膨化机.png', desc: 'Economic extrusion for various recipes.', specs: ['Low energy', 'Reliable sealing'], badge: 'Extrusion' },
+            { en: 'Twin-screw Extruder', cat: 'Extrusion', img: 'images/feed/双螺杆膨化机.png', desc: 'High cooking degree; wide capacity range.', specs: ['Floating/sinking adjustable', 'Excellent shaping'], badge: 'Extrusion' },
+            { en: 'Twin-screw Extruder (Pet Food)', cat: 'Extrusion', img: 'images/feed/双螺杆膨化机（宠食专用）.png', desc: 'Model optimized for pet food.', specs: ['Tight density control', 'Stable expansion'], badge: 'Extrusion' },
+            { en: 'Raw Material Extruder', cat: 'Extrusion', img: 'images/feed/原料膨化机.png', desc: 'Pre-treatment of soybean meal, corn germ, etc.', specs: ['Improve digestibility', 'Optional steam/water'], badge: 'Extrusion' },
 
-            { name: 'SLNF/TLNF板式逆流冷却器', en: 'SLNF/TLNF Plate‑type Counterflow Cooler', cat: 'Cooling & Crumbling', img: 'images/feed/板式逆流冷却器.png', desc: 'Plate design for uniform cooling and less pellet cracking.', specs: ['Capacity 3–90 t/h', 'ΔT 3–5 ℃', 'Low energy'], badge: 'Cooling' },
-            { name: 'SKLN滑阀式逆流冷却器', en: 'SKLN Slide‑type Counterflow Cooler', cat: 'Cooling & Crumbling', img: 'images/feed/SKLN逆流冷却器.png', desc: 'Classic design with easy maintenance.', specs: ['Capacity 4–45 t/h', 'Power 0.75–2.2 kW'], badge: 'Cooling' },
-            { name: 'TNLY叶轮逆流冷却器', en: 'TNLY Impeller‑type Counterflow Cooler', cat: 'Cooling & Crumbling', img: 'images/feed/TNLY叶轮逆流冷却器.png', desc: 'Impeller discharge for smoother material flow.', specs: ['Capacity 8–20 t/h', 'Low power'], badge: 'Cooling' },
-            { name: 'KDSL三辊破碎机', en: 'KDSL Triple‑roller Crumbler', cat: 'Cooling & Crumbling', img: 'images/feed/KDSL破碎机.png', desc: 'Triple/dual rollers; uniform particle size for starter feeds.', specs: ['Capacity 3–200 t/h', 'By‑pass structure', 'Easy maintenance'], badge: 'Crumbler' },
-            { name: 'MPSG蛋鸡料破碎机', en: 'MPSG Layer Feed Cracker', cat: 'Cooling & Crumbling', img: 'images/feed/MPSG蛋鸡料破碎机.png', desc: 'Pre‑cracking for layer feed to reduce fines and improve uniformity.', specs: ['Capacity 0.8–1.5 t/h', 'Main motor 75–150 kW', 'Feeding motor 0.75–1.1 kW'], badge: 'Cracker' },
+            // Coating
+            { en: 'Vacuum Coating System', cat: 'Coating', img: 'images/feed/真空喷涂.png', desc: 'Vacuum penetration for high-fat formulas.', specs: ['5–35% liquid addition', 'CV ≤ 5%'], badge: 'Coating' },
+            { en: 'Normobaric Coating', cat: 'Coating', img: 'images/feed/常压喷涂.png', desc: 'Compact coating with multi-point spraying.', specs: ['Easy cleaning', 'Low maintenance'], badge: 'Coating' },
+            { en: 'Twin-shaft Vacuum Coater', cat: 'Coating', img: 'images/feed/卧式双轴真空喷涂.png', desc: 'Horizontal twin-shaft vacuum coating.', specs: ['Uniform penetration', 'Easy sanitation'], badge: 'Coating' },
+            { en: 'Oil Coating System', cat: 'Coating', img: 'images/feed/油脂喷涂系统.png', desc: 'Oil spraying with recovery to save energy.', specs: ['High uniformity', 'Low consumption'], badge: 'Coating' },
 
-            { name: 'KDHD卧式烘干机', en: 'KDHD Horizontal Dryer', cat: 'Drying & Dedusting', img: 'images/feed/KDHD卧式烘干机.png', desc: 'Modular design for both floating & sinking pellets with low energy use.', specs: ['Capacity 2.5–10 t/h', 'Moisture uniformity ±0.75%', 'Energy‑saving exhaust recovery'], badge: 'Drying' },
-            { name: 'KDVD立式烘干机', en: 'KDVD Vertical Dryer', cat: 'Drying & Dedusting', img: 'images/feed/KDVD立式烘干机.png', desc: 'Multi‑layer vertical air channels for high thermal efficiency and small footprint.', specs: ['Capacity 1–15 t/h', 'Multi‑pass hot‑air circulation', 'Low energy'], badge: 'Drying' },
-            { name: 'TBLM高压脉冲袋收尘(筒/方)', en: 'TBLM High‑pressure Pulse Bag Filter', cat: 'Drying & Dedusting', img: 'images/feed/TBLM高压除尘.png', desc: 'High‑efficiency dust collection for bins & transfer points.', specs: ['Air volume 0.08–35,000 m³/h', 'Pulse cleaning', 'Easy maintenance'], badge: 'Filtration' },
+            // Cooling & Drying
+            { en: 'Plate-type Counterflow Cooler', cat: 'Cooling & Crumbling', img: 'images/feed/翻版式逆流冷却器.png', desc: 'Uniform cooling; reduced pellet cracking.', specs: ['ΔT 3–5 °C', 'Energy-saving'], badge: 'Cooling' },
+            { en: 'Slide-type Counterflow Cooler (SKLN)', cat: 'Cooling & Crumbling', img: 'images/feed/SKLN逆流冷却器.png', desc: 'Classic design; reliable discharge.', specs: ['4–45 t/h', '0.75–2.2 kW'], badge: 'Cooling' },
+            { en: 'Impeller-type Counterflow Cooler (TNLY)', cat: 'Cooling & Crumbling', img: 'images/feed/圆桶粉料筛.png', desc: 'Impeller discharge for smooth flow.', specs: ['8–20 t/h', 'Low power'], badge: 'Cooling' },
+            { en: 'Vertical Dryer', cat: 'Drying & Dedusting', img: 'images/feed/立式烘干机.png', desc: 'Multi-layer vertical hot-air circulation.', specs: ['1–15 t/h', 'Small footprint'], badge: 'Drying' },
+            { en: 'Horizontal Dryer', cat: 'Drying & Dedusting', img: 'images/feed/卧式烘干机.png', desc: 'Modular sections; floating/sinking pellets.', specs: ['2.5–10 t/h', '±0.75% moisture uniformity'], badge: 'Drying' },
 
-            { name: 'TQLZ振动分级筛', en: 'TQLZ Vibration Sifter', cat: 'Sifting & Grading', img: 'images/feed/TQLZ振动分级筛.png', desc: 'Compact, low energy; pre‑pelleting sifting & scalping.', specs: ['Capacity 14–80 t/h', 'Optional sieve area', 'Low noise'], badge: 'Sifting' },
-            { name: 'SFJH回转分级筛', en: 'SFJH Series Sifter', cat: 'Sifting & Grading', img: 'images/feed/SFJH回转分级筛.png', desc: 'Triple‑deck design for high grading efficiency.', specs: ['Capacity 6–50 t/h', 'Power 5.5–7.5 kW'], badge: 'Sifting' },
+            // Dedusting
+            { en: 'Square/Bag Pulse Dust Collector (High-pressure)', cat: 'Drying & Dedusting', img: 'images/feed/高压方形圆袋除尘器.png', desc: 'Pulse-jet dust removal for bins & transfer points.', specs: ['Pulse cleaning', 'Easy maintenance'], badge: 'Filtration' },
+            { en: 'Cylindrical Pulse Dust Collector (High-pressure)', cat: 'Drying & Dedusting', img: 'images/feed/高压圆筒脉冲除尘器.png', desc: 'High-efficiency filtration; compact.', specs: ['Stable operation', 'Durable bags'], badge: 'Filtration' },
 
-            { name: 'TDTG斗式提升机', en: 'TDTG Bucket Elevator', cat: 'Conveying', img: 'images/feed/TDTG斗式提升机.png', desc: 'Vertical conveying with anti‑backstop & tracking protection.', specs: ['Throughput 25–930 m³/h', 'Easy maintenance', 'Multiple heads'], badge: 'Conveying' },
-            { name: 'TGSS埋刮板输送机', en: 'TGSS En‑masse Conveyor', cat: 'Conveying', img: 'images/feed/TGSS埋刮板输送机.png', desc: 'Enclosed, low residue conveying for powder & pellets.', specs: ['Capacity 35–700 m³/h', 'Wear‑resistant flights', 'Horizontal / inclined'], badge: 'Conveying' },
-            { name: 'TLSS螺旋输送机', en: 'TLSS Screw Conveyor', cat: 'Conveying', img: 'images/feed/TLSS螺旋输送机.png', desc: 'Short‑distance powder conveying with compact layout.', specs: ['Capacity 10–260 m³/h', 'Multi‑angle installation', 'Easy service'], badge: 'Conveying' },
-            { name: 'KDWL喂料器', en: 'KDWL Series Feeder', cat: 'Conveying', img: 'images/feed/KDWL喂料器.png', desc: 'VFD‑controlled dosing, stable and reliable.', specs: ['Capacity 4–80 t/h', 'Power 2.2–3.0 kW', 'Base 1200 mm'], badge: 'Feeding' },
+            // Stabilization & Control
+            { en: 'Stabilizer (TWDF/Retarder)', cat: 'Stabilization', img: 'images/feed/稳定器.png', desc: 'Post-pellet conditioning to improve durability & water stability.', specs: ['Adjustable retention', 'Insulated chamber'], badge: 'Stabilizer' },
+            { en: 'Density Controller', cat: 'Mixing & Conditioning', img: 'images/feed/密度控制仪.png', desc: 'Online density/moisture/temperature control.', specs: ['Before & after conditioning', 'Better PDI'], badge: 'Control' },
 
-            { name: 'TFPX旋转分配器', en: 'TFPX Rotary Spout Distributor', cat: 'Dosing & Valves', img: 'images/feed/TFPX旋转分配器.png', desc: 'Multi‑way distribution with excellent sealing.', specs: ['Capacity 30–60 m³/h', 'Electric/pneumatic actuation', 'Accurate positioning'], badge: 'Flow' },
-            { name: 'TZMQ闸门', en: 'TZMQ Gate Valve', cat: 'Dosing & Valves', img: 'images/feed/TZMQ闸门.png', desc: 'On/off control for powder & pellets.', specs: ['Capacity 150–1600 m³/h (series)', 'Compact structure', 'Reliable sealing'], badge: 'Control' },
-            { name: 'KDST/KDSTC气动三通', en: 'KDST/KDSTC Pneumatic 3‑way Valve', cat: 'Dosing & Valves', img: 'images/feed/KDST三通.png', desc: 'Automatic flow direction switching; remote control supported.', specs: ['Capacity 40–80 m³/h', 'Flanged connection', 'Reliable actuation'], badge: 'Flow' },
-            { name: 'TBDQ气动四通', en: 'TBDQ Pneumatic 4‑way Valve', cat: 'Dosing & Valves', img: 'images/feed/TBDQ四通.png', desc: 'Cost‑effective distribution for multi‑silo/line systems.', specs: ['Capacity 40–50 m³/h', 'Compact design', 'Easy maintenance'], badge: 'Flow' },
-            { name: 'LCS微机控制定量包装秤', en: 'LCS Micro Automatic Bagging', cat: 'Dosing & Valves', img: 'images/feed/LCS定量包装秤.png', desc: 'Automatic bagging & stitching for finished feed.', specs: ['Batch 20–50 kg', 'Speed 100–400 bag/h', 'Multiple models'], badge: 'Packing' }
+            // Valves & Packing
+            { en: 'Pneumatic Three-way Valve', cat: 'Dosing & Valves', img: 'images/feed/气动三通.png', desc: 'Automatic flow direction switching.', specs: ['Remote control', 'Reliable sealing'], badge: 'Flow' },
+            { en: 'Pneumatic Four-way Valve', cat: 'Dosing & Valves', img: 'images/feed/气动四通.png', desc: 'Cost-effective multi-line distribution.', specs: ['Compact', 'Easy maintenance'], badge: 'Flow' },
+            { en: 'Gate Valve (TZMQ)', cat: 'Dosing & Valves', img: 'images/feed/闸阀.png', desc: 'On/off control for powder & pellets.', specs: ['150–1600 m³/h series', 'Compact body'], badge: 'Control' },
+            { en: 'Micro Automatic Bagging (LCS)', cat: 'Dosing & Valves', img: 'images/feed/微机控制定量包装秤.png', desc: 'Automatic bagging & stitching for finished feed.', specs: ['20–50 kg/batch', '100–400 bag/h'], badge: 'Packing' },
+
+            // Sifting & Grading
+            { en: 'Vibration Sifter (TQLZ)', cat: 'Sifting & Grading', img: 'images/feed/震动分级筛.png', desc: 'Compact, low energy; pre-pelleting sifting & scalping.', specs: ['Multiple deck options', 'Low noise'], badge: 'Sifting' },
+            { en: 'Classifier', cat: 'Sifting & Grading', img: 'images/feed/分级筛.png', desc: 'High grading efficiency with triple-deck options.', specs: ['6–50 t/h', '5.5–7.5 kW'], badge: 'Sifting' }
         ];
 
-        // === 渲染 ===
+        // === Render ===
         const grid = document.getElementById('grid');
         function render(list) {
             grid.innerHTML = '';
@@ -811,22 +567,20 @@
                 item.innerHTML = `
           <div class="thumb"><img loading="lazy" src="${p.img}" alt="${p.en}"><span class="badge">${p.badge || p.cat}</span></div>
           <div class="body">
-            <div class="title">${p.en} <span style="color:var(--muted);font-weight:600"> · ${p.en || ''}</span></div>
+            <div class="title">${p.en}</div>
             <div class="desc">${p.desc || ''}</div>
             <div class="meta">
               <span class="pill">${p.cat}</span>
-              <a class="btn" href="#" data-idx="${i}">查看详情</a>
+              <a class="btn" href="#" data-idx="${i}">Details</a>
             </div>
           </div>`;
                 item.querySelector('.btn').addEventListener('click', e => { e.preventDefault(); openModal(p) });
                 grid.appendChild(item);
             });
         }
-
-        // 初始渲染
         render(products);
 
-        // 筛选
+        // Filters
         const chips = document.querySelectorAll('.chip');
         chips.forEach(ch => {
             ch.addEventListener('click', () => {
@@ -834,24 +588,22 @@
                 ch.classList.add('active');
                 const cat = ch.dataset.cat;
                 const kw = document.getElementById('q').value.trim().toLowerCase();
-                let list = products.filter(p => cat === 'all' || p.cat === cat);
-                if (kw) {
-                    list = list.filter(p => [p.en, p.en, p.desc, ...(p.specs || [])].join(' ').toLowerCase().includes(kw));
-                }
+                let list = products.filter(p => cat === 'All' || p.cat === cat);
+                if (kw) { list = list.filter(p => [p.en, p.desc, ...(p.specs || [])].join(' ').toLowerCase().includes(kw)); }
                 render(list);
             })
         })
 
-        // 搜索
+        // Search
         document.getElementById('q').addEventListener('input', e => {
             const kw = e.target.value.trim().toLowerCase();
             const cat = document.querySelector('.chip.active').dataset.cat;
-            let list = products.filter(p => cat === 'all' || p.cat === cat);
-            if (kw) { list = list.filter(p => [p.en, p.en, p.desc, ...(p.specs || [])].join(' ').toLowerCase().includes(kw)); }
+            let list = products.filter(p => cat === 'All' || p.cat === cat);
+            if (kw) { list = list.filter(p => [p.en, p.desc, ...(p.specs || [])].join(' ').toLowerCase().includes(kw)); }
             render(list);
         });
 
-        // 模态逻辑
+        // Modal logic
         const modal = document.getElementById('modal');
         const mImg = document.getElementById('mImg');
         const mCat = document.getElementById('mCat');
@@ -864,16 +616,12 @@
         function openModal(p) {
             mImg.src = p.img; mImg.alt = p.en;
             mCat.textContent = p.cat;
-            mTitle.textContent = `${p.en} · ${p.en || ''}`;
+            mTitle.textContent = p.en;
             mDesc.textContent = p.desc || '';
             mSpecs.innerHTML = '';
-            (p.specs || []).forEach(s => {
-                const div = document.createElement('div');
-                div.className = 'spec';
-                div.textContent = s; mSpecs.appendChild(div);
-            })
-            quoteBtn.onclick = () => { alert(`已将【${p.en}】加入询价单，稍后在页脚联系我们。`) }
-            downloadBtn.href = p.img; downloadBtn.textContent = '查看原图';
+            (p.specs || []).forEach(s => { const div = document.createElement('div'); div.className = 'spec'; div.textContent = s; mSpecs.appendChild(div); });
+            quoteBtn.onclick = () => { alert(`Added 【${p.en}】 to your RFQ list. Contact us via the footer.`) }
+            downloadBtn.href = p.img; downloadBtn.textContent = 'Open Image';
             modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
         }
         function closeModal() { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); }
