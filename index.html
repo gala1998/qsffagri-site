@@ -623,7 +623,8 @@
         </div>
 
         <div class="pillars-grid">
-          <article class="pillar-card" id="breeding">
+          <!-- Breeding -->
+          <article class="pillar-card" id="breeding" onclick="location.href='breeding.html'">
             <div class="pillar-top">
               <div class="pillar-ic">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -632,10 +633,11 @@
               </div>
               <h3>Breeding (GP/PS)</h3>
             </div>
-            <a class="pillar-link" href="#contact">Ask about breeding projects →</a>
+            <a class="pillar-link" href="breeding.html">Ask about breeding projects →</a>
           </article>
 
-          <article class="pillar-card" id="incubation">
+          <!-- Incubation -->
+          <article class="pillar-card" id="incubation" onclick="location.href='incubation.html'">
             <div class="pillar-top">
               <div class="pillar-ic">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -645,196 +647,146 @@
               </div>
               <h3>Incubation</h3>
             </div>
-            <a class="pillar-link" href="#contact">Design a hatchery →</a>
-          </article>
+            <a class="pillar-link" href="incubation.html">Design a hatch
 
-          <article class="pillar-card" id="feed" onclick="location.href='feed.html'">
-            <div class="pillar-top">
-              <div class="pillar-ic">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M3 17h18M6 17V7l6-3 6 3v10" stroke="#2fbf4a" stroke-width="2" />
-                </svg>
-              </div>
-              <h3>Feed</h3>
-            </div>
+              <!-- 解决方案（清单式） -->
+              <section id="solutions">
+                <div class="container">
+                  <div class="section-title"><span class="bar"></span>
+                    <h3 style="margin:0">Representative Solutions</h3>
+                  </div>
+                  <div class="grid" style="grid-template-columns:1fr 1fr; gap:28px">
+                    <div class="card">
+                      <h3>Industrial Parks</h3>
+                      <ul class="muted" style="margin:0; padding-left:18px">
+                        <li>3 Million Broiler Industrial Park – Argentina</li>
+                        <li>150,000 Broiler House – China</li>
+                        <li>High-End Food Industrial Park – China</li>
+                      </ul>
+                    </div>
+                    <div class="card">
+                      <h3>International Projects</h3>
+                      <ul class="muted" style="margin:0; padding-left:18px">
+                        <li>30,000 Broiler House – Nicaragua</li>
+                        <li>100,000 Layer House – Kenya</li>
+                        <li>120,000 Layer House – Vietnam</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
-            <!-- 把原来的 #contact 改成 feed.html -->
-            <a class="pillar-link" href="feed.html">See feed systems →</a>
-          </article>
+              <!-- 项目/新闻 -->
+              <!-- Projects & News (6 items) -->
+              <section id="news">
+                <div class="container">
+                  <div class="section-title"><span class="bar"></span>
+                    <h3 style="margin:0">Projects & News</h3>
+                  </div>
 
+                  <div class="cards">
+                    <!-- 1) Pingdu -->
+                    <article class="news-card">
+                      <img src="images/pingdu18wt.png" alt="Pingdu 180,000-Ton Feed Production Line">
+                      <div class="body">
+                        <h4>Pingdu 180,000-Ton Feed Production Line</h4>
+                        <p class="muted">Large-scale feed facility delivering 180,000 tons per year to supply
+                          high-quality nutrition
+                          for livestock and poultry.</p>
+                      </div>
+                    </article>
 
-          <article class="pillar-card" id="farming">
-            <div class="pillar-top">
-              <div class="pillar-ic">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M3 11l9-6 9 6v8H3v-8z" stroke="#2fbf4a" stroke-width="2" />
-                  <circle cx="12" cy="15" r="2.5" stroke="#2fbf4a" stroke-width="2" />
-                </svg>
-              </div>
-              <h3>Farming</h3>
-            </div>
-            <a class="pillar-link" href="#solutions">See farming solutions →</a>
-          </article>
+                    <!-- 2) Senegal -->
+                    <article class="news-card">
+                      <img src="images/siliaochang1.jpg" alt="Senegal Feedmill Construction">
+                      <div class="body">
+                        <h4>Senegal Feedmill Construction</h4>
+                        <p class="muted">Modern feedmill project in West Africa to support sustainable growth of the
+                          regional
+                          poultry industry.</p>
+                      </div>
+                    </article>
 
-          <article class="pillar-card" id="processing">
-            <div class="pillar-top">
-              <div class="pillar-ic">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M3 9h18M5 13h14M7 17h10" stroke="#2fbf4a" stroke-width="2" />
-                </svg>
-              </div>
-              <h3>Slaughtering & Processing</h3>
-            </div>
-            <a class="pillar-link" href="#projects">Explore processing lines →</a>
-          </article>
+                    <!-- 3) Guizhou -->
+                    <article class="news-card">
+                      <img src="images/guizhou6wtzhusiliaoshengchanxian.png"
+                        alt="Guizhou 60,000-Ton Pig Feed Production Line">
+                      <div class="body">
+                        <h4>Guizhou 60,000-Ton Pig Feed Production Line</h4>
+                        <p class="muted">Dedicated swine feed line designed to improve production efficiency and support
+                          local
+                          livestock development.</p>
+                      </div>
+                    </article>
 
-          <article class="pillar-card" id="cooked">
-            <div class="pillar-top">
-              <div class="pillar-ic">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <rect x="4" y="10" width="16" height="7" rx="2" stroke="#2fbf4a" stroke-width="2" />
-                  <path d="M8 7c1-1 1-2 0-3M12 7c1-1 1-2 0-3M16 7c1-1 1-2 0-3" stroke="#2fbf4a" stroke-width="2" />
-                </svg>
-              </div>
-              <h3>Prepared & Cooked Foods</h3>
-            </div>
-            <a class="pillar-link" href="cooked.html">Build cooked-food lines →</a>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
+                    <!-- 4) Guangxi feedmill 150k -->
+                    <article class="news-card">
+                      <img src="images/guangxi15wtsiliao.jpg" alt="Guangxi 150,000-Ton Feed Production Line">
+                      <div class="body">
+                        <h4>Guangxi 150,000-Ton Feed Production Line</h4>
+                        <p class="muted">New high-capacity feed production line meeting fast-growing demand across the
+                          Guangxi
+                          region.</p>
+                      </div>
+                    </article>
 
-  <!-- 解决方案（清单式） -->
-  <section id="solutions">
-    <div class="container">
-      <div class="section-title"><span class="bar"></span>
-        <h3 style="margin:0">Representative Solutions</h3>
-      </div>
-      <div class="grid" style="grid-template-columns:1fr 1fr; gap:28px">
-        <div class="card">
-          <h3>Industrial Parks</h3>
-          <ul class="muted" style="margin:0; padding-left:18px">
-            <li>3 Million Broiler Industrial Park – Argentina</li>
-            <li>150,000 Broiler House – China</li>
-            <li>High-End Food Industrial Park – China</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>International Projects</h3>
-          <ul class="muted" style="margin:0; padding-left:18px">
-            <li>30,000 Broiler House – Nicaragua</li>
-            <li>100,000 Layer House – Kenya</li>
-            <li>120,000 Layer House – Vietnam</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+                    <!-- 5) Guangxi broiler processing & prepared foods -->
+                    <article class="news-card">
+                      <img src="images/guangxishushijiagong.jpg"
+                        alt="Guangxi Integrated Broiler Processing & Prepared Foods Project">
+                      <div class="body">
+                        <h4>Guangxi Integrated Broiler Processing & Prepared Foods</h4>
+                        <p class="muted">End-to-end project combining broiler slaughtering, processing and prepared
+                          foods, upgrading
+                          the poultry value chain.</p>
+                      </div>
+                    </article>
 
-  <!-- 项目/新闻 -->
-  <!-- Projects & News (6 items) -->
-  <section id="news">
-    <div class="container">
-      <div class="section-title"><span class="bar"></span>
-        <h3 style="margin:0">Projects & News</h3>
-      </div>
-
-      <div class="cards">
-        <!-- 1) Pingdu -->
-        <article class="news-card">
-          <img src="images/pingdu18wt.png" alt="Pingdu 180,000-Ton Feed Production Line">
-          <div class="body">
-            <h4>Pingdu 180,000-Ton Feed Production Line</h4>
-            <p class="muted">Large-scale feed facility delivering 180,000 tons per year to supply high-quality nutrition
-              for livestock and poultry.</p>
-          </div>
-        </article>
-
-        <!-- 2) Senegal -->
-        <article class="news-card">
-          <img src="images/siliaochang1.jpg" alt="Senegal Feedmill Construction">
-          <div class="body">
-            <h4>Senegal Feedmill Construction</h4>
-            <p class="muted">Modern feedmill project in West Africa to support sustainable growth of the regional
-              poultry industry.</p>
-          </div>
-        </article>
-
-        <!-- 3) Guizhou -->
-        <article class="news-card">
-          <img src="images/guizhou6wtzhusiliaoshengchanxian.png" alt="Guizhou 60,000-Ton Pig Feed Production Line">
-          <div class="body">
-            <h4>Guizhou 60,000-Ton Pig Feed Production Line</h4>
-            <p class="muted">Dedicated swine feed line designed to improve production efficiency and support local
-              livestock development.</p>
-          </div>
-        </article>
-
-        <!-- 4) Guangxi feedmill 150k -->
-        <article class="news-card">
-          <img src="images/guangxi15wtsiliao.jpg" alt="Guangxi 150,000-Ton Feed Production Line">
-          <div class="body">
-            <h4>Guangxi 150,000-Ton Feed Production Line</h4>
-            <p class="muted">New high-capacity feed production line meeting fast-growing demand across the Guangxi
-              region.</p>
-          </div>
-        </article>
-
-        <!-- 5) Guangxi broiler processing & prepared foods -->
-        <article class="news-card">
-          <img src="images/guangxishushijiagong.jpg"
-            alt="Guangxi Integrated Broiler Processing & Prepared Foods Project">
-          <div class="body">
-            <h4>Guangxi Integrated Broiler Processing & Prepared Foods</h4>
-            <p class="muted">End-to-end project combining broiler slaughtering, processing and prepared foods, upgrading
-              the poultry value chain.</p>
-          </div>
-        </article>
-
-        <!-- 6) Shandong slaughter 40M birds -->
-        <article class="news-card">
-          <img src="images/shandong4000wtuzai.jpg" alt="Shandong 40-Million Birds Per Year Broiler Slaughter Project">
-          <div class="body">
-            <h4>Shandong 40-Million Birds/Year Broiler Slaughter Project</h4>
-            <p class="muted">A comprehensive slaughter and processing complex designed for high-throughput,
-              food-safety-first operations.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+                    <!-- 6) Shandong slaughter 40M birds -->
+                    <article class="news-card">
+                      <img src="images/shandong4000wtuzai.jpg"
+                        alt="Shandong 40-Million Birds Per Year Broiler Slaughter Project">
+                      <div class="body">
+                        <h4>Shandong 40-Million Birds/Year Broiler Slaughter Project</h4>
+                        <p class="muted">A comprehensive slaughter and processing complex designed for high-throughput,
+                          food-safety-first operations.</p>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </section>
 
 
-  <!-- 联系 CTA -->
-  <section id="contact" class="cta">
-    <div class="container">
-      <div class="cta-box">
-        <div>
-          <h3 style="margin:0 0 6px">Tell us about your project</h3>
-          <p class="muted" style="margin:0">We’ll design a tailored solution and provide a detailed proposal.</p>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <a class="btn btn-primary" href="mailto:weichaozq@163.com">Email: weichaozq@163.com</a>
-          <a class="btn" href="https://wa.me/8615965310998" target="_blank">WhatsApp +86 159 6531 0998</a>
-        </div>
-      </div>
-    </div>
-  </section>
+              <!-- 联系 CTA -->
+              <section id="contact" class="cta">
+                <div class="container">
+                  <div class="cta-box">
+                    <div>
+                      <h3 style="margin:0 0 6px">Tell us about your project</h3>
+                      <p class="muted" style="margin:0">We’ll design a tailored solution and provide a detailed
+                        proposal.</p>
+                    </div>
+                    <div style="display:flex;gap:12px;flex-wrap:wrap">
+                      <a class="btn btn-primary" href="mailto:weichaozq@163.com">Email: weichaozq@163.com</a>
+                      <a class="btn" href="https://wa.me/8615965310998" target="_blank">WhatsApp +86 159 6531 0998</a>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
-  <!-- 页脚（黑底保留） -->
-  <div data-include="/partials/footer.html"></div>
+              <!-- 页脚（黑底保留） -->
+              <div data-include="/partials/footer.html"></div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      const slots = document.querySelectorAll('[data-include]');
-      for (const el of slots) {
-        const file = el.getAttribute('data-include');
-        const res = await fetch(file);
-        el.innerHTML = await res.text();
-      }
-    });
-  </script>
+              <script>
+                document.addEventListener('DOMContentLoaded', async () => {
+                  const slots = document.querySelectorAll('[data-include]');
+                  for (const el of slots) {
+                    const file = el.getAttribute('data-include');
+                    const res = await fetch(file);
+                    el.innerHTML = await res.text();
+                  }
+                });
+              </script>
 
 </body>
 
