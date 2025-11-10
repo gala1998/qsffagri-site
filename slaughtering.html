@@ -9,16 +9,13 @@
         content="QSFF Agri slaughtering equipment: reception, scalding & dehairing, evisceration, paw processing, cleaning & inspection, chilling, cutting & deboning, conveying & logistics." />
     <style>
         :root {
-            --brand: #22FFBB;
-            --brand-strong: #00DD66;
+            --brand: #2fbf4a;
+            --brand-dark: #0f7a2b;
             --bg: #fff;
-            --text: #222;
+            --text: #000;
             --muted: #555;
             --border: #ddd;
-            --footer-bg: #000;
-            --footer-text: #fff;
-            --brand-gradient: linear-gradient(135deg, var(--brand), var(--brand-strong));
-            --max: 1200px;
+            --max: 1200px
         }
 
         html,
@@ -26,7 +23,7 @@
             margin: 0;
             background: var(--bg);
             color: var(--text);
-            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
+            font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial
         }
 
         a {
@@ -34,57 +31,83 @@
             text-decoration: none
         }
 
-        /* header/footer 与熟食统一 */
-        header.site,
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-            backdrop-filter: saturate(120%) blur(6px)
+        img {
+            max-width: 100%;
+            display: block
         }
 
-        .h-wrap {
-            max-width: var(--max);
-            margin: 0 auto;
-            padding: 12px 16px;
+        /* === Shared header/footer styling (matches feed/breeding/farming/incubation) === */
+        .topbar {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 50
+        }
+
+        .nav {
             display: flex;
-            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            padding: 10px 20px;
+            max-width: var(--max);
+            margin: 0 auto
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
             align-items: center
         }
 
-        .brand {
-            font-weight: 800;
-            letter-spacing: .2px
+        .menu a {
+            color: #000;
+            font-weight: 600
         }
 
-        nav.h-nav {
-            margin-left: auto;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap
-        }
-
-        nav.h-nav a {
-            padding: .55rem .8rem;
-            border-radius: .6rem
-        }
-
-        nav.h-nav a:hover {
-            background: var(--brand-gradient);
-            color: #fff
-        }
-
-        .cta {
-            background: var(--brand-gradient);
-            color: #fff;
+        .cta-btn {
+            background: var(--brand);
+            color: #000;
+            padding: 10px 16px;
             border-radius: 999px;
-            padding: .55rem .95rem;
             font-weight: 700
         }
 
-        /* hero */
+        .cta-btn:hover {
+            filter: brightness(1.06)
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: #000
+        }
+
+        @media (max-width:900px) {
+            .menu {
+                display: none
+            }
+
+            .hamburger {
+                display: flex
+            }
+        }
+
+        /* === Page-specific styles preserved from your original layout === */
         .hero {
             border-bottom: 1px solid var(--border)
         }
@@ -110,7 +133,6 @@
             max-width: 900px
         }
 
-        /* filters */
         .filters {
             max-width: var(--max);
             margin: 10px auto 0;
@@ -129,12 +151,12 @@
         }
 
         .chip:hover {
-            border-color: var(--brand-strong);
-            color: var(--brand-strong)
+            border-color: #2fbf4a;
+            color: #2fbf4a
         }
 
         .chip.active {
-            background: var(--brand-gradient);
+            background: linear-gradient(135deg, #2fbf4a, #0f7a2b);
             color: #fff;
             border-color: transparent;
             box-shadow: 0 6px 14px rgba(0, 0, 0, .08)
@@ -152,8 +174,8 @@
         }
 
         .search:focus-within {
-            border-color: var(--brand-strong);
-            box-shadow: 0 0 0 3px rgba(34, 255, 187, .18)
+            border-color: #2fbf4a;
+            box-shadow: 0 0 0 3px rgba(47, 191, 74, .18)
         }
 
         .search input {
@@ -164,7 +186,6 @@
             min-width: 220px
         }
 
-        /* grid */
         .wrap {
             max-width: var(--max);
             margin: 0 auto;
@@ -223,7 +244,7 @@
             position: absolute;
             left: 12px;
             top: 12px;
-            background: var(--brand-gradient);
+            background: linear-gradient(135deg, #2fbf4a, #0f7a2b);
             color: #fff;
             border-radius: 10px;
             font-size: .75rem;
@@ -268,7 +289,7 @@
             gap: 8px;
             padding: .5rem .8rem;
             border-radius: 10px;
-            background: var(--brand-gradient);
+            background: linear-gradient(135deg, #2fbf4a, #0f7a2b);
             color: #fff;
             font-weight: 700
         }
@@ -348,47 +369,14 @@
             padding: 8px 10px;
             border-radius: 10px
         }
-
-        footer {
-            background: var(--footer-bg);
-            color: var(--footer-text);
-            padding: 3rem 1rem;
-            margin-top: 3rem;
-            text-align: center
-        }
-
-        .toTop {
-            position: fixed;
-            right: 18px;
-            bottom: 18px;
-            background: var(--brand-strong);
-            color: #fff;
-            border: none;
-            border-radius: 999px;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            cursor: pointer
-        }
     </style>
 </head>
 
 <body>
-    <!-- Header unified with Cooked page -->
-    <header class="site">
-        <div class="h-wrap">
-            <div class="brand">QSFF Agri · Slaughtering</div>
-            <nav class="h-nav">
-                <a href="/">Home</a>
-                <a href="/cooked.html">Cooked Food</a>
-                <a href="/slaughtering.html" class="cta">Get Quote</a>
-            </nav>
-        </div>
-    </header>
+    <!-- Shared header include -->
+    <div data-include="/partials/header.html"></div>
 
+    <!-- Hero & filters -->
     <section class="hero">
         <div class="hero-inner">
             <div class="breadcrumbs">EPCO Turn-key / <strong>Slaughtering Equipment Library</strong></div>
@@ -416,6 +404,7 @@
         </div>
     </section>
 
+    <!-- Grid -->
     <main class="wrap">
         <div id="grid" class="grid"></div>
     </main>
@@ -445,58 +434,41 @@
         </div>
     </div>
 
-    <button class="toTop" title="Back to top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
-
-    <footer>
-        Need detailed specs or a tailored layout? Email <a href="mailto:sales@qsffagri.com"
-            style="color:#fff;text-decoration:underline">sales@qsffagri.com</a> · +86-0000-000000
-    </footer>
+    <!-- Shared footer include -->
+    <div data-include="/partials/footer.html"></div>
 
     <script>
-        /* ---- Data: strictly use your file names under /images/Slaughtering/ ---- */
+        /* ---- Items (kept same as your original list/filenames under images/Slaughtering/) ---- */
         const ITEMS = [
-            // Reception / Logistics
             { title: 'Divider (Line Splitter)', file: '分龙机.png', cat: 'Conveying & Logistics', desc: 'Automated line splitting for balanced throughput.' },
             { title: 'Inclined Line Splitter', file: '倾斜式分龙机.png', cat: 'Conveying & Logistics', desc: 'Inclined divider for flexible line allocation.' },
             { title: 'Crate Unloading & Washing', file: '禽笼清洗机.png', cat: 'Reception', desc: 'Wash crates at reception to ensure hygiene.' },
             { title: 'Crate Lifting & Palletizing', file: '托举式码笼机.png', cat: 'Reception', desc: 'Lift and stack crates efficiently and safely.' },
-
-            // Scalding & Dehairing
             { title: 'Jet Scalding Tank', file: '射流浸烫机.png', cat: 'Scalding & Dehairing', desc: 'Jet flow scalding for uniform heat transfer.' },
             { title: 'N-type Scalding Tank', file: 'N型浸烫机.png', cat: 'Scalding & Dehairing', desc: 'Compact N-route scalding for steady output.' },
             { title: 'Fine Plucker', file: '精脱毛机.png', cat: 'Scalding & Dehairing', desc: 'Finishing plucker for residual feathers.' },
             { title: 'Rough Plucker', file: '粗脱毛机.png', cat: 'Scalding & Dehairing', desc: 'Primary plucking section with high removal rate.' },
             { title: 'Horizontal Plucker', file: '卧式脱毛机.png', cat: 'Scalding & Dehairing', desc: 'Horizontal configuration for special products.' },
-
-            // Paw Processing
             { title: 'Straight-line Pre-cut Paw', file: '直线（预）切爪机.png', cat: 'Paw Processing', desc: 'Pre-cutting for paw processing line.' },
             { title: 'Paw Transfer Hanger', file: '切爪转挂机.png', cat: 'Paw Processing', desc: 'Automatic transfer to paw line.' },
             { title: 'Toe Cutting Machine', file: '切趾机.png', cat: 'Paw Processing', desc: 'Accurate toe cutting for export standards.' },
             { title: 'Spiral Paw Conveyor', file: '螺旋爪机.png', cat: 'Paw Processing', desc: 'Gentle spiral conveying of paws.' },
             { title: 'Paw Skin Peeler', file: '鸡爪脱皮机.png', cat: 'Paw Processing', desc: 'Automatic skinning for chicken paws.' },
             { title: 'Paw Pre-chilling Line', file: '鸡爪预冷线.png', cat: 'Chilling', desc: 'Continuous pre-chilling after paw processing.' },
-
-            // Evisceration
             { title: 'Opening Machine', file: '开膛机.png', cat: 'Evisceration', desc: 'Automatic opening prior to evisceration.' },
             { title: 'Eviscerator', file: '掏腔机.png', cat: 'Evisceration', desc: 'Automatic evisceration with high yield.' },
             { title: 'Eviscerator (Gripping Type)', file: '掏腔机（夹取式）.png', cat: 'Evisceration', desc: 'Gripping eviscerator for stable handling.' },
             { title: 'Abdominal Fat Remover', file: '腔油去除机.png', cat: 'Evisceration', desc: 'Remove abdominal fat to meet specs.' },
             { title: 'Lung Extractor', file: '吸肺机.png', cat: 'Evisceration', desc: 'Efficient lung removal with low residue.' },
             { title: 'Cropper (Craw Remover)', file: '去嗉囊机.png', cat: 'Evisceration', desc: 'Remove crop reliably and hygienically.' },
-
-            // Cleaning & Inspection
             { title: 'Carcass Inside/Outside Washer', file: '胴体内外清洗机.png', cat: 'Cleaning & Inspection', desc: 'Dual-nozzle washing for carcass hygiene.' },
             { title: 'Automatic Unloader', file: '自动卸载机.png', cat: 'Conveying & Logistics', desc: 'Unload from shackle line automatically.' },
             { title: 'Carcass Weighing System', file: '胴体称重系统.png', cat: 'Cleaning & Inspection', desc: 'In-line weighing & data capture.' },
             { title: 'Carcass Pre-wash System', file: '胴体预清洗系统.png', cat: 'Cleaning & Inspection', desc: 'Pre-wash section before cooling.' },
             { title: 'Tunnel Washer', file: '隧道式清洗机.png', cat: 'Cleaning & Inspection', desc: 'High-capacity tunnel cleaning.' },
             { title: 'Breathing Pump', file: '呼吸泵.png', cat: 'Cleaning & Inspection', desc: 'Vacuum pump for hygienic handling.' },
-
-            // Chilling
             { title: 'High-capacity Pre-chiller', file: '超大容量预冷机.png', cat: 'Chilling', desc: 'Large-volume immersion pre-chilling.' },
             { title: 'Liver Pre-chiller', file: '肝预冷机.png', cat: 'Chilling', desc: 'Dedicated liver pre-chilling tank.' },
-
-            // Cutting & Deboning
             { title: 'Horizontal De-gluer / Fat Separator', file: '卧式脱胶脂机.png', cat: 'Cutting & Deboning', desc: 'Horizontal fat separation prior to cut-up.' },
             { title: 'Auto Head Cutter', file: '自动切头机.png', cat: 'Cutting & Deboning', desc: 'Accurate head cutting on line.' },
             { title: 'Auto Neck Cutter', file: '自动切脖机.png', cat: 'Cutting & Deboning', desc: 'Consistent neck cutting with safety guards.' },
@@ -522,7 +494,7 @@
               <a class="btn" href="#" data-idx="${i}">Details</a>
             </div>
           </div>`;
-                el.querySelector('.btn').addEventListener('click', e => { e.preventDefault(); openModal(p) });
+                el.querySelector('.btn').addEventListener('click', e => { e.preventDefault(); openModal(p); });
                 grid.appendChild(el);
             });
         }
@@ -530,26 +502,15 @@
 
         // filter chips
         const chips = document.querySelectorAll('.chip');
-        chips.forEach(ch => {
-            ch.addEventListener('click', () => {
-                chips.forEach(c => c.classList.remove('active'));
-                ch.classList.add('active');
-                const cat = ch.dataset.cat;
-                const kw = document.getElementById('q').value.trim().toLowerCase();
-                let list = ITEMS.filter(p => cat === 'All' || p.cat === cat);
-                if (kw) { list = list.filter(p => (p.title + ' ' + (p.desc || '') + ' ' + p.cat).toLowerCase().includes(kw)); }
-                render(list);
-            });
-        });
-
-        // search
-        document.getElementById('q').addEventListener('input', e => {
-            const kw = e.target.value.trim().toLowerCase();
+        function apply() {
             const cat = document.querySelector('.chip.active').dataset.cat;
+            const kw = document.getElementById('q').value.trim().toLowerCase();
             let list = ITEMS.filter(p => cat === 'All' || p.cat === cat);
-            if (kw) { list = list.filter(p => (p.title + ' ' + (p.desc || '') + ' ' + p.cat).toLowerCase().includes(kw)); }
+            if (kw) list = list.filter(p => (p.title + ' ' + (p.desc || '') + ' ' + p.cat).toLowerCase().includes(kw));
             render(list);
-        });
+        }
+        chips.forEach(ch => ch.addEventListener('click', () => { chips.forEach(c => c.classList.remove('active')); ch.classList.add('active'); apply(); }));
+        document.getElementById('q').addEventListener('input', apply);
 
         // modal logic
         const modal = document.getElementById('modal');
@@ -560,7 +521,6 @@
         const mSpecs = document.getElementById('mSpecs');
         const quoteBtn = document.getElementById('quoteBtn');
         const downloadBtn = document.getElementById('downloadBtn');
-
         function openModal(p) {
             mImg.src = 'images/Slaughtering/' + p.file; mImg.alt = p.title;
             mCat.textContent = p.cat; mTitle.textContent = p.title; mDesc.textContent = p.desc || '';
@@ -575,6 +535,20 @@
         function closeModal() { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); }
         window.closeModal = closeModal;
         modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+        // include shared header/footer partials
+        document.addEventListener('DOMContentLoaded', async () => {
+            const slots = document.querySelectorAll('[data-include]');
+            for (const el of slots) {
+                const file = el.getAttribute('data-include');
+                try {
+                    const res = await fetch(file);
+                    el.innerHTML = await res.text();
+                } catch (e) {
+                    console.error('Failed to include', file, e);
+                }
+            }
+        });
     </script>
 </body>
 
