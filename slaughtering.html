@@ -9,22 +9,16 @@
         content="QSFF Agri slaughtering equipment: reception, scalding & dehairing, evisceration, paw processing, cleaning & inspection, chilling, cutting & deboning, conveying & logistics." />
     <style>
         :root {
-            --brand: #2fbf4a;
-            --brand-dark: #0f7a2b;
+            --brand: #22FFBB;
+            --brand-strong: #00DD66;
             --bg: #fff;
-            --text: #000;
+            --text: #222;
             --muted: #555;
             --border: #ddd;
-            --card: #fff;
-            --line: #ddd;
             --footer-bg: #000;
             --footer-text: #fff;
-            --brand-gradient: linear-gradient(135deg, #22FFBB, #00DD66);
+            --brand-gradient: linear-gradient(135deg, var(--brand), var(--brand-strong));
             --max: 1200px;
-        }
-
-        * {
-            box-sizing: border-box
         }
 
         html,
@@ -32,7 +26,7 @@
             margin: 0;
             background: var(--bg);
             color: var(--text);
-            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
         }
 
         a {
@@ -40,88 +34,65 @@
             text-decoration: none
         }
 
-        /* === Shared header/footer styles (match feed page) === */
-        .topbar {
-            background: #fff;
-            border-bottom: 1px solid var(--line);
+        /* header/footer 与熟食统一 */
+        header.site,
+        .site-header {
             position: sticky;
             top: 0;
             z-index: 50;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: saturate(120%) blur(6px)
         }
 
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 64px;
-            padding: 10px 0;
+        .h-wrap {
             max-width: var(--max);
             margin: 0 auto;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        .logo {
+            padding: 12px 16px;
             display: flex;
-            align-items: center;
-            gap: 12px
-        }
-
-        .menu {
-            display: flex;
-            gap: 30px;
+            gap: 16px;
             align-items: center
         }
 
-        .menu a {
-            color: #000;
-            font-weight: 600
+        .brand {
+            font-weight: 800;
+            letter-spacing: .2px
         }
 
-        .cta-btn {
-            background: var(--brand);
-            color: #000;
-            padding: 10px 16px;
+        nav.h-nav {
+            margin-left: auto;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        nav.h-nav a {
+            padding: .55rem .8rem;
+            border-radius: .6rem
+        }
+
+        nav.h-nav a:hover {
+            background: var(--brand-gradient);
+            color: #fff
+        }
+
+        .cta {
+            background: var(--brand-gradient);
+            color: #fff;
             border-radius: 999px;
-            font-weight: 700;
+            padding: .55rem .95rem;
+            font-weight: 700
         }
 
-        .cta-btn:hover {
-            filter: brightness(1.06)
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            cursor: pointer
-        }
-
-        .hamburger span {
-            width: 24px;
-            height: 2px;
-            background: #000
-        }
-
-        @media (max-width:900px) {
-            .menu {
-                display: none
-            }
-
-            .hamburger {
-                display: flex
-            }
-        }
-
-        /* === Hero (keep page-specific) === */
+        /* hero */
         .hero {
-            border-bottom: 1px solid var(--line)
+            border-bottom: 1px solid var(--border)
         }
 
         .hero-inner {
             max-width: var(--max);
             margin: 0 auto;
-            padding: 32px 16px 14px;
+            padding: 32px 16px 14px
         }
 
         .breadcrumbs {
@@ -139,32 +110,34 @@
             max-width: 900px
         }
 
-        /* === Filter/search toolbar (unchanged) === */
+        /* filters */
         .filters {
             max-width: var(--max);
             margin: 10px auto 0;
             padding: 0 16px 10px;
             display: flex;
             gap: 8px;
-            flex-wrap: wrap;
+            flex-wrap: wrap
         }
 
         .chip {
-            border: 1px solid var(--line);
+            border: 1px solid var(--border);
             border-radius: 999px;
             padding: .42rem .85rem;
             cursor: pointer;
-            background: #fff;
+            background: #fff
         }
 
         .chip:hover {
-            border-color: var(--brand-dark);
-            color: var(--brand-dark)
+            border-color: var(--brand-strong);
+            color: var(--brand-strong)
         }
 
         .chip.active {
-            background: linear-gradient(180deg, rgba(47, 191, 74, .12), transparent);
-            border-color: rgba(47, 191, 74, .45);
+            background: var(--brand-gradient);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, .08)
         }
 
         .search {
@@ -172,15 +145,15 @@
             display: flex;
             align-items: center;
             gap: .5rem;
-            border: 1px solid var(--line);
+            border: 1px solid var(--border);
             border-radius: 12px;
             padding: .4rem .7rem;
-            background: #fff;
+            background: #fff
         }
 
         .search:focus-within {
-            border-color: var(--brand-dark);
-            box-shadow: 0 0 0 3px rgba(47, 191, 74, .18);
+            border-color: var(--brand-strong);
+            box-shadow: 0 0 0 3px rgba(34, 255, 187, .18)
         }
 
         .search input {
@@ -188,10 +161,10 @@
             outline: none;
             background: transparent;
             color: var(--text);
-            min-width: 220px;
+            min-width: 220px
         }
 
-        /* === Grid/cards (unchanged) === */
+        /* grid */
         .wrap {
             max-width: var(--max);
             margin: 0 auto;
@@ -219,13 +192,13 @@
         .card {
             grid-column: span 3;
             background: #fff;
-            border: 1px solid var(--line);
+            border: 1px solid var(--border);
             border-radius: 16px;
             box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: transform .15s, box-shadow .15s;
+            transition: transform .15s, box-shadow .15s
         }
 
         .card:hover {
@@ -250,12 +223,11 @@
             position: absolute;
             left: 12px;
             top: 12px;
-            background: var(--brand);
+            background: var(--brand-gradient);
             color: #fff;
             border-radius: 10px;
             font-size: .75rem;
-            padding: .2rem .5rem;
-            border: 1px solid rgba(0, 0, 0, .06);
+            padding: .2rem .5rem
         }
 
         .body {
@@ -285,7 +257,7 @@
         .pill {
             font-size: .75rem;
             color: var(--muted);
-            border: 1px solid var(--line);
+            border: 1px solid var(--border);
             padding: .22rem .5rem;
             border-radius: 6px
         }
@@ -296,13 +268,12 @@
             gap: 8px;
             padding: .5rem .8rem;
             border-radius: 10px;
-            background: var(--brand);
-            color: #000;
-            font-weight: 700;
-            border: 1px solid rgba(0, 0, 0, .06);
+            background: var(--brand-gradient);
+            color: #fff;
+            font-weight: 700
         }
 
-        /* === Modal (unchanged) === */
+        /* modal */
         .modal {
             position: fixed;
             inset: 0;
@@ -311,7 +282,7 @@
             align-items: center;
             justify-content: center;
             padding: 18px;
-            z-index: 60;
+            z-index: 60
         }
 
         .modal.open {
@@ -322,10 +293,10 @@
             max-width: 980px;
             width: 100%;
             background: #fff;
-            border: 1px solid var(--line);
+            border: 1px solid var(--border);
             border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, .25);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, .25)
         }
 
         .sheet-head {
@@ -349,7 +320,7 @@
             background: rgba(0, 0, 0, .45);
             color: #fff;
             font-size: 18px;
-            cursor: pointer;
+            cursor: pointer
         }
 
         .sheet-body {
@@ -373,18 +344,25 @@
 
         .spec {
             background: #fafafa;
-            border: 1px solid var(--line);
+            border: 1px solid var(--border);
             padding: 8px 10px;
             border-radius: 10px
         }
 
-        /* === Utilities === */
+        footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+            text-align: center
+        }
+
         .toTop {
             position: fixed;
             right: 18px;
             bottom: 18px;
-            background: var(--brand);
-            color: #000;
+            background: var(--brand-strong);
+            color: #fff;
             border: none;
             border-radius: 999px;
             width: 44px;
@@ -393,16 +371,23 @@
             align-items: center;
             justify-content: center;
             font-weight: 900;
-            cursor: pointer;
-            border: 1px solid rgba(0, 0, 0, .06);
+            cursor: pointer
         }
     </style>
 </head>
 
 <body>
-
-    <!-- Shared header (identical mechanism as feed page) -->
-    <div data-include="/partials/header.html"></div>
+    <!-- Header unified with Cooked page -->
+    <header class="site">
+        <div class="h-wrap">
+            <div class="brand">QSFF Agri · Slaughtering</div>
+            <nav class="h-nav">
+                <a href="/">Home</a>
+                <a href="/cooked.html">Cooked Food</a>
+                <a href="/slaughtering.html" class="cta">Get Quote</a>
+            </nav>
+        </div>
+    </header>
 
     <section class="hero">
         <div class="hero-inner">
@@ -449,7 +434,7 @@
                     <p id="mDesc" class="sub" style="margin:.5rem 0 1rem"></p>
                     <div style="display:flex;gap:10px;flex-wrap:wrap">
                         <a id="quoteBtn" class="btn">Add to RFQ</a>
-                        <a id="downloadBtn" class="pill" target="_blank" style="text-decoration:none">Open Original</a>
+                        <a id="downloadBtn" class="pill" target="_blank">Open Original</a>
                     </div>
                 </div>
                 <div>
@@ -462,8 +447,10 @@
 
     <button class="toTop" title="Back to top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-    <!-- Shared footer (identical mechanism as feed page) -->
-    <div data-include="/partials/footer.html"></div>
+    <footer>
+        Need detailed specs or a tailored layout? Email <a href="mailto:sales@qsffagri.com"
+            style="color:#fff;text-decoration:underline">sales@qsffagri.com</a> · +86-0000-000000
+    </footer>
 
     <script>
         /* ---- Data: strictly use your file names under /images/Slaughtering/ ---- */
@@ -518,7 +505,7 @@
             { title: 'Thigh Deboner', file: '鸡上腿剔骨机.png', cat: 'Cutting & Deboning', desc: 'Automated deboning for upper thigh.' }
         ];
 
-        /* ---- Render grid ---- */
+        /* ---- Render ---- */
         const grid = document.getElementById('grid');
         function render(list) {
             grid.innerHTML = '';
@@ -588,20 +575,6 @@
         function closeModal() { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); }
         window.closeModal = closeModal;
         modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-
-        // include shared header/footer (same as feed page)
-        document.addEventListener('DOMContentLoaded', async () => {
-            const slots = document.querySelectorAll('[data-include]');
-            for (const el of slots) {
-                const file = el.getAttribute('data-include');
-                try {
-                    const res = await fetch(file);
-                    el.innerHTML = await res.text();
-                } catch (e) {
-                    console.warn('Include failed for', file, e);
-                }
-            }
-        });
     </script>
 </body>
 
