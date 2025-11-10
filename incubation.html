@@ -1,12 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Incubation · Core Equipment | QSFF Agri</title>
+    <title>Incubation · Core Equipment — QSFF Agri</title>
     <meta name="description"
-        content="QSFF Agri incubation solutions: incubators & hatchers, candling & setting lines (single/dual), chick handling for broilers and layers, waste treatment." />
+        content="QSFF Agri incubation solutions: incubators & hatchers, candling & setting lines, chick handling, waste treatment. Turnkey EPCO." />
     <style>
         :root {
             --brand: #2fbf4a;
@@ -14,6 +14,7 @@
             --bg: #fff;
             --text: #000;
             --muted: #555;
+            --card: #fff;
             --line: #ddd;
             --max: 1200px
         }
@@ -25,14 +26,11 @@
         html,
         body {
             margin: 0;
+            padding: 0;
             background: var(--bg);
             color: var(--text);
-            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            line-height: 1.6
         }
 
         img {
@@ -41,13 +39,18 @@
             border-radius: 8px
         }
 
+        a {
+            color: var(--text);
+            text-decoration: none
+        }
+
         .container {
             max-width: var(--max);
             margin: 0 auto;
             padding: 0 20px
         }
 
-        /* --- header/footer identical to feed.html (shared partials) --- */
+        /* === Header/Footer: copied 1:1 from feed.html for identical layout === */
         .topbar {
             background: #fff;
             border-bottom: 1px solid var(--line);
@@ -116,15 +119,16 @@
             }
         }
 
-        /* --- hero --- */
+        /* === Hero (incubation image) === */
         .hero {
-            border-bottom: 1px solid var(--line);
-            background: url("images/Incubation/hero.jpg") center/cover no-repeat;
+            position: relative;
             width: 100%;
             aspect-ratio: 16/7;
+            background: url("images/Incubation/hero.jpg") center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-bottom: 1px solid var(--line)
         }
 
         .hero .inner {
@@ -133,7 +137,7 @@
             background: rgba(255, 255, 255, .86);
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
-            max-width: 900px;
+            max-width: 900px
         }
 
         .eyebrow {
@@ -145,7 +149,7 @@
             border-radius: 999px;
             font-size: 12px;
             letter-spacing: .6px;
-            text-transform: uppercase;
+            text-transform: uppercase
         }
 
         .hero h1 {
@@ -161,20 +165,31 @@
             font-size: 16px
         }
 
-        /* filters/search */
-        .filters {
-            padding: 16px 0;
+        section {
+            padding: 56px 0;
             border-bottom: 1px solid var(--line)
         }
 
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px
+        }
+
+        .bar {
+            width: 32px;
+            height: 3px;
+            background: var(--brand)
+        }
+
+        /* === Filter/Search toolbar (match feed spacing) === */
         .toolbar {
             display: flex;
             gap: 10px;
             align-items: center;
             flex-wrap: wrap;
-            margin: 0 auto;
-            max-width: var(--max);
-            padding: 0 20px
+            margin-bottom: 16px
         }
 
         .chip {
@@ -209,13 +224,7 @@
             min-width: 220px
         }
 
-        /* grid/cards */
-        .wrap {
-            max-width: var(--max);
-            margin: 0 auto;
-            padding: 22px 20px 80px
-        }
-
+        /* === Grid/Cards (visuals harmonized with feed cards/hover) === */
         .grid {
             display: grid;
             gap: 18px;
@@ -235,11 +244,18 @@
         }
 
         .card {
-            background: #fff;
+            background: var(--card);
             border: 1px solid var(--line);
             border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, .06)
+            padding: 0;
+            transition: transform .18s ease, box-shadow .18s ease, border-color .18s
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, .06);
+            border-color: rgba(47, 191, 74, .45)
         }
 
         .thumb {
@@ -299,15 +315,16 @@
             border-radius: 6px
         }
 
-        /* modal */
+        /* === Modal (match feed’s visual weight) === */
         .backdrop {
             position: fixed;
             inset: 0;
             background: rgba(0, 0, 0, .45);
+            backdrop-filter: blur(2px);
             display: none;
             align-items: center;
             justify-content: center;
-            padding: 18px;
+            padding: 20px;
             z-index: 60
         }
 
@@ -316,13 +333,13 @@
         }
 
         .modal {
-            max-width: 980px;
-            width: 100%;
             background: #fff;
             border: 1px solid var(--line);
-            border-radius: 18px;
+            border-radius: 16px;
+            max-width: 980px;
+            width: 100%;
             overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, .25)
+            box-shadow: 0 24px 48px rgba(0, 0, 0, .18)
         }
 
         .modal header {
@@ -351,7 +368,7 @@
 
         .modal .body {
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
+            grid-template-columns: 1.2fr .8fr;
             gap: 16px;
             padding: 16px
         }
@@ -375,7 +392,7 @@
             border-radius: 10px
         }
 
-        /* footer (shared) */
+        /* === Footer: copied from feed.html for identical layout === */
         footer {
             background: #000;
             color: #fff;
@@ -430,33 +447,34 @@
         <div class="inner container">
             <span class="eyebrow">Incubation · Equipment Library</span>
             <h1>Incubators & hatchers, egg candling & setting, chick handling, and waste treatment</h1>
-            <p>Filter by process or search keywords. Click a card for a large image and highlights; add items to your
-                RFQ list.</p>
+            <p>Filter by process and build your RFQ list. Click a card for a large image and highlights.</p>
         </div>
     </header>
 
-    <!-- Filters -->
-    <section class="filters">
-        <div class="toolbar">
-            <button class="chip active" data-cat="All">All</button>
-            <button class="chip" data-cat="Incubators & Hatchers">Incubators &amp; Hatchers</button>
-            <button class="chip" data-cat="Egg Candling & Setting">Egg Candling &amp; Setting</button>
-            <button class="chip" data-cat="Chick Handling">Chick Handling</button>
-            <button class="chip" data-cat="Waste Treatment">Waste Treatment</button>
-            <div class="search">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" />
-                </svg>
-                <input id="q" placeholder="Search equipment / process / keyword…" />
+    <!-- Filters + Grid -->
+    <section>
+        <div class="container">
+            <div class="section-title"><span class="bar"></span>
+                <h3>Browse by Process</h3>
             </div>
+            <div class="toolbar">
+                <button class="chip active" data-cat="All">All</button>
+                <button class="chip" data-cat="Incubators & Hatchers">Incubators &amp; Hatchers</button>
+                <button class="chip" data-cat="Egg Candling & Setting">Egg Candling &amp; Setting</button>
+                <button class="chip" data-cat="Chick Handling">Chick Handling</button>
+                <button class="chip" data-cat="Waste Treatment">Waste Treatment</button>
+                <div class="search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <input id="q" placeholder="Search (English keywords)…" />
+                </div>
+            </div>
+
+            <div id="grid" class="grid"></div>
         </div>
     </section>
-
-    <!-- Grid -->
-    <main class="wrap">
-        <div id="grid" class="grid"></div>
-    </main>
 
     <!-- Shared footer -->
     <div data-include="/partials/footer.html"></div>
@@ -472,7 +490,7 @@
                 <div>
                     <div class="badge" id="mCat"></div>
                     <h2 id="mTitle" style="margin:.5rem 0 0"></h2>
-                    <p id="mDesc" class="sub" style="margin:.5rem 0 1rem"></p>
+                    <p id="mDesc" class="muted" style="margin:.5rem 0 1rem"></p>
                     <div style="display:flex;gap:10px;flex-wrap:wrap">
                         <a id="quoteBtn" class="cta-btn">Add to RFQ</a>
                         <a id="downloadBtn" class="cta-btn" target="_blank">Open Original</a>
@@ -489,27 +507,22 @@
     <script>
         // Items (kept from your original incubation file)
         const ITEMS = [
-            // Incubators & Hatchers
             { title: 'Hatcher', file: '出雏机.jpg', cat: 'Incubators & Hatchers', desc: 'High-capacity hatcher with stable airflow and precise temperature/humidity control.' },
             { title: 'Hatcher (Alt.)', file: '出雏机2.jpg', cat: 'Incubators & Hatchers', desc: 'Alternative configuration for different tray standards and capacities.' },
             { title: 'Setter (Incubator)', file: '孵化器.png', cat: 'Incubators & Hatchers', desc: 'High-uniformity setter for PS/GP eggs with efficient energy use.' },
             { title: 'Setter (Incubator) – Inside View', file: '孵化器2.png', cat: 'Incubators & Hatchers', desc: 'Inside layout for racks, trolleys and service aisle.' },
 
-            // Chick handling
             { title: 'Chick Handling Line (Broiler)', file: '禽雏处理系统（白羽肉鸡）.png', cat: 'Chick Handling', desc: 'Dedicated line for broiler chicks: counting, sexing, vaccination and boxing.' },
             { title: 'Chick Handling Line (Layer)', file: '禽雏处理系统（蛋鸡）.png', cat: 'Chick Handling', desc: 'Optimized for layer chicks with flexible modules and gentle transfer.' },
 
-            // Egg candling & setting
             { title: 'Egg Candling & Setting – Single Line', file: '照蛋落盘系统（单线）.png', cat: 'Egg Candling & Setting', desc: 'Inline candling and automatic setting (single line).' },
             { title: 'Egg Candling & Setting – Dual Line', file: '照蛋落盘系统（双线）.png', cat: 'Egg Candling & Setting', desc: 'Higher throughput with dual-line layout.' },
             { title: 'Hatching Egg Processing – 1-to-3', file: '种蛋处理系统（一拖三）.png', cat: 'Egg Candling & Setting', desc: 'One-to-three configuration for efficient egg flow and buffering.' },
             { title: 'Hatching Egg Processing – 1-to-2', file: '种蛋处理系统（一拖二）.png', cat: 'Egg Candling & Setting', desc: 'One-to-two configuration, compact footprint.' },
 
-            // Waste treatment
-            { title: 'Hatchery Waste Treatment System', file: '孵化废弃物处理系统.png', cat: 'Waste Treatment', desc: 'Integrated crushing, separation and rendering interface for hatchery waste.' },
+            { title: 'Hatchery Waste Treatment System', file: '孵化废弃物处理系统.png', cat: 'Waste Treatment', desc: 'Integrated crushing, separation and rendering interface for hatchery waste.' }
         ];
 
-        // Render
         const grid = document.getElementById('grid');
         function render(list) {
             grid.innerHTML = '';
@@ -517,7 +530,10 @@
                 const el = document.createElement('article');
                 el.className = 'card';
                 el.innerHTML = `
-          <div class="thumb"><img loading="lazy" src="images/Incubation/${p.file}" alt="${p.title}"><span class="badge">${p.cat}</span></div>
+          <div class="thumb">
+            <img loading="lazy" src="images/Incubation/${p.file}" alt="${p.title}">
+            <span class="badge">${p.cat}</span>
+          </div>
           <div class="body">
             <div class="title">${p.title}</div>
             <div class="desc">${p.desc || ''}</div>
@@ -558,7 +574,7 @@
             mImg.src = 'images/Incubation/' + p.file; mImg.alt = p.title;
             mCat.textContent = p.cat; mTitle.textContent = p.title; mDesc.textContent = p.desc || '';
             mSpecs.innerHTML = '';
-            ['Food-grade contact parts', 'Easy cleaning & maintenance', 'Modular integration with existing hatchery layout']
+            ['Food‑grade contact parts', 'Easy cleaning & maintenance', 'Modular integration with existing hatchery layout']
                 .forEach(s => { const div = document.createElement('div'); div.className = 'spec'; div.textContent = s; mSpecs.appendChild(div); });
             quoteBtn.onclick = () => alert(`Added [${p.title}] to RFQ. Please contact us via the footer.`);
             downloadBtn.href = 'images/Incubation/' + p.file;
