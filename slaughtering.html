@@ -9,7 +9,6 @@
         content="QSFF Agri slaughtering equipment: reception, scalding & dehairing, evisceration, paw processing, cleaning & inspection, chilling, cutting & deboning, conveying & logistics." />
     <style>
         :root {
-            /* use same brand palette as feed page */
             --brand: #2fbf4a;
             --brand-dark: #0f7a2b;
             --bg: #fff;
@@ -17,7 +16,7 @@
             --muted: #555;
             --card: #fff;
             --line: #ddd;
-            --max: 1200px;
+            --max: 1200px
         }
 
         * {
@@ -27,19 +26,16 @@
         html,
         body {
             margin: 0;
+            padding: 0;
             background: var(--bg);
             color: var(--text);
-            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            line-height: 1.6
         }
 
         a {
-            color: inherit;
+            color: var(--text);
             text-decoration: none
-        }
-
-        img {
-            max-width: 100%;
-            display: block
         }
 
         .container {
@@ -48,7 +44,7 @@
             padding: 0 20px
         }
 
-        /* --- header/footer identical to feed section (styles expect partials with matching classes) --- */
+        /* --- header/footer identical to feed section --- */
         .topbar {
             background: #fff;
             border-bottom: 1px solid var(--line);
@@ -117,49 +113,77 @@
             }
         }
 
-        /* --- hero (kept from slaughtering, tuned to feed aesthetics) --- */
+        /* --- hero --- */
         .hero {
-            border-bottom: 1px solid var(--line);
-            background: #fff
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/7;
+            background: url("images/slaughtering/hero.jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--line)
         }
 
-        .hero-inner {
-            max-width: var(--max);
-            margin: 0 auto;
-            padding: 32px 20px 18px
+        .hero .inner {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, .86);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+            max-width: 900px
         }
 
-        .breadcrumbs {
-            color: var(--muted);
-            font-size: .9rem
+        .eyebrow {
+            display: inline-block;
+            color: var(--brand-dark);
+            background: rgba(47, 191, 74, .12);
+            border: 1px solid rgba(47, 191, 74, .35);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            letter-spacing: .6px;
+            text-transform: uppercase
         }
 
         .hero h1 {
-            margin: .35rem 0 0;
+            margin: 18px auto 12px;
             font-size: 40px;
             line-height: 1.2
         }
 
-        .sub {
+        .hero p {
+            margin: 0 auto 18px;
+            max-width: 820px;
             color: var(--muted);
-            max-width: 900px;
-            margin: .2rem 0 0
+            font-size: 16px
         }
 
-        /* --- filter/search (match feed controls) --- */
         section {
-            padding: 22px 0
+            padding: 56px 0;
+            border-bottom: 1px solid var(--line)
         }
 
-        .toolbar,
-        .filters {
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px
+        }
+
+        .bar {
+            width: 32px;
+            height: 3px;
+            background: var(--brand)
+        }
+
+        /* --- filter/search --- */
+        .toolbar {
             display: flex;
             gap: 10px;
             align-items: center;
             flex-wrap: wrap;
-            margin: 10px auto 0;
-            padding: 0 20px 10px;
-            max-width: var(--max)
+            margin-bottom: 16px
         }
 
         .chip {
@@ -195,12 +219,6 @@
         }
 
         /* --- grid/cards --- */
-        .wrap {
-            max-width: var(--max);
-            margin: 0 auto;
-            padding: 12px 20px 80px
-        }
-
         .grid {
             display: grid;
             gap: 18px;
@@ -223,15 +241,140 @@
             background: var(--card);
             border: 1px solid var(--line);
             border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
-            transition: transform .15s, box-shadow .15s, border-color .15s
+            padding: 14px;
+            transition: transform .18s ease, box-shadow .18s ease, border-color .18s
         }
 
         .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 28px rgba(0, 0, 0, .12);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, .06);
             border-color: rgba(47, 191, 74, .45)
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(47, 191, 74, .12);
+            border: 1px solid rgba(47, 191, 74, .35);
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 12px
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        /* --- modal --- */
+        .backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .45);
+            backdrop-filter: blur(2px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 60
+        }
+
+        .backdrop.open {
+            display: flex
+        }
+
+        .modal {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            max-width: 980px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, .18)
+        }
+
+        .modal header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .modal .body {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 16px;
+            padding: 16px
+        }
+
+        @media (max-width:900px) {
+            .modal .body {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .modal .close {
+            background: #eee;
+            border: none;
+            border-radius: 999px;
+            width: 36px;
+            height: 36px;
+            font-size: 18px;
+            cursor: pointer
+        }
+
+        /* --- footer --- */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 50px 10%
+        }
+
+        footer .cols {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap
+        }
+
+        footer .col {
+            flex: 1;
+            min-width: 220px;
+            margin: 20px
+        }
+
+        footer h2 {
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--brand);
+            display: inline-block
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            line-height: 2
+        }
+
+        footer .social {
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid #222;
+            padding-top: 20px
+        }
+
+        footer .social a {
+            margin: 0 10px;
+            color: #fff
+        }
+
+        /* 屠宰设备页面原有样式 */
+        .breadcrumbs {
+            color: var(--muted);
+            font-size: .9rem
+        }
+
+        .sub {
+            color: var(--muted);
+            max-width: 900px
         }
 
         .thumb {
@@ -244,26 +387,8 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover
-        }
-
-        .badge {
-            position: absolute;
-            left: 12px;
-            top: 12px;
-            background: rgba(47, 191, 74, .12);
-            border: 1px solid rgba(47, 191, 74, .35);
-            color: #000;
-            border-radius: 8px;
-            font-size: 12px;
-            padding: 4px 8px
-        }
-
-        .body {
-            padding: 12px 12px 14px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px
+            object-fit: cover;
+            border-radius: 8px
         }
 
         .title {
@@ -298,150 +423,159 @@
             padding: .5rem .8rem;
             border-radius: 10px;
             background: var(--brand);
-            color: #000;
+            color: #fff;
             font-weight: 700
         }
 
-        /* --- modal (kept, matches feed shadows/radius) --- */
-        .modal {
+        .toTop {
             position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, .45);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 18px;
-            z-index: 60
-        }
-
-        .modal.open {
-            display: flex
-        }
-
-        .sheet {
-            max-width: 980px;
-            width: 100%;
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 24px 48px rgba(0, 0, 0, .18)
-        }
-
-        .sheet-head {
-            position: relative
-        }
-
-        .sheet-head img {
-            width: 100%;
-            height: 360px;
-            object-fit: cover
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 40px;
-            height: 40px;
+            right: 18px;
+            bottom: 18px;
+            background: var(--brand-dark);
+            color: #fff;
             border: none;
             border-radius: 999px;
-            background: #eee;
-            color: #000;
-            font-size: 18px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
             cursor: pointer
-        }
-
-        .sheet-body {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 16px;
-            padding: 16px
-        }
-
-        @media (max-width:900px) {
-            .sheet-body {
-                grid-template-columns: 1fr
-            }
-        }
-
-        .specs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px
-        }
-
-        .spec {
-            background: #fafafa;
-            border: 1px solid var(--line);
-            padding: 8px 10px;
-            border-radius: 10px
         }
     </style>
 </head>
 
 <body>
-    <!-- Shared header (same include slot used on feed page) -->
-    <div data-include="/partials/header.html"></div>
-
-    <section class="hero">
-        <div class="hero-inner">
-            <div class="breadcrumbs">EPCO Turn‑key / <strong>Slaughtering Equipment Library</strong></div>
-            <h1>From reception to cutting — all key units in one place</h1>
-            <p class="sub">Filter by process or search by keywords. Click a card for a large image and quick highlights;
-                add items to your RFQ list.</p>
-        </div>
-        <div class="filters" id="filters">
-            <button class="chip active" data-cat="All">All</button>
-            <button class="chip" data-cat="Reception">Reception</button>
-            <button class="chip" data-cat="Scalding & Dehairing">Scalding &amp; Dehairing</button>
-            <button class="chip" data-cat="Evisceration">Evisceration</button>
-            <button class="chip" data-cat="Paw Processing">Paw Processing</button>
-            <button class="chip" data-cat="Cleaning & Inspection">Cleaning &amp; Inspection</button>
-            <button class="chip" data-cat="Chilling">Chilling</button>
-            <button class="chip" data-cat="Cutting & Deboning">Cutting &amp; Deboning</button>
-            <button class="chip" data-cat="Conveying & Logistics">Conveying &amp; Logistics</button>
-            <div class="search">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" />
-                </svg>
-                <input id="q" placeholder="Search equipment / process / keyword…" />
-            </div>
-        </div>
-    </section>
-
-    <main class="wrap">
-        <div id="grid" class="grid"></div>
-    </main>
-
-    <!-- Modal -->
-    <div class="modal" id="modal" aria-hidden="true">
-        <div class="sheet">
-            <div class="sheet-head">
-                <img id="mImg" alt="" />
-                <button class="close" aria-label="Close" onclick="closeModal()">✕</button>
-            </div>
-            <div class="sheet-body">
-                <div>
-                    <div class="badge" id="mCat"></div>
-                    <h2 id="mTitle" style="margin:.5rem 0 0"></h2>
-                    <p id="mDesc" class="sub" style="margin:.5rem 0 1rem"></p>
-                    <div style="display:flex;gap:10px;flex-wrap:wrap">
-                        <a id="quoteBtn" class="btn">Add to RFQ</a>
-                        <a id="downloadBtn" class="pill" target="_blank" style="text-decoration:none">Open Original</a>
-                    </div>
+    <!-- Header unified with Feed page -->
+    <div class="topbar">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <div class="brand">QSFF Agri · Slaughtering</div>
                 </div>
-                <div>
-                    <h3 style="margin:.2rem 0 .6rem">Highlights</h3>
-                    <div id="mSpecs" class="specs"></div>
+                <nav class="menu">
+                    <a href="/">Home</a>
+                    <a href="/cooked.html">Cooked Food</a>
+                    <a href="/feed.html">Feed Mill</a>
+                    <a href="/slaughtering.html" class="cta-btn">Get Quote</a>
+                </nav>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Shared footer (same include slot used on feed page) -->
-    <div data-include="/partials/footer.html"></div>
+    <header class="hero">
+        <div class="inner container">
+            <span class="eyebrow">EPCO Turn-key · Slaughtering Equipment Library</span>
+            <h1>From reception to cutting — all key units in one place</h1>
+            <p>Filter by process or search by keywords. Click a card for a large image and quick highlights; add items
+                to your RFQ list.</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="section-title"><span class="bar"></span>
+                <h3>Browse by Process</h3>
+            </div>
+            <div class="toolbar">
+                <button class="chip active" data-cat="All">All</button>
+                <button class="chip" data-cat="Reception">Reception</button>
+                <button class="chip" data-cat="Scalding & Dehairing">Scalding &amp; Dehairing</button>
+                <button class="chip" data-cat="Evisceration">Evisceration</button>
+                <button class="chip" data-cat="Paw Processing">Paw Processing</button>
+                <button class="chip" data-cat="Cleaning & Inspection">Cleaning &amp; Inspection</button>
+                <button class="chip" data-cat="Chilling">Chilling</button>
+                <button class="chip" data-cat="Cutting & Deboning">Cutting &amp; Deboning</button>
+                <button class="chip" data-cat="Conveying & Logistics">Conveying &amp; Logistics</button>
+                <div class="search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <input id="q" placeholder="Search equipment / process / keyword…" />
+                </div>
+            </div>
+
+            <div id="grid" class="grid"></div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-box"
+                style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:18px;box-shadow:0 8px 24px rgba(0,0,0,.05)">
+                <div>
+                    <h3 style="margin:0 0 6px">Need a turnkey slaughter line?</h3>
+                    <p class="muted" style="margin:0">Send us your capacity, product type, and target throughput — we'll
+                        design and quote.</p>
+                </div>
+                <div style="display:flex;gap:12px;flex-wrap:wrap">
+                    <a class="cta-btn" href="mailto:sales@qsffagri.com">Email: sales@qsffagri.com</a>
+                    <a class="cta-btn" href="tel:+86-0000-000000">Call +86-0000-000000</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="cols">
+            <div class="col">
+                <h2>QSFF Agri</h2>
+                <p>Professional solutions for slaughtering and food processing industries.</p>
+            </div>
+            <div class="col">
+                <h2>Equipment</h2>
+                <ul>
+                    <li><a href="/slaughtering.html">Slaughtering</a></li>
+                    <li><a href="/cooked.html">Cooked Food</a></li>
+                    <li><a href="/feed.html">Feed Mill</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h2>Contact</h2>
+                <ul>
+                    <li>Email: <a href="mailto:sales@qsffagri.com">sales@qsffagri.com</a></li>
+                    <li>Phone: +86-0000-000000</li>
+                </ul>
+            </div>
+        </div>
+        <div class="social">
+            <p>&copy; 2023 QSFF Agri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="backdrop" class="backdrop" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true">
+            <header>
+                <strong id="mTitle">Slaughtering Equipment</strong>
+                <button class="close" onclick="closeModal()">✕</button>
+            </header>
+            <div class="body">
+                <div class="thumb">
+                    <img id="mImg" alt="Equipment image" />
+                    <span class="badge" id="mCat">Process</span>
+                </div>
+                <div>
+                    <p class="muted" id="mDesc">High‑quality, engineering‑grade equipment for modern slaughterhouses.
+                    </p>
+                    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+                        <a id="quoteBtn" class="cta-btn">Add to RFQ</a>
+                        <a id="downloadBtn" class="pill" target="_blank">Open Original</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="toTop" title="Back to top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
 
     <script>
         /* ---- Data: strictly use your file names under /images/Slaughtering/ ---- */
@@ -496,6 +630,7 @@
             { title: 'Thigh Deboner', file: '鸡上腿剔骨机.png', cat: 'Cutting & Deboning', desc: 'Automated deboning for upper thigh.' }
         ];
 
+        /* ---- Render ---- */
         const grid = document.getElementById('grid');
         function render(list) {
             grid.innerHTML = '';
@@ -520,46 +655,46 @@
 
         // filter chips
         const chips = document.querySelectorAll('.chip');
-        function apply() {
-            const active = document.querySelector('.chip.active').dataset.cat;
-            const kw = document.getElementById('q').value.trim().toLowerCase();
-            let list = ITEMS.filter(p => active === 'All' || p.cat === active);
+        chips.forEach(ch => {
+            ch.addEventListener('click', () => {
+                chips.forEach(c => c.classList.remove('active'));
+                ch.classList.add('active');
+                const cat = ch.dataset.cat;
+                const kw = document.getElementById('q').value.trim().toLowerCase();
+                let list = ITEMS.filter(p => cat === 'All' || p.cat === cat);
+                if (kw) { list = list.filter(p => (p.title + ' ' + (p.desc || '') + ' ' + p.cat).toLowerCase().includes(kw)); }
+                render(list);
+            });
+        });
+
+        // search
+        document.getElementById('q').addEventListener('input', e => {
+            const kw = e.target.value.trim().toLowerCase();
+            const cat = document.querySelector('.chip.active').dataset.cat;
+            let list = ITEMS.filter(p => cat === 'All' || p.cat === cat);
             if (kw) { list = list.filter(p => (p.title + ' ' + (p.desc || '') + ' ' + p.cat).toLowerCase().includes(kw)); }
             render(list);
-        }
-        chips.forEach(ch => { ch.addEventListener('click', () => { chips.forEach(c => c.classList.remove('active')); ch.classList.add('active'); apply(); }); });
-        document.getElementById('q').addEventListener('input', apply);
+        });
 
         // modal logic
-        const modal = document.getElementById('modal');
+        const backdrop = document.getElementById('backdrop');
         const mImg = document.getElementById('mImg');
         const mCat = document.getElementById('mCat');
         const mTitle = document.getElementById('mTitle');
         const mDesc = document.getElementById('mDesc');
-        const mSpecs = document.getElementById('mSpecs');
         const quoteBtn = document.getElementById('quoteBtn');
         const downloadBtn = document.getElementById('downloadBtn');
 
         function openModal(p) {
             mImg.src = 'images/Slaughtering/' + p.file; mImg.alt = p.title;
             mCat.textContent = p.cat; mTitle.textContent = p.title; mDesc.textContent = p.desc || '';
-            mSpecs.innerHTML = '';
-            ['Food‑grade stainless', 'Easy cleaning', 'Supports line integration'].forEach(s => {
-                const div = document.createElement('div'); div.className = 'spec'; div.textContent = s; mSpecs.appendChild(div);
-            });
             quoteBtn.onclick = () => alert(`Added [${p.title}] to RFQ. Please contact us via the footer.`);
             downloadBtn.href = 'images/Slaughtering/' + p.file;
-            modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+            backdrop.classList.add('open'); backdrop.setAttribute('aria-hidden', 'false');
         }
-        function closeModal() { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); }
+        function closeModal() { backdrop.classList.remove('open'); backdrop.setAttribute('aria-hidden', 'true'); }
         window.closeModal = closeModal;
-        modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-
-        // include shared header/footer, same as feed page
-        document.addEventListener('DOMContentLoaded', async () => {
-            const slots = document.querySelectorAll('[data-include]');
-            for (const el of slots) { const file = el.getAttribute('data-include'); const res = await fetch(file); el.innerHTML = await res.text(); }
-        });
+        backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
     </script>
 </body>
 
