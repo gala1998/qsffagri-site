@@ -14,8 +14,12 @@
             --bg: #fff;
             --text: #000;
             --muted: #555;
+            --border: #ddd;
             --card: #fff;
             --line: #ddd;
+            --footer-bg: #000;
+            --footer-text: #fff;
+            --brand-gradient: linear-gradient(135deg, #22FFBB, #00DD66);
             --max: 1200px;
         }
 
@@ -26,11 +30,9 @@
         html,
         body {
             margin: 0;
-            padding: 0;
             background: var(--bg);
             color: var(--text);
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-            line-height: 1.6
+            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
         }
 
         a {
@@ -38,93 +40,131 @@
             text-decoration: none
         }
 
-        img {
-            max-width: 100%;
-            display: block;
-            border-radius: 8px
+        /* === Shared header/footer styles (match feed page) === */
+        .topbar {
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 50;
         }
 
-        .container {
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            padding: 10px 0;
             max-width: var(--max);
             margin: 0 auto;
-            padding: 0 20px
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
-        /* --- header/footer are pulled from shared partials (same as feed.html) --- */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+            align-items: center
+        }
+
+        .menu a {
+            color: #000;
+            font-weight: 600
+        }
+
+        .cta-btn {
+            background: var(--brand);
+            color: #000;
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 700;
+        }
+
+        .cta-btn:hover {
+            filter: brightness(1.06)
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: #000
+        }
+
+        @media (max-width:900px) {
+            .menu {
+                display: none
+            }
+
+            .hamburger {
+                display: flex
+            }
+        }
+
+        /* === Hero (keep page-specific) === */
         .hero {
             border-bottom: 1px solid var(--line)
         }
 
-        .hero .inner {
-            max-width: 900px;
+        .hero-inner {
+            max-width: var(--max);
             margin: 0 auto;
-            padding: 32px 20px;
-            text-align: center
+            padding: 32px 16px 14px;
         }
 
-        .eyebrow {
-            display: inline-block;
-            color: var(--brand-dark);
-            background: rgba(47, 191, 74, .12);
-            border: 1px solid rgba(47, 191, 74, .35);
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-size: 12px;
-            letter-spacing: .6px;
-            text-transform: uppercase
+        .breadcrumbs {
+            color: var(--muted);
+            font-size: .9rem
         }
 
         h1 {
-            margin: 18px auto 12px;
-            font-size: 40px;
-            line-height: 1.2
+            margin: .25rem 0 0;
+            font-size: 2rem
         }
 
         .sub {
-            margin: 0 auto 18px;
-            max-width: 820px;
             color: var(--muted);
-            font-size: 16px
+            max-width: 900px
         }
 
-        /* filters/search */
-        section.grid-wrap {
-            padding: 56px 0;
-            border-bottom: 1px solid var(--line)
-        }
-
-        .section-title {
+        /* === Filter/search toolbar (unchanged) === */
+        .filters {
+            max-width: var(--max);
+            margin: 10px auto 0;
+            padding: 0 16px 10px;
             display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 18px
-        }
-
-        .bar {
-            width: 32px;
-            height: 3px;
-            background: var(--brand)
-        }
-
-        .toolbar {
-            display: flex;
-            gap: 10px;
-            align-items: center;
+            gap: 8px;
             flex-wrap: wrap;
-            margin-bottom: 16px
         }
 
         .chip {
             border: 1px solid var(--line);
-            padding: .45rem .9rem;
             border-radius: 999px;
+            padding: .42rem .85rem;
+            cursor: pointer;
             background: #fff;
-            cursor: pointer
+        }
+
+        .chip:hover {
+            border-color: var(--brand-dark);
+            color: var(--brand-dark)
         }
 
         .chip.active {
             background: linear-gradient(180deg, rgba(47, 191, 74, .12), transparent);
-            border-color: rgba(47, 191, 74, .45)
+            border-color: rgba(47, 191, 74, .45);
         }
 
         .search {
@@ -133,9 +173,14 @@
             align-items: center;
             gap: .5rem;
             border: 1px solid var(--line);
-            padding: .45rem .7rem;
             border-radius: 12px;
-            background: #fff
+            padding: .4rem .7rem;
+            background: #fff;
+        }
+
+        .search:focus-within {
+            border-color: var(--brand-dark);
+            box-shadow: 0 0 0 3px rgba(47, 191, 74, .18);
         }
 
         .search input {
@@ -143,67 +188,81 @@
             outline: none;
             background: transparent;
             color: var(--text);
-            min-width: 220px
+            min-width: 220px;
         }
 
-        /* cards */
+        /* === Grid/cards (unchanged) === */
+        .wrap {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 22px 16px 80px
+        }
+
         .grid {
             display: grid;
-            gap: 18px;
-            grid-template-columns: repeat(3, 1fr)
+            gap: 14px;
+            grid-template-columns: repeat(12, 1fr)
         }
 
-        @media (max-width:1000px) {
+        @media (max-width:1100px) {
             .grid {
-                grid-template-columns: repeat(2, 1fr)
+                grid-template-columns: repeat(8, 1fr)
             }
         }
 
-        @media (max-width:640px) {
+        @media (max-width:720px) {
             .grid {
-                grid-template-columns: 1fr
+                grid-template-columns: repeat(4, 1fr)
             }
         }
 
         .card {
-            background: var(--card);
+            grid-column: span 3;
+            background: #fff;
             border: 1px solid var(--line);
-            border-radius: 14px;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
             overflow: hidden;
-            transition: transform .18s ease, box-shadow .18s ease, border-color .18s
+            display: flex;
+            flex-direction: column;
+            transition: transform .15s, box-shadow .15s;
         }
 
         .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 28px rgba(0, 0, 0, .06);
-            border-color: rgba(47, 191, 74, .45)
+            transform: translateY(-3px);
+            box-shadow: 0 16px 28px rgba(0, 0, 0, .12)
         }
 
         .thumb {
             position: relative;
-            aspect-ratio: 16/10
+            padding-top: 62%
         }
 
         .thumb img {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            border-radius: 0
+            object-fit: cover
         }
 
         .badge {
             position: absolute;
             left: 12px;
             top: 12px;
-            background: rgba(47, 191, 74, .12);
-            border: 1px solid rgba(47, 191, 74, .35);
-            padding: 4px 8px;
-            border-radius: 8px;
-            font-size: 12px
+            background: var(--brand);
+            color: #fff;
+            border-radius: 10px;
+            font-size: .75rem;
+            padding: .2rem .5rem;
+            border: 1px solid rgba(0, 0, 0, .06);
         }
 
         .body {
-            padding: 12px
+            padding: 12px 12px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px
         }
 
         .title {
@@ -217,160 +276,197 @@
         }
 
         .meta {
+            margin-top: auto;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            gap: 10px;
-            margin-top: 6px
+            align-items: center
         }
 
         .pill {
-            font-size: .8rem;
+            font-size: .75rem;
             color: var(--muted);
             border: 1px solid var(--line);
             padding: .22rem .5rem;
             border-radius: 6px
         }
 
-        .cta-btn {
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: .5rem .8rem;
+            border-radius: 10px;
             background: var(--brand);
             color: #000;
-            padding: 10px 14px;
-            border-radius: 10px;
-            font-weight: 700
+            font-weight: 700;
+            border: 1px solid rgba(0, 0, 0, .06);
         }
 
-        /* modal like feed.html */
-        .backdrop {
+        /* === Modal (unchanged) === */
+        .modal {
             position: fixed;
             inset: 0;
             background: rgba(0, 0, 0, .45);
-            backdrop-filter: blur(2px);
             display: none;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            z-index: 60
+            padding: 18px;
+            z-index: 60;
         }
 
-        .backdrop.open {
+        .modal.open {
             display: flex
         }
 
-        .modal {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 16px;
+        .sheet {
             max-width: 980px;
             width: 100%;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 24px 48px rgba(0, 0, 0, .18)
+            box-shadow: 0 30px 60px rgba(0, 0, 0, .25);
         }
 
-        .modal header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--line)
+        .sheet-head {
+            position: relative
         }
 
-        .modal .body {
+        .sheet-head img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, .45);
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .sheet-body {
             display: grid;
-            grid-template-columns: 1.2fr .8fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 16px;
             padding: 16px
         }
 
         @media (max-width:900px) {
-            .modal .body {
+            .sheet-body {
                 grid-template-columns: 1fr
             }
         }
 
-        .modal .close {
-            background: #eee;
-            border: none;
-            border-radius: 999px;
-            width: 36px;
-            height: 36px;
-            font-size: 18px;
-            cursor: pointer
+        .specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px
         }
 
-        .muted {
-            color: var(--muted)
+        .spec {
+            background: #fafafa;
+            border: 1px solid var(--line);
+            padding: 8px 10px;
+            border-radius: 10px
+        }
+
+        /* === Utilities === */
+        .toTop {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            background: var(--brand);
+            color: #000;
+            border: none;
+            border-radius: 999px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, .06);
         }
     </style>
 </head>
 
 <body>
-    <!-- Shared header (same include method as feed.html) -->
+
+    <!-- Shared header (identical mechanism as feed page) -->
     <div data-include="/partials/header.html"></div>
 
-    <header class="hero">
-        <div class="inner container">
-            <span class="eyebrow">Slaughtering · Equipment Library</span>
-            <h1>From Reception to Cutting — All Core Units in One Place</h1>
-            <p class="sub">Filter by process or search keywords. Click a card to view a larger image and highlights; add
-                items to your RFQ list.</p>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="breadcrumbs">EPCO Turn-key / <strong>Slaughtering Equipment Library</strong></div>
+            <h1>From reception to cutting — all key units in one place</h1>
+            <p class="sub">Filter by process or search by keywords. Click a card for a large image and quick highlights;
+                add items to your RFQ list.</p>
         </div>
-    </header>
-
-    <section class="grid-wrap">
-        <div class="container">
-            <div class="section-title"><span class="bar"></span>
-                <h3>Browse by Process</h3>
+        <div class="filters" id="filters">
+            <div class="chip active" data-cat="All">All</div>
+            <div class="chip" data-cat="Reception">Reception</div>
+            <div class="chip" data-cat="Scalding & Dehairing">Scalding &amp; Dehairing</div>
+            <div class="chip" data-cat="Evisceration">Evisceration</div>
+            <div class="chip" data-cat="Paw Processing">Paw Processing</div>
+            <div class="chip" data-cat="Cleaning & Inspection">Cleaning &amp; Inspection</div>
+            <div class="chip" data-cat="Chilling">Chilling</div>
+            <div class="chip" data-cat="Cutting & Deboning">Cutting &amp; Deboning</div>
+            <div class="chip" data-cat="Conveying & Logistics">Conveying &amp; Logistics</div>
+            <div class="search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <input id="q" placeholder="Search equipment / process / keyword…" />
             </div>
-            <div class="toolbar">
-                <button class="chip active" data-cat="All">All</button>
-                <button class="chip" data-cat="Reception">Reception</button>
-                <button class="chip" data-cat="Scalding & Dehairing">Scalding &amp; Dehairing</button>
-                <button class="chip" data-cat="Evisceration">Evisceration</button>
-                <button class="chip" data-cat="Paw Processing">Paw Processing</button>
-                <button class="chip" data-cat="Cleaning & Inspection">Cleaning &amp; Inspection</button>
-                <button class="chip" data-cat="Chilling">Chilling</button>
-                <button class="chip" data-cat="Cutting & Deboning">Cutting &amp; Deboning</button>
-                <button class="chip" data-cat="Conveying & Logistics">Conveying &amp; Logistics</button>
-                <div class="search">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                    <input id="q" placeholder="Search equipment / process / keyword…" />
-                </div>
-            </div>
-
-            <div id="grid" class="grid"></div>
         </div>
     </section>
 
-    <!-- Shared footer -->
-    <div data-include="/partials/footer.html"></div>
+    <main class="wrap">
+        <div id="grid" class="grid"></div>
+    </main>
 
-    <!-- Modal (aligned with feed.html structure) -->
-    <div id="backdrop" class="backdrop" aria-hidden="true">
-        <div class="modal" role="dialog" aria-modal="true">
-            <header>
-                <strong id="mTitle">Slaughtering Equipment</strong>
-                <button class="close" onclick="closeModal()">✕</button>
-            </header>
-            <div class="body">
-                <img id="mImg" alt="Equipment image" />
+    <!-- Modal -->
+    <div class="modal" id="modal" aria-hidden="true">
+        <div class="sheet">
+            <div class="sheet-head">
+                <img id="mImg" alt="" />
+                <button class="close" aria-label="Close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="sheet-body">
                 <div>
-                    <div class="badge" id="mCat">Process</div>
-                    <p class="muted" id="mDesc">Food‑grade, line‑integrated equipment for modern poultry plants.</p>
-                    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
-                        <a id="rfqBtn" class="cta-btn" href="#">Add to RFQ</a>
-                        <a id="dlBtn" class="cta-btn" target="_blank">Open Original</a>
+                    <div class="badge" id="mCat"></div>
+                    <h2 id="mTitle" style="margin:.5rem 0 0"></h2>
+                    <p id="mDesc" class="sub" style="margin:.5rem 0 1rem"></p>
+                    <div style="display:flex;gap:10px;flex-wrap:wrap">
+                        <a id="quoteBtn" class="btn">Add to RFQ</a>
+                        <a id="downloadBtn" class="pill" target="_blank" style="text-decoration:none">Open Original</a>
                     </div>
+                </div>
+                <div>
+                    <h3 style="margin:.2rem 0 .6rem">Highlights</h3>
+                    <div id="mSpecs" class="specs"></div>
                 </div>
             </div>
         </div>
     </div>
 
+    <button class="toTop" title="Back to top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <!-- Shared footer (identical mechanism as feed page) -->
+    <div data-include="/partials/footer.html"></div>
+
     <script>
-        // ---- Data: use exact filenames from images/Slaughtering/ ----
+        /* ---- Data: strictly use your file names under /images/Slaughtering/ ---- */
         const ITEMS = [
             // Reception / Logistics
             { title: 'Divider (Line Splitter)', file: '分龙机.png', cat: 'Conveying & Logistics', desc: 'Automated line splitting for balanced throughput.' },
@@ -422,69 +518,90 @@
             { title: 'Thigh Deboner', file: '鸡上腿剔骨机.png', cat: 'Cutting & Deboning', desc: 'Automated deboning for upper thigh.' }
         ];
 
+        /* ---- Render grid ---- */
         const grid = document.getElementById('grid');
         function render(list) {
             grid.innerHTML = '';
             list.forEach((p, i) => {
                 const el = document.createElement('article');
                 el.className = 'card';
-                el.innerHTML = \`
-          <div class="thumb">
-            <img loading="lazy" src="images/Slaughtering/\${p.file}" alt="\${p.title}">
-            <span class="badge">\${p.cat}</span>
-          </div>
+                el.innerHTML = `
+          <div class="thumb"><img loading="lazy" src="images/Slaughtering/${p.file}" alt="${p.title}"><span class="badge">${p.cat}</span></div>
           <div class="body">
-            <div class="title">\${p.title}</div>
-            <div class="desc">\${p.desc||''}</div>
+            <div class="title">${p.title}</div>
+            <div class="desc">${p.desc || ''}</div>
             <div class="meta">
-              <span class="pill">\${p.cat}</span>
-              <a class="cta-btn" href="#" data-idx="\${i}">Details</a>
+              <span class="pill">${p.cat}</span>
+              <a class="btn" href="#" data-idx="${i}">Details</a>
             </div>
-          </div>\`;
-        el.querySelector('a').addEventListener('click', e=>{e.preventDefault(); openModal(p)});
-        grid.appendChild(el);
-      });
-    }
-    render(ITEMS);
+          </div>`;
+                el.querySelector('.btn').addEventListener('click', e => { e.preventDefault(); openModal(p) });
+                grid.appendChild(el);
+            });
+        }
+        render(ITEMS);
 
-    // filter/search
-    const chips=[...document.querySelectorAll('.chip')];
-    function apply(){
-      const active=document.querySelector('.chip.active').dataset.cat;
-      const kw=document.getElementById('q').value.trim().toLowerCase();
-      let list=ITEMS.filter(x=>active==='All'||x.cat===active);
-      if(kw){ list=list.filter(x=> (\`\${x.title} \${x.desc||''} \${x.cat}\`).toLowerCase().includes(kw)); }
-      render(list);
-    }
-    chips.forEach(c=>c.addEventListener('click',()=>{chips.forEach(x=>x.classList.remove('active')); c.classList.add('active'); apply();}));
-    document.getElementById('q').addEventListener('input', apply);
+        // filter chips
+        const chips = document.querySelectorAll('.chip');
+        chips.forEach(ch => {
+            ch.addEventListener('click', () => {
+                chips.forEach(c => c.classList.remove('active'));
+                ch.classList.add('active');
+                const cat = ch.dataset.cat;
+                const kw = document.getElementById('q').value.trim().toLowerCase();
+                let list = ITEMS.filter(p => cat === 'All' || p.cat === cat);
+                if (kw) { list = list.filter(p => (p.title + ' ' + (p.desc || '') + ' ' + p.cat).toLowerCase().includes(kw)); }
+                render(list);
+            });
+        });
 
-    // modal
-    const backdrop=document.getElementById('backdrop');
-    const mImg=document.getElementById('mImg');
-    const mTitle=document.getElementById('mTitle');
-    const mCat=document.getElementById('mCat');
-    const mDesc=document.getElementById('mDesc');
-    const rfqBtn=document.getElementById('rfqBtn');
-    const dlBtn=document.getElementById('dlBtn');
-    function openModal(p){
-      mImg.src='images/Slaughtering/'+p.file; mImg.alt=p.title;
-      mTitle.textContent=p.title; mCat.textContent=p.cat; mDesc.textContent=p.desc||'Food‑grade, line‑integrated equipment.';
-      rfqBtn.onclick=()=>alert('Added ['+p.title+'] to RFQ. Please contact us via the footer.');
-      dlBtn.href='images/Slaughtering/'+p.file; dlBtn.textContent='Open Original';
-      backdrop.classList.add('open'); backdrop.setAttribute('aria-hidden','false');
-    }
-    function closeModal(){backdrop.classList.remove('open');backdrop.setAttribute('aria-hidden','true');}
-    window.closeModal=closeModal;
+        // search
+        document.getElementById('q').addEventListener('input', e => {
+            const kw = e.target.value.trim().toLowerCase();
+            const cat = document.querySelector('.chip.active').dataset.cat;
+            let list = ITEMS.filter(p => cat === 'All' || p.cat === cat);
+            if (kw) { list = list.filter(p => (p.title + ' ' + (p.desc || '') + ' ' + p.cat).toLowerCase().includes(kw)); }
+            render(list);
+        });
 
-    // include shared header/footer
-    document.addEventListener('DOMContentLoaded', async () => {
-      const slots=document.querySelectorAll('[data-include]');
-      for (const el of slots){
-        const file=el.getAttribute('data-include');
-        try{ const res=await fetch(file); el.innerHTML=await res.text(); }catch(e){ console.warn('Include failed:',file,e); }
-      }
-    });
+        // modal logic
+        const modal = document.getElementById('modal');
+        const mImg = document.getElementById('mImg');
+        const mCat = document.getElementById('mCat');
+        const mTitle = document.getElementById('mTitle');
+        const mDesc = document.getElementById('mDesc');
+        const mSpecs = document.getElementById('mSpecs');
+        const quoteBtn = document.getElementById('quoteBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        function openModal(p) {
+            mImg.src = 'images/Slaughtering/' + p.file; mImg.alt = p.title;
+            mCat.textContent = p.cat; mTitle.textContent = p.title; mDesc.textContent = p.desc || '';
+            mSpecs.innerHTML = '';
+            ['Food-grade stainless', 'Easy cleaning', 'Supports line integration'].forEach(s => {
+                const div = document.createElement('div'); div.className = 'spec'; div.textContent = s; mSpecs.appendChild(div);
+            });
+            quoteBtn.onclick = () => alert(`Added [${p.title}] to RFQ. Please contact us via the footer.`);
+            downloadBtn.href = 'images/Slaughtering/' + p.file;
+            modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+        }
+        function closeModal() { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); }
+        window.closeModal = closeModal;
+        modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+        // include shared header/footer (same as feed page)
+        document.addEventListener('DOMContentLoaded', async () => {
+            const slots = document.querySelectorAll('[data-include]');
+            for (const el of slots) {
+                const file = el.getAttribute('data-include');
+                try {
+                    const res = await fetch(file);
+                    el.innerHTML = await res.text();
+                } catch (e) {
+                    console.warn('Include failed for', file, e);
+                }
+            }
+        });
     </script>
 </body>
 
