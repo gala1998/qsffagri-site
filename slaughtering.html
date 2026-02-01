@@ -2,681 +2,701 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Slaughtering · Core Equipment | QSFF Agri</title>
-    <meta name="description"
-        content="QSFF Agri slaughtering equipment: reception, scalding & dehairing, evisceration, paw processing, cleaning & inspection, chilling, cutting & deboning, conveying & logistics." />
-    <style>
-        :root {
-            --brand: #2fbf4a;
-            --brand-dark: #0f7a2b;
-            --bg: #fff;
-            --text: #000;
-            --muted: #555;
-            --card: #fff;
-            --line: #ddd;
-            --max: 1200px
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Slaughtering · Core Equipment | QSFF Agri</title>
+  <meta name="description"
+    content="QSFF Agri poultry slaughtering & processing equipment library — crate handling, scalding & defeathering, washing, evisceration, chilling, cutting & deboning, utilities & systems." />
 
-        * {
-            box-sizing: border-box
-        }
+  <style>
+    :root {
+      --brand: #2fbf4a;
+      --brand-dark: #0f7a2b;
+      --bg: #fff;
+      --text: #000;
+      --muted: #555;
+      --card: #fff;
+      --line: #ddd;
+      --max: 1200px
+    }
 
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-            line-height: 1.6
-        }
+    * {
+      box-sizing: border-box
+    }
 
-        a {
-            color: var(--text);
-            text-decoration: none
-        }
+    html,
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
+    }
 
-        .container {
-            max-width: var(--max);
-            margin: 0 auto;
-            padding: 0 20px
-        }
+    a {
+      color: inherit;
+      text-decoration: none
+    }
 
-        /* --- header/footer identical to feed section --- */
-        .topbar {
-            background: #fff;
-            border-bottom: 1px solid var(--line);
-            position: sticky;
-            top: 0;
-            z-index: 50
-        }
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 8px
+    }
 
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 64px;
-            padding: 10px 0
-        }
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px
-        }
+    /* --- header/footer identical to breeding.html --- */
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 50
+    }
 
-        .menu {
-            display: flex;
-            gap: 30px;
-            align-items: center
-        }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 10px 0
+    }
 
-        .menu a {
-            color: #000;
-            font-weight: 600
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
 
-        .cta-btn {
-            background: var(--brand);
-            color: #000;
-            padding: 10px 16px;
-            border-radius: 999px;
-            font-weight: 700
-        }
+    .menu {
+      display: flex;
+      gap: 30px;
+      align-items: center
+    }
 
-        .cta-btn:hover {
-            filter: brightness(1.06)
-        }
+    .menu a {
+      color: #000;
+      font-weight: 600
+    }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            cursor: pointer
-        }
+    .cta-btn {
+      background: var(--brand);
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700
+    }
 
-        .hamburger span {
-            width: 24px;
-            height: 2px;
-            background: #000
-        }
+    .cta-btn:hover {
+      filter: brightness(1.06)
+    }
 
-        @media (max-width:900px) {
-            .menu {
-                display: none
-            }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer
+    }
 
-            .hamburger {
-                display: flex
-            }
-        }
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: #000;
+      display: block
+    }
 
-        /* --- hero --- */
-        .hero {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16/7;
-            background: url("images/slaughtering/hero.jpg") center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid var(--line)
-        }
+    /* hero (breeding-like) */
+    .hero {
+      padding: 80px 0 50px;
+      background: #f5faf6
+    }
 
-        .hero .inner {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, .86);
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
-            max-width: 900px
-        }
+    .hero .inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      background: #fff;
+      border-radius: 16px;
+      padding: 50px 30px;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, .08)
+    }
 
-        .eyebrow {
-            display: inline-block;
-            color: var(--brand-dark);
-            background: rgba(47, 191, 74, .12);
-            border: 1px solid rgba(47, 191, 74, .35);
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-size: 12px;
-            letter-spacing: .6px;
-            text-transform: uppercase
-        }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #bfeec8;
+      color: var(--brand-dark);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      font-size: 12px;
+      text-transform: uppercase
+    }
 
-        .hero h1 {
-            margin: 18px auto 12px;
-            font-size: 40px;
-            line-height: 1.2
-        }
+    h1 {
+      margin: 18px 0 10px;
+      font-size: 56px;
+      line-height: 1.05
+    }
 
-        .hero p {
-            margin: 0 auto 18px;
-            max-width: 820px;
-            color: var(--muted);
-            font-size: 16px
-        }
+    .sub {
+      color: #444;
+      font-size: 18px;
+      margin: 0 auto;
+      max-width: 720px
+    }
 
-        section {
-            padding: 56px 0;
-            border-bottom: 1px solid var(--line)
-        }
+    /* controls — same scale as breeding */
+    .controls {
+      padding: 14px 0 6px;
+    }
 
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 18px
-        }
+    .bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+    }
 
-        .bar {
-            width: 32px;
-            height: 3px;
-            background: var(--brand)
-        }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
-        /* --- filter/search --- */
-        .toolbar {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 16px
-        }
+    .chip {
+      border: 1px solid var(--line);
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+    }
 
-        .chip {
-            border: 1px solid var(--line);
-            padding: .45rem .9rem;
-            border-radius: 999px;
-            background: #fff;
-            cursor: pointer
-        }
+    .chip.active {
+      border-color: #bfeec8;
+      background: #e9faee;
+      color: var(--brand-dark);
+    }
 
-        .chip.active {
-            background: linear-gradient(180deg, rgba(47, 191, 74, .12), transparent);
-            border-color: rgba(47, 191, 74, .45)
-        }
+    .search {
+      margin-left: auto;
+      min-width: 200px;
+      max-width: 300px;
+      display: flex;
+    }
 
-        .search {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-            border: 1px solid var(--line);
-            padding: .45rem .7rem;
-            border-radius: 12px;
-            background: #fff
-        }
+    .search input {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 14px;
+      outline: none;
+    }
 
-        .search input {
-            border: none;
-            outline: none;
-            background: transparent;
-            color: var(--text);
-            min-width: 220px
-        }
+    /* grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding: 22px 0 60px
+    }
 
-        /* --- grid/cards --- */
-        .grid {
-            display: grid;
-            gap: 18px;
-            grid-template-columns: repeat(3, 1fr)
-        }
+    .card {
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      transition: transform .12s ease, box-shadow .12s ease;
+      cursor: pointer;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .06)
+    }
 
-        @media (max-width:1000px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr)
-            }
-        }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .10)
+    }
 
-        @media (max-width:640px) {
-            .grid {
-                grid-template-columns: 1fr
-            }
-        }
+    .imgwrap {
+      position: relative;
+      height: 230px;
+      background: #f2f6f3
+    }
 
-        .card {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 14px;
-            transition: transform .18s ease, box-shadow .18s ease, border-color .18s
-        }
+    .imgwrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
 
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 28px rgba(0, 0, 0, .06);
-            border-color: rgba(47, 191, 74, .45)
-        }
+    .tag {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .10)
+    }
 
-        .badge {
-            display: inline-block;
-            background: rgba(47, 191, 74, .12);
-            border: 1px solid rgba(47, 191, 74, .35);
-            padding: 4px 8px;
-            border-radius: 8px;
-            font-size: 12px
-        }
+    .body {
+      padding: 18px 18px 20px
+    }
 
-        .muted {
-            color: var(--muted)
-        }
+    .title {
+      font-size: 22px;
+      line-height: 1.25;
+      margin: 0 0 8px;
+      font-weight: 800
+    }
 
-        /* --- modal --- */
-        .backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, .45);
-            backdrop-filter: blur(2px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            z-index: 60
-        }
+    .desc {
+      margin: 0 0 18px;
+      color: #555;
+      font-size: 16px
+    }
 
-        .backdrop.open {
-            display: flex
-        }
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px
+    }
 
-        .modal {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            max-width: 980px;
-            width: 100%;
-            overflow: hidden;
-            box-shadow: 0 24px 48px rgba(0, 0, 0, .18)
-        }
+    .cat {
+      color: #111;
+      font-weight: 700
+    }
 
-        .modal header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--line)
-        }
+    .btn {
+      background: var(--brand);
+      color: #000;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 10px 18px;
+      border: none
+    }
 
-        .modal .body {
-            display: grid;
-            grid-template-columns: 1.2fr .8fr;
-            gap: 16px;
-            padding: 16px
-        }
+    /* modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 99
+    }
 
-        @media (max-width:900px) {
-            .modal .body {
-                grid-template-columns: 1fr
-            }
-        }
+    .modal-backdrop.show {
+      display: flex
+    }
 
-        .modal .close {
-            background: #eee;
-            border: none;
-            border-radius: 999px;
-            width: 36px;
-            height: 36px;
-            font-size: 18px;
-            cursor: pointer
-        }
+    .modal {
+      width: min(980px, 96vw);
+      max-height: 92vh;
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 40px 90px rgba(0, 0, 0, .30)
+    }
 
-        /* --- footer --- */
-        footer {
-            background: #000;
-            color: #fff;
-            padding: 50px 10%
-        }
+    .modal .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line)
+    }
 
-        footer .cols {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap
-        }
+    .modal .top strong {
+      font-size: 16px
+    }
 
-        footer .col {
-            flex: 1;
-            min-width: 220px;
-            margin: 20px
-        }
+    .close {
+      border: 1px solid var(--line);
+      background: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 900
+    }
 
-        footer h2 {
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--brand);
-            display: inline-block
-        }
+    .modal .content {
+      padding: 18px
+    }
 
-        footer ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            line-height: 2
-        }
+    .modal img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      background: #f6f7f8
+    }
 
-        footer .social {
-            text-align: center;
-            margin-top: 30px;
-            border-top: 1px solid #222;
-            padding-top: 20px
-        }
+    /* footer */
+    footer {
+      border-top: 1px solid var(--line);
+      background: #fff;
+      padding: 34px 0;
+      color: #333
+    }
 
-        footer .social a {
-            margin: 0 10px;
-            color: #fff
-        }
+    .foot {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 26px
+    }
 
-        /* 屠宰设备页面原有样式 */
-        .breadcrumbs {
-            color: var(--muted);
-            font-size: .9rem
-        }
+    .foot h4 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .08em
+    }
 
-        .sub {
-            color: var(--muted);
-            max-width: 900px
-        }
+    .foot a {
+      color: #333
+    }
 
-        .thumb {
-            position: relative;
-            padding-top: 62%
-        }
+    .muted {
+      color: #666;
+      font-size: 14px
+    }
 
-        .thumb img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px
-        }
+    /* responsive */
+    @media (max-width: 980px) {
+      h1 {
+        font-size: 42px
+      }
 
-        .title {
-            font-weight: 800
-        }
+      .grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
 
-        .desc {
-            color: var(--muted);
-            font-size: .95rem;
-            min-height: 2.2em
-        }
+    @media (max-width: 640px) {
+      .menu {
+        display: none
+      }
 
-        .meta {
-            margin-top: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center
-        }
+      .hamburger {
+        display: flex
+      }
 
-        .pill {
-            font-size: .75rem;
-            color: var(--muted);
-            border: 1px solid var(--line);
-            padding: .22rem .5rem;
-            border-radius: 6px
-        }
+      .grid {
+        grid-template-columns: 1fr
+      }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: .5rem .8rem;
-            border-radius: 10px;
-            background: var(--brand);
-            color: #fff;
-            font-weight: 700
-        }
+      .hero {
+        padding: 50px 0 34px
+      }
 
-        .toTop {
-            position: fixed;
-            right: 18px;
-            bottom: 18px;
-            background: var(--brand-dark);
-            color: #fff;
-            border: none;
-            border-radius: 999px;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            cursor: pointer
-        }
-    </style>
+      .hero .inner {
+        padding: 38px 18px
+      }
+
+      h1 {
+        font-size: 34px
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Shared header -->
-    <div data-include="/partials/header.html"></div>
 
-    <header class="hero">
-        <div class="inner container">
-            <span class="eyebrow">EPCO Turn-key · Slaughtering Equipment Library</span>
-            <h1>From reception to cutting — all key units in one place</h1>
-            <p>Filter by process or search by keywords. Click a card for a large image and quick highlights; add items
-                to your RFQ list.</p>
-        </div>
-    </header>
+  <!-- shared header -->
+  <div data-include="partials/header.html"></div>
 
-    <section>
-        <div class="container">
-            <div class="section-title"><span class="bar"></span>
-                <h3>Browse by Process</h3>
-            </div>
-            <div class="toolbar">
-                <button class="chip active" data-cat="All">All</button>
-                <button class="chip" data-cat="Reception">Reception</button>
-                <button class="chip" data-cat="Scalding & Dehairing">Scalding &amp; Dehairing</button>
-                <button class="chip" data-cat="Evisceration">Evisceration</button>
-                <button class="chip" data-cat="Paw Processing">Paw Processing</button>
-                <button class="chip" data-cat="Cleaning & Inspection">Cleaning &amp; Inspection</button>
-                <button class="chip" data-cat="Chilling">Chilling</button>
-                <button class="chip" data-cat="Cutting & Deboning">Cutting &amp; Deboning</button>
-                <button class="chip" data-cat="Conveying & Logistics">Conveying &amp; Logistics</button>
-                <div class="search">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                        <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                    <input id="q" placeholder="Search equipment / process / keyword…" />
-                </div>
-            </div>
-
-            <div id="grid" class="grid"></div>
-        </div>
-    </section>
-
-    <section class="cta">
-        <div class="container">
-            <div class="cta-box"
-                style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:18px;box-shadow:0 8px 24px rgba(0,0,0,.05)">
-                <div>
-                    <h3 style="margin:0 0 6px">Need a turnkey slaughter line?</h3>
-                    <p class="muted" style="margin:0">Send us your capacity, product type, and target throughput — we'll
-                        design and quote.</p>
-                </div>
-                <div style="display:flex;gap:12px;flex-wrap:wrap">
-                    <a class="cta-btn" href="mailto:sales@qsffagri.com">Email: sales@qsffagri.com</a>
-                    <a class="cta-btn" href="tel:+86-0000-000000">Call +86-0000-000000</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Shared footer -->
-    <div data-include="/partials/footer.html"></div>
-
-    <!-- Modal -->
-    <div id="backdrop" class="backdrop" aria-hidden="true">
-        <div class="modal" role="dialog" aria-modal="true">
-            <header>
-                <strong id="mTitle">Slaughtering Equipment</strong>
-                <button class="close" onclick="closeModal()">✕</button>
-            </header>
-            <div class="body">
-                <div class="thumb">
-                    <img id="mImg" alt="Equipment image" />
-                    <span class="badge" id="mCat">Process</span>
-                </div>
-                <div>
-                    <p class="muted" id="mDesc">High‑quality, engineering‑grade equipment for modern slaughterhouses.
-                    </p>
-                    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
-                        <a id="quoteBtn" class="cta-btn">Add to RFQ</a>
-                        <a id="downloadBtn" class="pill" target="_blank">Open Original</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="inner">
+        <span class="eyebrow">SLAUGHTERING · EQUIPMENT LIBRARY</span>
+        <h1>Core Equipment for Poultry Processing</h1>
+        <p class="sub">
+          Filter by process and build your RFQ list. Images point to files under
+          <code>images/Slaughterering/</code> using your original filenames.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <button class="toTop" title="Back to top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+  <!-- controls -->
+  <section class="controls">
+    <div class="container">
+      <div class="bar">
+        <div class="chips" id="chips"></div>
+        <div class="search">
+          <input id="search" type="text" placeholder="Search equipment..." />
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        /* ---- Data: strictly use your file names under /images/Slaughtering/ ---- */
-        const ITEMS = [
-            // Reception / Logistics
-            { title: 'Divider (Line Splitter)', file: '分龙机.png', cat: 'Conveying & Logistics', desc: 'Automated line splitting for balanced throughput.' },
-            { title: 'Inclined Line Splitter', file: '倾斜式分龙机.png', cat: 'Conveying & Logistics', desc: 'Inclined divider for flexible line allocation.' },
-            { title: 'Crate Unloading & Washing', file: '禽笼清洗机.png', cat: 'Reception', desc: 'Wash crates at reception to ensure hygiene.' },
-            { title: 'Crate Lifting & Palletizing', file: '托举式码笼机.png', cat: 'Reception', desc: 'Lift and stack crates efficiently and safely.' },
+  <!-- grid -->
+  <main>
+    <div class="container">
+      <div class="grid" id="grid"></div>
+    </div>
+  </main>
 
-            // Scalding & Dehairing
-            { title: 'Jet Scalding Tank', file: '射流浸烫机.png', cat: 'Scalding & Dehairing', desc: 'Jet flow scalding for uniform heat transfer.' },
-            { title: 'N-type Scalding Tank', file: 'N型浸烫机.png', cat: 'Scalding & Dehairing', desc: 'Compact N-route scalding for steady output.' },
-            { title: 'Fine Plucker', file: '精脱毛机.png', cat: 'Scalding & Dehairing', desc: 'Finishing plucker for residual feathers.' },
-            { title: 'Rough Plucker', file: '粗脱毛机.png', cat: 'Scalding & Dehairing', desc: 'Primary plucking section with high removal rate.' },
-            { title: 'Horizontal Plucker', file: '卧式脱毛机.png', cat: 'Scalding & Dehairing', desc: 'Horizontal configuration for special products.' },
+  <!-- modal -->
+  <div class="modal-backdrop" id="backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Equipment image">
+      <div class="top">
+        <strong id="modalTitle">Image</strong>
+        <button class="close" id="closeBtn" aria-label="Close">×</button>
+      </div>
+      <div class="content">
+        <img id="modalImg" alt="" />
+      </div>
+    </div>
+  </div>
 
-            // Paw Processing
-            { title: 'Straight-line Pre-cut Paw', file: '直线（预）切爪机.png', cat: 'Paw Processing', desc: 'Pre-cutting for paw processing line.' },
-            { title: 'Paw Transfer Hanger', file: '切爪转挂机.png', cat: 'Paw Processing', desc: 'Automatic transfer to paw line.' },
-            { title: 'Toe Cutting Machine', file: '切趾机.png', cat: 'Paw Processing', desc: 'Accurate toe cutting for export standards.' },
-            { title: 'Spiral Paw Conveyor', file: '螺旋爪机.png', cat: 'Paw Processing', desc: 'Gentle spiral conveying of paws.' },
-            { title: 'Paw Skin Peeler', file: '鸡爪脱皮机.png', cat: 'Paw Processing', desc: 'Automatic skinning for chicken paws.' },
-            { title: 'Paw Pre-chilling Line', file: '鸡爪预冷线.png', cat: 'Chilling', desc: 'Continuous pre-chilling after paw processing.' },
+  <!-- shared footer -->
+  <div data-include="partials/footer.html"></div>
 
-            // Evisceration
-            { title: 'Opening Machine', file: '开膛机.png', cat: 'Evisceration', desc: 'Automatic opening prior to evisceration.' },
-            { title: 'Eviscerator', file: '掏腔机.png', cat: 'Evisceration', desc: 'Automatic evisceration with high yield.' },
-            { title: 'Eviscerator (Gripping Type)', file: '掏腔机（夹取式）.png', cat: 'Evisceration', desc: 'Gripping eviscerator for stable handling.' },
-            { title: 'Abdominal Fat Remover', file: '腔油去除机.png', cat: 'Evisceration', desc: 'Remove abdominal fat to meet specs.' },
-            { title: 'Lung Extractor', file: '吸肺机.png', cat: 'Evisceration', desc: 'Efficient lung removal with low residue.' },
-            { title: 'Cropper (Craw Remover)', file: '去嗉囊机.png', cat: 'Evisceration', desc: 'Remove crop reliably and hygienically.' },
-
-            // Cleaning & Inspection
-            { title: 'Carcass Inside/Outside Washer', file: '胴体内外清洗机.png', cat: 'Cleaning & Inspection', desc: 'Dual-nozzle washing for carcass hygiene.' },
-            { title: 'Automatic Unloader', file: '自动卸载机.png', cat: 'Conveying & Logistics', desc: 'Unload from shackle line automatically.' },
-            { title: 'Carcass Weighing System', file: '胴体称重系统.png', cat: 'Cleaning & Inspection', desc: 'In-line weighing & data capture.' },
-            { title: 'Carcass Pre-wash System', file: '胴体预清洗系统.png', cat: 'Cleaning & Inspection', desc: 'Pre-wash section before cooling.' },
-            { title: 'Tunnel Washer', file: '隧道式清洗机.png', cat: 'Cleaning & Inspection', desc: 'High-capacity tunnel cleaning.' },
-            { title: 'Breathing Pump', file: '呼吸泵.png', cat: 'Cleaning & Inspection', desc: 'Vacuum pump for hygienic handling.' },
-
-            // Chilling
-            { title: 'High-capacity Pre-chiller', file: '超大容量预冷机.png', cat: 'Chilling', desc: 'Large-volume immersion pre-chilling.' },
-            { title: 'Liver Pre-chiller', file: '肝预冷机.png', cat: 'Chilling', desc: 'Dedicated liver pre-chilling tank.' },
-
-            // Cutting & Deboning
-            { title: 'Horizontal De-gluer / Fat Separator', file: '卧式脱胶脂机.png', cat: 'Cutting & Deboning', desc: 'Horizontal fat separation prior to cut-up.' },
-            { title: 'Auto Head Cutter', file: '自动切头机.png', cat: 'Cutting & Deboning', desc: 'Accurate head cutting on line.' },
-            { title: 'Auto Neck Cutter', file: '自动切脖机.png', cat: 'Cutting & Deboning', desc: 'Consistent neck cutting with safety guards.' },
-            { title: 'Auto Tail Cutter', file: '自动切尾机.png', cat: 'Cutting & Deboning', desc: 'Tail cutting for standardized products.' },
-            { title: 'Auto Breast Opener', file: '自动开胸机.png', cat: 'Cutting & Deboning', desc: 'Open breast for further processing.' },
-            { title: 'Thigh Deboner', file: '鸡上腿剔骨机.png', cat: 'Cutting & Deboning', desc: 'Automated deboning for upper thigh.' }
-        ];
-
-        /* ---- Render ---- */
-        const grid = document.getElementById('grid');
-        function render(list) {
-            grid.innerHTML = '';
-            list.forEach((p, i) => {
-                const el = document.createElement('article');
-                el.className = 'card';
-                el.innerHTML = `
-          <div class="thumb"><img loading="lazy" src="images/Slaughtering/${p.file}" alt="${p.title}"><span class="badge">${p.cat}</span></div>
-          <div class="body">
-            <div class="title">${p.title}</div>
-            <div class="desc">${p.desc || ''}</div>
-            <div class="meta">
-              <span class="pill">${p.cat}</span>
-              <a class="btn" href="#" data-idx="${i}">Details</a>
-            </div>
-          </div>`;
-                el.querySelector('.btn').addEventListener('click', e => { e.preventDefault(); openModal(p) });
-                grid.appendChild(el);
-            });
+  <script>
+    // --- include partials (header/footer) ---
+    async function includePartials() {
+      const slots = document.querySelectorAll("[data-include]");
+      for (const el of slots) {
+        const file = el.getAttribute("data-include");
+        try {
+          const res = await fetch(file);
+          if (!res.ok) throw new Error(`Cannot GET ${file}`);
+          el.innerHTML = await res.text();
+        } catch (err) {
+          console.error(err);
+          el.innerHTML = `<div style="padding:16px;color:#b00020;font-weight:700;">${err}</div>`;
         }
-        render(ITEMS);
+      }
+    }
 
-        // filter chips
-        const chips = document.querySelectorAll('.chip');
-        chips.forEach(ch => {
-            ch.addEventListener('click', () => {
-                chips.forEach(c => c.classList.remove('active'));
-                ch.classList.add('active');
-                const cat = ch.dataset.cat;
-                const kw = document.getElementById('q').value.trim().toLowerCase();
-                let list = ITEMS.filter(p => cat === 'All' || p.cat === cat);
-                if (kw) { list = list.filter(p => (p.title + ' ' + (p.desc || '') + ' ' + p.cat).toLowerCase().includes(kw)); }
-                render(list);
-            });
-        });
+    // =========================
+    // Slaughtering equipment
+    // =========================
 
-        // search
-        document.getElementById('q').addEventListener('input', e => {
-            const kw = e.target.value.trim().toLowerCase();
-            const cat = document.querySelector('.chip.active').dataset.cat;
-            let list = ITEMS.filter(p => cat === 'All' || p.cat === cat);
-            if (kw) { list = list.filter(p => (p.title + ' ' + (p.desc || '') + ' ' + p.cat).toLowerCase().includes(kw)); }
-            render(list);
-        });
+    // IMPORTANT: adjust folder name if needed (case-sensitive on Linux hosting).
+    // Your screenshot shows: images/Slaughterering/
+    const IMG_BASE = "images/Slaughtering/";
 
-        // modal logic
-        const backdrop = document.getElementById('backdrop');
-        const mImg = document.getElementById('mImg');
-        const mCat = document.getElementById('mCat');
-        const mTitle = document.getElementById('mTitle');
-        const mDesc = document.getElementById('mDesc');
-        const quoteBtn = document.getElementById('quoteBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
+    // NOTE: filenames must exactly match the directory (including spaces/punctuation).
+    const ITEMS = [
+      // --- Crate Handling ---
+      { title: "Cage Unloader (Automatic)", file: "自动卸载机.png", cat: "Crate Handling", desc: "Automatic unloading for incoming transport crates." },
+      { title: "Cage Washer", file: "禽笼清洗机.png", cat: "Crate Handling", desc: "High-efficiency washing for poultry transport crates." },
+      { title: "Cage Stacker (Lifting Type)", file: "托举式码笼机.png", cat: "Crate Handling", desc: "Stacking and buffering of crates for smooth logistics." },
+      { title: "Cage Divider", file: "分笼机.png", cat: "Crate Handling", desc: "Separating crates for continuous line feeding." },
+      { title: "Inclined Cage Divider", file: "倾斜式分笼机.png", cat: "Crate Handling", desc: "Inclined separation for safer, smoother crate handling." },
 
-        function openModal(p) {
-            mImg.src = 'images/Slaughtering/' + p.file; mImg.alt = p.title;
-            mCat.textContent = p.cat; mTitle.textContent = p.title; mDesc.textContent = p.desc || '';
-            quoteBtn.onclick = () => alert(`Added [${p.title}] to RFQ. Please contact us via the footer.`);
-            downloadBtn.href = 'images/Slaughtering/' + p.file;
-            backdrop.classList.add('open'); backdrop.setAttribute('aria-hidden', 'false');
+      // --- Scalding & Defeathering ---
+      { title: "N-Type Scalding Tank", file: "N型浸烫机.png", cat: "Scalding & Defeathering", desc: "Scalding for optimal feather release and skin quality." },
+      { title: "Jet Scalding Machine", file: "射流浸烫机.png", cat: "Scalding & Defeathering", desc: "Jet-assisted scalding for more uniform processing." },
+      { title: "Rough Picker", file: "粗脱毛机.png", cat: "Scalding & Defeathering", desc: "Primary defeathering after scalding." },
+      { title: "Fine Picker", file: "精脱毛机.png", cat: "Scalding & Defeathering", desc: "Fine defeathering to improve carcass appearance." },
+      { title: "Horizontal Picker", file: "卧式脱毛机.png", cat: "Scalding & Defeathering", desc: "Horizontal defeathering for stable, continuous operation." },
+
+      // --- Washing & Cleaning ---
+      { title: "Tunnel Washer", file: "隧道式清洗机.png", cat: "Washing & Cleaning", desc: "Tunnel-type washing for continuous cleaning and rinsing." },
+      { title: "Carcass Inside/Outside Washer", file: "胴体内外清洗机.png", cat: "Washing & Cleaning", desc: "Internal & external carcass washing after key processes." },
+      { title: "Carcass Pre-wash System", file: "胴体预清洗系统.png", cat: "Washing & Cleaning", desc: "Pre-wash module for improved hygiene and downstream performance." },
+
+      // --- Evisceration & Hygiene ---
+      { title: "Opener (Evisceration Opening)", file: "开膛机.png", cat: "Evisceration & Hygiene", desc: "Opening operation for safe, consistent evisceration." },
+      { title: "Eviscerator (Pull Type)", file: "掏膛机（扒取式）.png", cat: "Evisceration & Hygiene", desc: "Evisceration using pull-type mechanism for stable removal." },
+      { title: "Eviscerator (Clamp Type)", file: "掏膛机（夹取式）.png", cat: "Evisceration & Hygiene", desc: "Evisceration using clamp-type mechanism for accurate removal." },
+      { title: "Automatic Crop Remover", file: "去嗉囊机.png", cat: "Evisceration & Hygiene", desc: "Automatic removal of the crop to improve evisceration hygiene and product quality." },
+      { title: "Lung Suction Unit", file: "吸肺机.png", cat: "Evisceration & Hygiene", desc: "Suction removal of lungs for cleaner carcass cavity." },
+      { title: "Abdominal Fat Remover", file: "腹油去除机.png", cat: "Evisceration & Hygiene", desc: "Efficient removal of abdominal fat." },
+      { title: "Horizontal Gizzard Fat Remover", file: "卧式脱胗脂机.png", cat: "Evisceration & Hygiene", desc: "Horizontal removal of gizzard fat to improve hygiene and processing efficiency." },
+
+      // --- Chilling ---
+      { title: "Ultra Large Capacity Pre-chiller", file: "超大容量预冷机.png", cat: "Chilling", desc: "High-capacity pre-chilling for temperature control." },
+      { title: "Liver Pre-chiller", file: "肝预冷机.png", cat: "Chilling", desc: "Dedicated pre-chilling for livers and giblets." },
+      { title: "Chicken Feet Pre-chiller", file: "鸡爪预冷机.png", cat: "Chilling", desc: "Dedicated pre-chilling for chicken feet." },
+
+      // --- Cutting & Line Equipment ---
+      { title: "Vent Cutter", file: "切肛机.png", cat: "Cutting & Line Equipment", desc: "Vent cutting for clean processing and reduced contamination risk." },
+      { title: "Neck Cutter (Automatic)", file: "自动切脖机.png", cat: "Cutting & Line Equipment", desc: "Automatic neck cutting for consistent results." },
+      { title: "Head Cutter (Automatic)", file: "自动切头机.png", cat: "Cutting & Line Equipment", desc: "Automatic head cutting for continuous line operation." },
+      { title: "Tail Cutter (Automatic)", file: "自动切尾机.png", cat: "Cutting & Line Equipment", desc: "Automatic tail cutting for standardized processing." },
+      { title: "Chest Opener (Automatic)", file: "自动开胸机.png", cat: "Cutting & Line Equipment", desc: "Automatic opening of chest area for downstream operations." },
+      { title: "Straight (Pre) Paw Cutter", file: "直线（预）切爪机.png", cat: "Cutting & Line Equipment", desc: "Straight-line (pre) cutting for chicken feet / paws." },
+      { title: "Paw Transfer Hanger", file: "切爪转挂机.png", cat: "Cutting & Line Equipment", desc: "Transfer hanging unit for chicken feet processing lines." },
+      { title: "Spiral Paw Scalding Machine", file: "螺旋烫爪机.png", cat: "Cutting & Line Equipment", desc: "Spiral scalding system for chicken feet to facilitate skin removal." },
+
+      // --- Deboning & Further Processing ---
+      { title: "Upper Leg Deboner", file: "鸡上腿剔骨机.png", cat: "Deboning & Further Processing", desc: "Deboning for upper leg with stable yield." },
+      { title: "Chicken Feet Skin Peeler", file: "鸡爪脱皮机.png", cat: "Deboning & Further Processing", desc: "Skin removal for feet to improve appearance and quality." },
+
+      // --- Washing / Support ---
+      { title: "Carcass Weighing System", file: "胴体称重系统.png", cat: "Utilities & Systems", desc: "Inline weighing for yield tracking and data management." },
+      { title: "Respiratory Pump", file: "呼吸泵.png", cat: "Utilities & Systems", desc: "Auxiliary pump unit for process support." },
+    ];
+
+    const CATEGORIES = ["All", ...Array.from(new Set(ITEMS.map(i => i.cat)))];
+
+    const chipsEl = document.getElementById("chips");
+    const gridEl = document.getElementById("grid");
+    const searchEl = document.getElementById("search");
+
+    const backdrop = document.getElementById("backdrop");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const closeBtn = document.getElementById("closeBtn");
+
+    let activeCat = "All";
+    let query = "";
+
+    function makeChip(label) {
+      const b = document.createElement("div");
+      b.className = "chip" + (label === "All" ? " active" : "");
+      b.textContent = label;
+      b.addEventListener("click", () => {
+        document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+        b.classList.add("active");
+        activeCat = label;
+        render();
+      });
+      return b;
+    }
+
+    function makeCard(item) {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.setAttribute("tabindex", "0");
+
+      const imgwrap = document.createElement("div");
+      imgwrap.className = "imgwrap";
+
+      const tag = document.createElement("div");
+      tag.className = "tag";
+      tag.textContent = item.cat;
+
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.alt = item.title;
+      img.src = IMG_BASE + item.file;
+
+      imgwrap.appendChild(img);
+      imgwrap.appendChild(tag);
+
+      const body = document.createElement("div");
+      body.className = "body";
+
+      const title = document.createElement("h3");
+      title.className = "title";
+      title.textContent = item.title;
+
+      const desc = document.createElement("p");
+      desc.className = "desc";
+      desc.textContent = item.desc;
+
+      const meta = document.createElement("div");
+      meta.className = "meta";
+
+      const cat = document.createElement("div");
+      cat.className = "cat";
+      cat.textContent = item.cat;
+
+      const btn = document.createElement("button");
+      btn.className = "btn";
+      btn.textContent = "Details";
+      btn.type = "button";
+
+      meta.appendChild(cat);
+      meta.appendChild(btn);
+
+      body.appendChild(title);
+      body.appendChild(desc);
+      body.appendChild(meta);
+
+      card.appendChild(imgwrap);
+      card.appendChild(body);
+
+      function open() {
+        modalTitle.textContent = item.title;
+        modalImg.src = IMG_BASE + item.file;
+        modalImg.alt = item.title;
+        backdrop.classList.add("show");
+        backdrop.setAttribute("aria-hidden", "false");
+      }
+
+      card.addEventListener("click", open);
+      card.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") open();
+      });
+
+      return card;
+    }
+
+    function render() {
+      const q = query.trim().toLowerCase();
+      const filtered = ITEMS.filter(it => {
+        const inCat = (activeCat === "All") || (it.cat === activeCat);
+        const inQ = !q
+          || it.title.toLowerCase().includes(q)
+          || it.file.toLowerCase().includes(q)
+          || it.desc.toLowerCase().includes(q)
+          || it.cat.toLowerCase().includes(q);
+        return inCat && inQ;
+      });
+
+      gridEl.innerHTML = "";
+      filtered.forEach(it => gridEl.appendChild(makeCard(it)));
+    }
+
+    function init() {
+      CATEGORIES.forEach(c => chipsEl.appendChild(makeChip(c)));
+      render();
+
+      searchEl.addEventListener("input", (e) => {
+        query = e.target.value;
+        render();
+      });
+
+      closeBtn.addEventListener("click", () => {
+        backdrop.classList.remove("show");
+        backdrop.setAttribute("aria-hidden", "true");
+        modalImg.src = "";
+      });
+
+      backdrop.addEventListener("click", (e) => {
+        if (e.target === backdrop) {
+          backdrop.classList.remove("show");
+          backdrop.setAttribute("aria-hidden", "true");
+          modalImg.src = "";
         }
-        function closeModal() { backdrop.classList.remove('open'); backdrop.setAttribute('aria-hidden', 'true'); }
-        window.closeModal = closeModal;
-        backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
+      });
 
-        // include shared header/footer
-        document.addEventListener('DOMContentLoaded', async () => {
-            const slots = document.querySelectorAll('[data-include]');
-            for (const el of slots) {
-                const file = el.getAttribute('data-include');
-                try {
-                    const res = await fetch(file);
-                    if (res.ok) {
-                        el.innerHTML = await res.text();
-                    } else {
-                        console.warn(`Failed to load ${file}: ${res.status}`);
-                    }
-                } catch (error) {
-                    console.warn(`Error loading ${file}:`, error);
-                }
-            }
-        });
-
-        // 添加菜单切换功能
-        function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && backdrop.classList.contains("show")) {
+          backdrop.classList.remove("show");
+          backdrop.setAttribute("aria-hidden", "true");
+          modalImg.src = "";
         }
-        window.toggleMenu = toggleMenu;
-    </script>
+      });
+    }
+
+    // boot
+    includePartials().then(init);
+  </script>
 </body>
 
 </html>

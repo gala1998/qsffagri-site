@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abattage · Équipements clés | QSFF Agri</title>
+  <meta name="description"
+    content="Bibliothèque d’équipements QSFF Agri pour l’abattage et la transformation de volailles — manutention des caisses/cages, échaudage et plumaison, lavage, éviscération, refroidissement, découpe et désossage, utilités et systèmes." />
+
+  <style>
+    :root {
+      --brand: #2fbf4a;
+      --brand-dark: #0f7a2b;
+      --bg: #fff;
+      --text: #000;
+      --muted: #555;
+      --card: #fff;
+      --line: #ddd;
+      --max: 1200px
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 8px
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    /* --- header/footer identical to breeding.html --- */
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 50
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 10px 0
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+      align-items: center
+    }
+
+    .menu a {
+      color: #000;
+      font-weight: 600
+    }
+
+    .cta-btn {
+      background: var(--brand);
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700
+    }
+
+    .cta-btn:hover {
+      filter: brightness(1.06)
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: #000;
+      display: block
+    }
+
+    /* hero (breeding-like) */
+    .hero {
+      padding: 80px 0 50px;
+      background: #f5faf6
+    }
+
+    .hero .inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      background: #fff;
+      border-radius: 16px;
+      padding: 50px 30px;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, .08)
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #bfeec8;
+      color: var(--brand-dark);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      font-size: 12px;
+      text-transform: uppercase
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: 56px;
+      line-height: 1.05
+    }
+
+    .sub {
+      color: #444;
+      font-size: 18px;
+      margin: 0 auto;
+      max-width: 720px
+    }
+
+    /* controls — same scale as breeding */
+    .controls {
+      padding: 14px 0 6px;
+    }
+
+    .bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .chip.active {
+      border-color: #bfeec8;
+      background: #e9faee;
+      color: var(--brand-dark);
+    }
+
+    .search {
+      margin-left: auto;
+      min-width: 200px;
+      max-width: 300px;
+      display: flex;
+    }
+
+    .search input {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    /* grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding: 22px 0 60px
+    }
+
+    .card {
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      transition: transform .12s ease, box-shadow .12s ease;
+      cursor: pointer;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .06)
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .10)
+    }
+
+    .imgwrap {
+      position: relative;
+      height: 230px;
+      background: #f2f6f3
+    }
+
+    .imgwrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .tag {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .10)
+    }
+
+    .body {
+      padding: 18px 18px 20px
+    }
+
+    .title {
+      font-size: 22px;
+      line-height: 1.25;
+      margin: 0 0 8px;
+      font-weight: 800
+    }
+
+    .desc {
+      margin: 0 0 18px;
+      color: #555;
+      font-size: 16px
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px
+    }
+
+    .cat {
+      color: #111;
+      font-weight: 700
+    }
+
+    .btn {
+      background: var(--brand);
+      color: #000;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 10px 18px;
+      border: none
+    }
+
+    /* modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 99
+    }
+
+    .modal-backdrop.show {
+      display: flex
+    }
+
+    .modal {
+      width: min(980px, 96vw);
+      max-height: 92vh;
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 40px 90px rgba(0, 0, 0, .30)
+    }
+
+    .modal .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .modal .top strong {
+      font-size: 16px
+    }
+
+    .close {
+      border: 1px solid var(--line);
+      background: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 900
+    }
+
+    .modal .content {
+      padding: 18px
+    }
+
+    .modal img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      background: #f6f7f8
+    }
+
+    /* footer */
+    footer {
+      border-top: 1px solid var(--line);
+      background: #fff;
+      padding: 34px 0;
+      color: #333
+    }
+
+    .foot {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 26px
+    }
+
+    .foot h4 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .08em
+    }
+
+    .foot a {
+      color: #333
+    }
+
+    .muted {
+      color: #666;
+      font-size: 14px
+    }
+
+    /* responsive */
+    @media (max-width: 980px) {
+      h1 {
+        font-size: 42px
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media (max-width: 640px) {
+      .menu {
+        display: none
+      }
+
+      .hamburger {
+        display: flex
+      }
+
+      .grid {
+        grid-template-columns: 1fr
+      }
+
+      .hero {
+        padding: 50px 0 34px
+      }
+
+      .hero .inner {
+        padding: 38px 18px
+      }
+
+      h1 {
+        font-size: 34px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- shared header -->
+  <div data-include="partials/header.html"></div>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="inner">
+        <span class="eyebrow">ABATTAGE · BIBLIOTHÈQUE D’ÉQUIPEMENTS</span>
+        <h1>Équipements clés pour la transformation des volailles</h1>
+        <p class="sub">
+          Filtrez par procédé et constituez votre liste de demande de prix (RFQ). Les images pointent vers les fichiers dans
+          <code>images/Slaughterering/</code> en conservant vos noms de fichiers d’origine.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- controls -->
+  <section class="controls">
+    <div class="container">
+      <div class="bar">
+        <div class="chips" id="chips"></div>
+        <div class="search">
+          <input id="search" type="text" placeholder="Rechercher un équipement..." />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- grid -->
+  <main>
+    <div class="container">
+      <div class="grid" id="grid"></div>
+    </div>
+  </main>
+
+  <!-- modal -->
+  <div class="modal-backdrop" id="backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Image de l’équipement">
+      <div class="top">
+        <strong id="modalTitle">Image</strong>
+        <button class="close" id="closeBtn" aria-label="Fermer">×</button>
+      </div>
+      <div class="content">
+        <img id="modalImg" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <!-- shared footer -->
+  <div data-include="partials/footer.html"></div>
+
+  <script>
+    // --- include partials (header/footer) ---
+    async function includePartials() {
+      const slots = document.querySelectorAll("[data-include]");
+      for (const el of slots) {
+        const file = el.getAttribute("data-include");
+        try {
+          const res = await fetch(file);
+          if (!res.ok) throw new Error(`Cannot GET ${file}`);
+          el.innerHTML = await res.text();
+        } catch (err) {
+          console.error(err);
+          el.innerHTML = `<div style="padding:16px;color:#b00020;font-weight:700;">${err}</div>`;
+        }
+      }
+    }
+
+    // =========================
+    // Slaughtering equipment
+    // =========================
+
+    // IMPORTANT: adjust folder name if needed (case-sensitive on Linux hosting).
+    // Your screenshot shows: images/Slaughterering/
+    const IMG_BASE = "../images/Slaughtering/";
+
+    // NOTE: filenames must exactly match the directory (including spaces/punctuation).
+    const ITEMS = [
+      // --- Crate Handling ---
+      { title: "Déchargeur automatique de cages", file: "自动卸载机.png", cat: "Manutention des cages", desc: "Déchargement automatique des cages de transport entrantes." },
+      { title: "Laveuse de cages", file: "禽笼清洗机.png", cat: "Manutention des cages", desc: "Lavage haute efficacité des cages de transport pour volailles." },
+      { title: "Empileur de cages (type levage)", file: "托举式码笼机.png", cat: "Manutention des cages", desc: "Empilage et tamponnement des cages pour une logistique fluide." },
+      { title: "Séparateur de cages", file: "分笼机.png", cat: "Manutention des cages", desc: "Séparation des cages pour une alimentation continue de la ligne." },
+      { title: "Séparateur de cages incliné", file: "倾斜式分笼机.png", cat: "Manutention des cages", desc: "Séparation inclinée pour une manutention plus sûre et plus régulière." },
+
+      // --- Scalding & Defeathering ---
+      { title: "Échaudeuse type N", file: "N型浸烫机.png", cat: "Échaudage & plumaison", desc: "Échaudage pour un bon détachement des plumes et une peau de qualité." },
+      { title: "Échaudeuse à jet", file: "射流浸烫机.png", cat: "Échaudage & plumaison", desc: "Échaudage assisté par jets pour un traitement plus uniforme." },
+      { title: "Plumeuse (grossière)", file: "粗脱毛机.png", cat: "Échaudage & plumaison", desc: "Plumaison primaire après l’échaudage." },
+      { title: "Plumeuse (fine)", file: "精脱毛机.png", cat: "Échaudage & plumaison", desc: "Plumaison fine pour améliorer l’aspect des carcasses." },
+      { title: "Plumeuse horizontale", file: "卧式脱毛机.png", cat: "Échaudage & plumaison", desc: "Plumaison horizontale pour une production stable et continue." },
+
+      // --- Washing & Cleaning ---
+      { title: "Laveuse tunnel", file: "隧道式清洗机.png", cat: "Lavage & nettoyage", desc: "Lavage en tunnel pour un nettoyage/rinçage en continu." },
+      { title: "Laveuse carcasse intérieur/extérieur", file: "胴体内外清洗机.png", cat: "Lavage & nettoyage", desc: "Lavage interne et externe des carcasses après les opérations clés." },
+      { title: "Système de pré-lavage des carcasses", file: "胴体预清洗系统.png", cat: "Lavage & nettoyage", desc: "Module de pré-lavage pour une meilleure hygiène et de meilleures performances en aval." },
+
+      // --- Evisceration & Hygiene ---
+      { title: "Ouvreuse (ouverture pour éviscération)", file: "开膛机.png", cat: "Éviscération & hygiène", desc: "Ouverture pour une éviscération sûre et régulière." },
+      { title: "Éviscéreuse (type traction)", file: "掏膛机（扒取式）.png", cat: "Éviscération & hygiène", desc: "Éviscération par mécanisme de traction pour une extraction stable." },
+      { title: "Éviscéreuse (type pince)", file: "掏膛机（夹取式）.png", cat: "Éviscération & hygiène", desc: "Éviscération par mécanisme à pince pour une extraction précise." },
+      { title: "Retire-jabot automatique", file: "去嗉囊机.png", cat: "Éviscération & hygiène", desc: "Retrait automatique du jabot pour améliorer l’hygiène et la qualité du produit." },
+      { title: "Aspirateur de poumons", file: "吸肺机.png", cat: "Éviscération & hygiène", desc: "Aspiration des poumons pour une cavité de carcasse plus propre." },
+      { title: "Retire-graisse abdominale", file: "腹油去除机.png", cat: "Éviscération & hygiène", desc: "Retrait efficace de la graisse abdominale." },
+      { title: "Retire-graisse de gésier (horizontal)", file: "卧式脱胗脂机.png", cat: "Éviscération & hygiène", desc: "Retrait horizontal de la graisse de gésier pour améliorer l’hygiène et l’efficacité." },
+
+      // --- Chilling ---
+      { title: "Pré-refroidisseur très grande capacité", file: "超大容量预冷机.png", cat: "Refroidissement", desc: "Pré-refroidissement haute capacité pour le contrôle de la température." },
+      { title: "Pré-refroidisseur pour foies", file: "肝预冷机.png", cat: "Refroidissement", desc: "Pré-refroidissement dédié aux foies et abats." },
+      { title: "Pré-refroidisseur pour pattes de poulet", file: "鸡爪预冷机.png", cat: "Refroidissement", desc: "Pré-refroidissement dédié aux pattes de poulet." },
+
+      // --- Cutting & Line Equipment ---
+      { title: "Coupe-cloaque", file: "切肛机.png", cat: "Découpe & équipements de ligne", desc: "Découpe du cloaque pour un procédé propre et un risque de contamination réduit." },
+      { title: "Coupe-cou automatique", file: "自动切脖机.png", cat: "Découpe & équipements de ligne", desc: "Découpe automatique du cou pour des résultats réguliers." },
+      { title: "Coupe-tête automatique", file: "自动切头机.png", cat: "Découpe & équipements de ligne", desc: "Découpe automatique de la tête pour une ligne continue." },
+      { title: "Coupe-queue automatique", file: "自动切尾机.png", cat: "Découpe & équipements de ligne", desc: "Découpe automatique de la queue pour un traitement standardisé." },
+      { title: "Ouvre-poitrine automatique", file: "自动开胸机.png", cat: "Découpe & équipements de ligne", desc: "Ouverture automatique de la poitrine pour les opérations en aval." },
+      { title: "Coupe-pattes en ligne (pré-coupe)", file: "直线（预）切爪机.png", cat: "Découpe & équipements de ligne", desc: "Pré-coupe/coupe en ligne des pattes." },
+      { title: "Transfert de suspension des pattes", file: "切爪转挂机.png", cat: "Découpe & équipements de ligne", desc: "Unité de transfert/suspension pour les lignes de traitement des pattes." },
+      { title: "Échaudeuse spirale pour pattes", file: "螺旋烫爪机.png", cat: "Découpe & équipements de ligne", desc: "Système d’échaudage spirale pour faciliter le pelage des pattes." },
+
+      // --- Deboning & Further Processing ---
+      { title: "Désosseuse de haut de cuisse", file: "鸡上腿剔骨机.png", cat: "Désossage & transformation", desc: "Désossage du haut de cuisse avec un rendement stable." },
+      { title: "Peleuse de pattes de poulet", file: "鸡爪脱皮机.png", cat: "Désossage & transformation", desc: "Pelage des pattes pour améliorer l’aspect et la qualité." },
+
+      // --- Washing / Support ---
+      { title: "Système de pesage des carcasses", file: "胴体称重系统.png", cat: "Utilités & systèmes", desc: "Pesage en ligne pour le suivi des rendements et la gestion des données." },
+      { title: "Pompe respiratoire", file: "呼吸泵.png", cat: "Utilités & systèmes", desc: "Pompe auxiliaire pour le support de processus." },
+    ];
+
+    const CATEGORIES = ["Tous", ...Array.from(new Set(ITEMS.map(i => i.cat)))];
+
+    const chipsEl = document.getElementById("chips");
+    const gridEl = document.getElementById("grid");
+    const searchEl = document.getElementById("search");
+
+    const backdrop = document.getElementById("backdrop");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const closeBtn = document.getElementById("closeBtn");
+
+    let activeCat = "Tous";
+    let query = "";
+
+    function makeChip(label) {
+      const b = document.createElement("div");
+      b.className = "chip" + (label === "Tous" ? " active" : "");
+      b.textContent = label;
+      b.addEventListener("click", () => {
+        document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+        b.classList.add("active");
+        activeCat = label;
+        render();
+      });
+      return b;
+    }
+
+    function makeCard(item) {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.setAttribute("tabindex", "0");
+
+      const imgwrap = document.createElement("div");
+      imgwrap.className = "imgwrap";
+
+      const tag = document.createElement("div");
+      tag.className = "tag";
+      tag.textContent = item.cat;
+
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.alt = item.title;
+      img.src = IMG_BASE + item.file;
+
+      imgwrap.appendChild(img);
+      imgwrap.appendChild(tag);
+
+      const body = document.createElement("div");
+      body.className = "body";
+
+      const title = document.createElement("h3");
+      title.className = "title";
+      title.textContent = item.title;
+
+      const desc = document.createElement("p");
+      desc.className = "desc";
+      desc.textContent = item.desc;
+
+      const meta = document.createElement("div");
+      meta.className = "meta";
+
+      const cat = document.createElement("div");
+      cat.className = "cat";
+      cat.textContent = item.cat;
+
+      const btn = document.createElement("button");
+      btn.className = "btn";
+      btn.textContent = "Détails";
+      btn.type = "button";
+
+      meta.appendChild(cat);
+      meta.appendChild(btn);
+
+      body.appendChild(title);
+      body.appendChild(desc);
+      body.appendChild(meta);
+
+      card.appendChild(imgwrap);
+      card.appendChild(body);
+
+      function open() {
+        modalTitle.textContent = item.title;
+        modalImg.src = IMG_BASE + item.file;
+        modalImg.alt = item.title;
+        backdrop.classList.add("show");
+        backdrop.setAttribute("aria-hidden", "false");
+      }
+
+      card.addEventListener("click", open);
+      card.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") open();
+      });
+
+      return card;
+    }
+
+    function render() {
+      const q = query.trim().toLowerCase();
+      const filtered = ITEMS.filter(it => {
+        const inCat = (activeCat === "Tous") || (it.cat === activeCat);
+        const inQ = !q
+          || it.title.toLowerCase().includes(q)
+          || it.file.toLowerCase().includes(q)
+          || it.desc.toLowerCase().includes(q)
+          || it.cat.toLowerCase().includes(q);
+        return inCat && inQ;
+      });
+
+      gridEl.innerHTML = "";
+      filtered.forEach(it => gridEl.appendChild(makeCard(it)));
+    }
+
+    function init() {
+      CATEGORIES.forEach(c => chipsEl.appendChild(makeChip(c)));
+      render();
+
+      searchEl.addEventListener("input", (e) => {
+        query = e.target.value;
+        render();
+      });
+
+      closeBtn.addEventListener("click", () => {
+        backdrop.classList.remove("show");
+        backdrop.setAttribute("aria-hidden", "true");
+        modalImg.src = "";
+      });
+
+      backdrop.addEventListener("click", (e) => {
+        if (e.target === backdrop) {
+          backdrop.classList.remove("show");
+          backdrop.setAttribute("aria-hidden", "true");
+          modalImg.src = "";
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && backdrop.classList.contains("show")) {
+          backdrop.classList.remove("show");
+          backdrop.setAttribute("aria-hidden", "true");
+          modalImg.src = "";
+        }
+      });
+    }
+
+    // boot
+    includePartials().then(init);
+  </script>
+</body>
+
+</html>

@@ -2,575 +2,651 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Farming · Core Equipment | QSFF Agri</title>
-    <meta name="description"
-        content="QSFF Agri farming solutions: broiler cage systems, feeding & tower conveying, drinking lines, manure cleaning, environment control, egg collection, and automatic depopulation." />
-    <style>
-        :root {
-            --brand: #2fbf4a;
-            --brand-dark: #0f7a2b;
-            --bg: #fff;
-            --text: #000;
-            --muted: #555;
-            --card: #fff;
-            --line: #ddd;
-            --max: 1200px
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farming · Core Systems | QSFF Agri</title>
+  <meta name="description"
+    content="QSFF Agri farming systems library — environmental control, egg collection, broiler cage systems, feed silo conveying, manure removal, drinking and automatic bird unloading solutions." />
 
-        * {
-            box-sizing: border-box
-        }
+  <style>
+    :root {
+      --brand: #2fbf4a;
+      --brand-dark: #0f7a2b;
+      --bg: #fff;
+      --text: #000;
+      --muted: #555;
+      --card: #fff;
+      --line: #ddd;
+      --max: 1200px
+    }
 
-        html,
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
-        }
+    * {
+      box-sizing: border-box
+    }
 
-        a {
-            color: inherit;
-            text-decoration: none
-        }
+    html,
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
+    }
 
-        img {
-            max-width: 100%;
-            display: block;
-            border-radius: 8px
-        }
+    a {
+      color: inherit;
+      text-decoration: none
+    }
 
-        .container {
-            max-width: var(--max);
-            margin: 0 auto;
-            padding: 0 20px
-        }
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 8px
+    }
 
-        /* --- header/footer identical to feed.html (shared partials) --- */
-        .topbar {
-            background: #fff;
-            border-bottom: 1px solid var(--line);
-            position: sticky;
-            top: 0;
-            z-index: 50
-        }
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px
+    }
 
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 64px;
-            padding: 10px 0
-        }
+    /* --- header/footer identical to feed.html --- */
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 50
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px
-        }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 10px 0
+    }
 
-        .menu {
-            display: flex;
-            gap: 30px;
-            align-items: center
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
 
-        .menu a {
-            color: #000;
-            font-weight: 600
-        }
+    .menu {
+      display: flex;
+      gap: 30px;
+      align-items: center
+    }
 
-        .cta-btn {
-            background: var(--brand);
-            color: #000;
-            padding: 10px 16px;
-            border-radius: 999px;
-            font-weight: 700
-        }
+    .menu a {
+      color: #000;
+      font-weight: 600
+    }
 
-        .cta-btn:hover {
-            filter: brightness(1.06)
-        }
+    .cta-btn {
+      background: var(--brand);
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700
+    }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            cursor: pointer
-        }
+    .cta-btn:hover {
+      filter: brightness(1.06)
+    }
 
-        .hamburger span {
-            width: 24px;
-            height: 2px;
-            background: #000
-        }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer
+    }
 
-        @media (max-width:900px) {
-            .menu {
-                display: none
-            }
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: #000;
+      display: block
+    }
 
-            .hamburger {
-                display: flex
-            }
-        }
+    /* hero (breeding-like) */
+    .hero {
+      padding: 80px 0 50px;
+      background: #f5faf6
+    }
 
-        /* --- hero --- */
-        .hero {
-            border-bottom: 1px solid var(--line);
-            background: url("images/Farming/hero.jpg") center/cover no-repeat;
-            width: 100%;
-            aspect-ratio: 16/7;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .hero .inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      background: #fff;
+      border-radius: 16px;
+      padding: 50px 30px;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, .08)
+    }
 
-        .hero .inner {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, .86);
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
-            max-width: 900px;
-        }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #bfeec8;
+      color: var(--brand-dark);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      font-size: 12px;
+      text-transform: uppercase
+    }
 
-        .eyebrow {
-            display: inline-block;
-            color: var(--brand-dark);
-            background: rgba(47, 191, 74, .12);
-            border: 1px solid rgba(47, 191, 74, .35);
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-size: 12px;
-            letter-spacing: .6px;
-            text-transform: uppercase;
-        }
+    h1 {
+      margin: 18px 0 10px;
+      font-size: 56px;
+      line-height: 1.05
+    }
 
-        .hero h1 {
-            margin: 18px auto 12px;
-            font-size: 40px;
-            line-height: 1.2
-        }
+    .sub {
+      color: #444;
+      font-size: 18px;
+      margin: 0 auto;
+      max-width: 720px
+    }
 
-        .hero p {
-            margin: 0 auto 18px;
-            max-width: 820px;
-            color: var(--muted);
-            font-size: 16px
-        }
+    /* controls — same scale as breeding */
+    .controls {
+      padding: 14px 0 6px;
+    }
 
-        /* filters/search */
-        .filters {
-            padding: 16px 0;
-            border-bottom: 1px solid var(--line)
-        }
+    .bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+    }
 
-        .toolbar {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-            margin: 0 auto;
-            max-width: var(--max);
-            padding: 0 20px
-        }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
-        .chip {
-            border: 1px solid var(--line);
-            padding: .45rem .9rem;
-            border-radius: 999px;
-            background: #fff;
-            cursor: pointer
-        }
+    .chip {
+      border: 1px solid var(--line);
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+    }
 
-        .chip.active {
-            background: linear-gradient(180deg, rgba(47, 191, 74, .12), transparent);
-            border-color: rgba(47, 191, 74, .45)
-        }
+    .chip.active {
+      border-color: #bfeec8;
+      background: #e9faee;
+      color: var(--brand-dark);
+    }
 
-        .search {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-            border: 1px solid var(--line);
-            padding: .45rem .7rem;
-            border-radius: 12px;
-            background: #fff
-        }
+    .search {
+      margin-left: auto;
+      min-width: 200px;
+      max-width: 300px;
+      display: flex;
+    }
 
-        .search input {
-            border: none;
-            outline: none;
-            background: transparent;
-            color: var(--text);
-            min-width: 220px
-        }
+    .search input {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 14px;
+      outline: none;
+    }
 
-        /* grid/cards */
-        .wrap {
-            max-width: var(--max);
-            margin: 0 auto;
-            padding: 22px 20px 80px
-        }
+    /* grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding: 22px 0 60px
+    }
 
-        .grid {
-            display: grid;
-            gap: 18px;
-            grid-template-columns: repeat(3, 1fr)
-        }
+    .card {
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      transition: transform .12s ease, box-shadow .12s ease;
+      cursor: pointer;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .06)
+    }
 
-        @media (max-width:1000px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr)
-            }
-        }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .10)
+    }
 
-        @media (max-width:640px) {
-            .grid {
-                grid-template-columns: 1fr
-            }
-        }
+    .imgwrap {
+      position: relative;
+      height: 230px;
+      background: #f2f6f3
+    }
 
-        .card {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, .06)
-        }
+    .imgwrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
 
-        .thumb {
-            position: relative;
-            padding-top: 62%
-        }
+    .tag {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .10)
+    }
 
-        .thumb img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0
-        }
+    .body {
+      padding: 18px 18px 20px
+    }
 
-        .badge {
-            position: absolute;
-            left: 12px;
-            top: 12px;
-            background: rgba(47, 191, 74, .9);
-            color: #fff;
-            border-radius: 10px;
-            font-size: .75rem;
-            padding: .2rem .5rem
-        }
+    .title {
+      font-size: 22px;
+      line-height: 1.25;
+      margin: 0 0 8px;
+      font-weight: 800
+    }
 
-        .body {
-            padding: 12px 12px 14px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px
-        }
+    .desc {
+      margin: 0 0 18px;
+      color: #555;
+      font-size: 16px
+    }
 
-        .title {
-            font-weight: 800
-        }
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px
+    }
 
-        .desc {
-            color: var(--muted);
-            font-size: .95rem;
-            min-height: 2.2em
-        }
+    .cat {
+      color: #111;
+      font-weight: 700
+    }
 
-        .meta {
-            margin-top: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center
-        }
+    .btn {
+      background: var(--brand);
+      color: #000;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 10px 18px;
+      border: none
+    }
 
-        .pill {
-            font-size: .75rem;
-            color: var(--muted);
-            border: 1px solid var(--line);
-            padding: .22rem .5rem;
-            border-radius: 6px
-        }
+    /* modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 99
+    }
 
-        /* modal */
-        .backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, .45);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 18px;
-            z-index: 60
-        }
+    .modal-backdrop.show {
+      display: flex
+    }
 
-        .backdrop.open {
-            display: flex
-        }
+    .modal {
+      width: min(980px, 96vw);
+      max-height: 92vh;
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 40px 90px rgba(0, 0, 0, .30)
+    }
 
-        .modal {
-            max-width: 980px;
-            width: 100%;
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, .25)
-        }
+    .modal .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line)
+    }
 
-        .modal header {
-            position: relative
-        }
+    .modal .top strong {
+      font-size: 16px
+    }
 
-        .modal header img {
-            width: 100%;
-            height: 360px;
-            object-fit: cover
-        }
+    .close {
+      border: 1px solid var(--line);
+      background: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 900
+    }
 
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 40px;
-            height: 40px;
-            border: none;
-            border-radius: 999px;
-            background: rgba(0, 0, 0, .45);
-            color: #fff;
-            font-size: 18px;
-            cursor: pointer
-        }
+    .modal .content {
+      padding: 18px
+    }
 
-        .modal .body {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 16px;
-            padding: 16px
-        }
+    .modal img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      background: #f6f7f8
+    }
 
-        @media (max-width:900px) {
-            .modal .body {
-                grid-template-columns: 1fr
-            }
-        }
+    /* footer */
+    footer {
+      border-top: 1px solid var(--line);
+      background: #fff;
+      padding: 34px 0;
+      color: #333
+    }
 
-        .specs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px
-        }
+    .foot {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 26px
+    }
 
-        .spec {
-            background: #fafafa;
-            border: 1px solid var(--line);
-            padding: 8px 10px;
-            border-radius: 10px
-        }
+    .foot h4 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .08em
+    }
 
-        /* footer (shared) */
-        footer {
-            background: #000;
-            color: #fff;
-            padding: 50px 10%
-        }
+    .foot a {
+      color: #333
+    }
 
-        footer .cols {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap
-        }
+    .muted {
+      color: #666;
+      font-size: 14px
+    }
 
-        footer .col {
-            flex: 1;
-            min-width: 220px;
-            margin: 20px
-        }
+    /* responsive */
+    @media (max-width: 980px) {
+      h1 {
+        font-size: 42px
+      }
 
-        footer h2 {
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--brand);
-            display: inline-block
-        }
+      .grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
 
-        footer ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            line-height: 2
-        }
+    @media (max-width: 640px) {
+      .menu {
+        display: none
+      }
 
-        footer .social {
-            text-align: center;
-            margin-top: 30px;
-            border-top: 1px solid #222;
-            padding-top: 20px
-        }
+      .hamburger {
+        display: flex
+      }
 
-        footer .social a {
-            margin: 0 10px;
-            color: #fff
-        }
-    </style>
+      .grid {
+        grid-template-columns: 1fr
+      }
+
+      .hero {
+        padding: 50px 0 34px
+      }
+
+      .hero .inner {
+        padding: 38px 18px
+      }
+
+      h1 {
+        font-size: 34px
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Shared header -->
-    <div data-include="/partials/header.html"></div>
 
-    <!-- Hero -->
-    <header class="hero">
-        <div class="inner container">
-            <span class="eyebrow">Farming · Equipment Library</span>
-            <h1>Broiler cage systems, feeding & conveying, drinking lines, manure cleaning, environment control, egg
-                collection & depopulation</h1>
-            <p>Filter by process or search keywords. Click a card for a large image and highlights; add items to your
-                RFQ list.</p>
-        </div>
-    </header>
+  <!-- shared header -->
+  <div data-include="partials/header.html"></div>
 
-    <!-- Filters -->
-    <section class="filters">
-        <div class="toolbar">
-            <button class="chip active" data-cat="All">All</button>
-            <button class="chip" data-cat="Housing Systems">Housing Systems</button>
-            <button class="chip" data-cat="Feeding & Drinking">Feeding &amp; Drinking</button>
-            <button class="chip" data-cat="Manure & Cleaning">Manure &amp; Cleaning</button>
-            <button class="chip" data-cat="Environment Control">Environment Control</button>
-            <button class="chip" data-cat="Egg Collection">Egg Collection</button>
-            <button class="chip" data-cat="Depopulation">Depopulation</button>
-            <div class="search">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" />
-                </svg>
-                <input id="q" placeholder="Search equipment / process / keyword…" />
-            </div>
-        </div>
-    </section>
-
-    <!-- Grid -->
-    <main class="wrap">
-        <div id="grid" class="grid"></div>
-    </main>
-
-    <!-- Shared footer -->
-    <div data-include="/partials/footer.html"></div>
-
-    <!-- Modal -->
-    <div id="backdrop" class="backdrop" aria-hidden="true">
-        <div class="modal" role="dialog" aria-modal="true">
-            <header>
-                <img id="mImg" alt="" />
-                <button class="close" onclick="closeModal()">✕</button>
-            </header>
-            <div class="body">
-                <div>
-                    <div class="badge" id="mCat"></div>
-                    <h2 id="mTitle" style="margin:.5rem 0 0"></h2>
-                    <p id="mDesc" class="sub" style="margin:.5rem 0 1rem"></p>
-                    <div style="display:flex;gap:10px;flex-wrap:wrap">
-                        <a id="quoteBtn" class="cta-btn">Add to RFQ</a>
-                        <a id="downloadBtn" class="cta-btn" target="_blank">Open Original</a>
-                    </div>
-                </div>
-                <div>
-                    <h3 style="margin:.2rem 0 .6rem">Highlights</h3>
-                    <div id="mSpecs" class="specs"></div>
-                </div>
-            </div>
-        </div>
+  <!-- hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="inner">
+        <span class="eyebrow">FARMING · SYSTEMS LIBRARY</span>
+        <h1>Core Systems for Poultry Farming</h1>
+        <p class="sub">
+          Filter by system and build your RFQ list. Images point to files under
+          <code>images/Farming/</code> using your original filenames.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <script>
-        // Farming items (kept from your original file)
-        const ITEMS = [
-            { title: 'Economy Broiler Cage System', file: '经济型肉鸡笼养系统.png', cat: 'Housing Systems', desc: 'Cost-effective stacked cages for commercial broilers; robust frame and easy installation.' },
-            { title: 'Feed Silo & Conveying System', file: '料塔输送系统.png', cat: 'Feeding & Drinking', desc: 'Outdoor silos with auger/chain conveying to feeders; sealed and reliable.' },
-            { title: 'Drinking Line System', file: '饮水系统.png', cat: 'Feeding & Drinking', desc: 'High-precision nipple drinking lines with pressure regulation and anti-leak design.' },
-            { title: 'Manure Cleaning System', file: '清粪系统.png', cat: 'Manure & Cleaning', desc: 'Belt/scraper removal with corrosion-resistant materials; low residue and easy service.' },
-            { title: 'Environment Control System', file: '环控系统.png', cat: 'Environment Control', desc: 'Ventilation, cooling pads, heaters, sensors, and controller for stable microclimate.' },
-            { title: 'Egg Collection System', file: '集蛋系统.png', cat: 'Egg Collection', desc: 'Automatic egg belts, elevators and tables to reduce breakage.' },
-            { title: 'Automatic Depopulation Cage', file: '自动出鸡鸡笼.png', cat: 'Depopulation', desc: 'Mechanized bird-out solution to speed up loading and reduce labor intensity.' },
-        ];
+  <!-- controls -->
+  <section class="controls">
+    <div class="container">
+      <div class="bar">
+        <div class="chips" id="chips"></div>
+        <div class="search">
+          <input id="search" type="text" placeholder="Search equipment..." />
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Render
-        const grid = document.getElementById('grid');
-        function render(list) {
-            grid.innerHTML = '';
-            list.forEach((p, i) => {
-                const el = document.createElement('article');
-                el.className = 'card';
-                el.innerHTML = `
-          <div class="thumb"><img loading="lazy" src="images/Farming/${p.file}" alt="${p.title}"><span class="badge">${p.cat}</span></div>
-          <div class="body">
-            <div class="title">${p.title}</div>
-            <div class="desc">${p.desc || ''}</div>
-            <div class="meta">
-              <span class="pill">${p.cat}</span>
-              <a class="cta-btn" href="#" data-idx="${i}">Details</a>
-            </div>
-          </div>`;
-                el.querySelector('a').addEventListener('click', e => { e.preventDefault(); openModal(p) });
-                grid.appendChild(el);
-            });
+  <!-- grid -->
+  <main>
+    <div class="container">
+      <div class="grid" id="grid"></div>
+    </div>
+  </main>
+
+  <!-- modal -->
+  <div class="modal-backdrop" id="backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Equipment image">
+      <div class="top">
+        <strong id="modalTitle">Image</strong>
+        <button class="close" id="closeBtn" aria-label="Close">×</button>
+      </div>
+      <div class="content">
+        <img id="modalImg" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <!-- shared footer -->
+  <div data-include="partials/footer.html"></div>
+
+  <script>
+    // --- include partials (header/footer) ---
+    async function includePartials() {
+      const slots = document.querySelectorAll("[data-include]");
+      for (const el of slots) {
+        const file = el.getAttribute("data-include");
+        try {
+          const res = await fetch(file);
+          if (!res.ok) throw new Error(`Cannot GET ${file}`);
+          el.innerHTML = await res.text();
+        } catch (err) {
+          console.error(err);
+          el.innerHTML = `<div style="padding:16px;color:#b00020;font-weight:700;">${err}</div>`;
         }
-        render(ITEMS);
+      }
+    }
 
-        // Filter/search behavior
-        const chips = [...document.querySelectorAll('.chip')];
-        function apply() {
-            const active = document.querySelector('.chip.active').dataset.cat;
-            const kw = document.getElementById('q').value.trim().toLowerCase();
-            let list = ITEMS.filter(x => active === 'All' || x.cat === active);
-            if (kw) { list = list.filter(x => `${x.title} ${x.file} ${x.cat} ${x.desc || ''}`.toLowerCase().includes(kw)); }
-            render(list);
+    // =========================
+    // Farming systems
+    // =========================
+    // Your folder name is "Farming" (capital F) per your screenshot.
+    const IMG_BASE = "images/Farming/";
+
+    const ITEMS = [
+      { title: "Environmental Control System", file: "环控系统.png", cat: "Climate Control", desc: "Ventilation and climate management system for stable house conditions." },
+      { title: "Egg Collection System", file: "集蛋系统.png", cat: "Egg Handling", desc: "Automated egg collection line to reduce breakage and labor." },
+      { title: "Economy Broiler Cage Rearing System", file: "经济型肉鸡笼养系统.png", cat: "Housing", desc: "Cost-effective broiler cage system with reliable structure and efficient management." },
+      { title: "Feed Silo Conveying System", file: "料塔输送系统.png", cat: "Feeding", desc: "Feed silo conveying and distribution system for stable feed supply." },
+      { title: "Manure Removal System", file: "清粪系统.png", cat: "Manure Handling", desc: "Manure belt/scraper system to improve hygiene and reduce ammonia." },
+      { title: "Drinking System", file: "饮水系统.png", cat: "Water", desc: "Nipple drinking system ensuring clean water supply and reduced waste." },
+      { title: "Automatic Bird Unloading Cage", file: "自动出鸡鸡笼.png", cat: "Handling", desc: "Automatic unloading cage for efficient bird catching and loading operations." }
+    ];
+
+    const CATEGORIES = ["All", ...Array.from(new Set(ITEMS.map(i => i.cat)))];
+
+    const chipsEl = document.getElementById("chips");
+    const gridEl = document.getElementById("grid");
+    const searchEl = document.getElementById("search");
+
+    const backdrop = document.getElementById("backdrop");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const closeBtn = document.getElementById("closeBtn");
+
+    let activeCat = "All";
+    let query = "";
+
+    function makeChip(label) {
+      const b = document.createElement("div");
+      b.className = "chip" + (label === "All" ? " active" : "");
+      b.textContent = label;
+      b.addEventListener("click", () => {
+        document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+        b.classList.add("active");
+        activeCat = label;
+        render();
+      });
+      return b;
+    }
+
+    function makeCard(item) {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.setAttribute("tabindex", "0");
+
+      const imgwrap = document.createElement("div");
+      imgwrap.className = "imgwrap";
+
+      const tag = document.createElement("div");
+      tag.className = "tag";
+      tag.textContent = item.cat;
+
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.alt = item.title;
+      img.src = IMG_BASE + item.file;
+
+      imgwrap.appendChild(img);
+      imgwrap.appendChild(tag);
+
+      const body = document.createElement("div");
+      body.className = "body";
+
+      const title = document.createElement("h3");
+      title.className = "title";
+      title.textContent = item.title;
+
+      const desc = document.createElement("p");
+      desc.className = "desc";
+      desc.textContent = item.desc;
+
+      const meta = document.createElement("div");
+      meta.className = "meta";
+
+      const cat = document.createElement("div");
+      cat.className = "cat";
+      cat.textContent = item.cat;
+
+      const btn = document.createElement("button");
+      btn.className = "btn";
+      btn.textContent = "Details";
+      btn.type = "button";
+
+      meta.appendChild(cat);
+      meta.appendChild(btn);
+
+      body.appendChild(title);
+      body.appendChild(desc);
+      body.appendChild(meta);
+
+      card.appendChild(imgwrap);
+      card.appendChild(body);
+
+      function open() {
+        modalTitle.textContent = item.title;
+        modalImg.src = IMG_BASE + item.file;
+        modalImg.alt = item.title;
+        backdrop.classList.add("show");
+        backdrop.setAttribute("aria-hidden", "false");
+      }
+
+      card.addEventListener("click", open);
+      card.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") open();
+      });
+
+      return card;
+    }
+
+    function render() {
+      const q = query.trim().toLowerCase();
+      const filtered = ITEMS.filter(it => {
+        const inCat = (activeCat === "All") || (it.cat === activeCat);
+        const inQ = !q || it.title.toLowerCase().includes(q) || it.file.toLowerCase().includes(q) || it.desc.toLowerCase().includes(q) || it.cat.toLowerCase().includes(q);
+        return inCat && inQ;
+      });
+
+      gridEl.innerHTML = "";
+      filtered.forEach(it => gridEl.appendChild(makeCard(it)));
+    }
+
+    function init() {
+      CATEGORIES.forEach(c => chipsEl.appendChild(makeChip(c)));
+      render();
+
+      searchEl.addEventListener("input", (e) => {
+        query = e.target.value;
+        render();
+      });
+
+      closeBtn.addEventListener("click", () => {
+        backdrop.classList.remove("show");
+        backdrop.setAttribute("aria-hidden", "true");
+        modalImg.src = "";
+      });
+
+      backdrop.addEventListener("click", (e) => {
+        if (e.target === backdrop) {
+          backdrop.classList.remove("show");
+          backdrop.setAttribute("aria-hidden", "true");
+          modalImg.src = "";
         }
-        chips.forEach(c => c.addEventListener('click', () => { chips.forEach(x => x.classList.remove('active')); c.classList.add('active'); apply(); }));
-        document.getElementById('q').addEventListener('input', apply);
+      });
 
-        // Modal logic
-        const backdrop = document.getElementById('backdrop');
-        const mImg = document.getElementById('mImg');
-        const mCat = document.getElementById('mCat');
-        const mTitle = document.getElementById('mTitle');
-        const mDesc = document.getElementById('mDesc');
-        const mSpecs = document.getElementById('mSpecs');
-        const quoteBtn = document.getElementById('quoteBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
-
-        function openModal(p) {
-            mImg.src = 'images/Farming/' + p.file; mImg.alt = p.title;
-            mCat.textContent = p.cat; mTitle.textContent = p.title; mDesc.textContent = p.desc || '';
-            mSpecs.innerHTML = '';
-            ['Durable structure, easy maintenance', 'Modular integration into existing houses', 'Designed for biosecurity & hygiene'].forEach(s => {
-                const div = document.createElement('div'); div.className = 'spec'; div.textContent = s; mSpecs.appendChild(div);
-            });
-            quoteBtn.onclick = () => alert(`Added [${p.title}] to RFQ. Please contact us via the footer.`);
-            downloadBtn.href = 'images/Farming/' + p.file;
-            backdrop.classList.add('open'); backdrop.setAttribute('aria-hidden', 'false');
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && backdrop.classList.contains("show")) {
+          backdrop.classList.remove("show");
+          backdrop.setAttribute("aria-hidden", "true");
+          modalImg.src = "";
         }
-        function closeModal() { backdrop.classList.remove('open'); backdrop.setAttribute('aria-hidden', 'true'); }
-        window.closeModal = closeModal;
+      });
+    }
 
-        // include shared header/footer partials
-        document.addEventListener('DOMContentLoaded', async () => {
-            const slots = document.querySelectorAll('[data-include]');
-            for (const el of slots) {
-                const file = el.getAttribute('data-include');
-                const res = await fetch(file);
-                el.innerHTML = await res.text();
-            }
-        });
-    </script>
+    // boot
+    includePartials().then(init);
+  </script>
 </body>
 
 </html>

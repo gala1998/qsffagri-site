@@ -1,571 +1,717 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Feed Mill · Core Equipment — QSFF Agri</title>
-    <meta name="description"
-        content="QSFF Agri feed mill equipment library — receiving/cleaning, grinding, mixing & conditioning, pelleting, cooling & crumbling, conveying, dosing & valves, drying & dedusting, sifting & grading. Turnkey EPCO." />
-    <style>
-        :root {
-            --brand: #2fbf4a;
-            --brand-dark: #0f7a2b;
-            --bg: #fff;
-            --text: #000;
-            --muted: #555;
-            --card: #fff;
-            --line: #ddd;
-            --max: 1200px
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feed Mill · Core Equipment | QSFF Agri</title>
+  <meta name="description"
+    content="QSFF Agri feed mill equipment library — receiving/cleaning, grinding, mixing & conditioning, pelleting, cooling & crumbling, conveying, dosing & valves, coating, drying & dedusting, sifting & grading." />
 
-        * {
-            box-sizing: border-box
-        }
+  <style>
+    :root {
+      --brand: #2fbf4a;
+      --brand-dark: #0f7a2b;
+      --bg: #fff;
+      --text: #000;
+      --muted: #555;
+      --card: #fff;
+      --line: #ddd;
+      --max: 1200px
+    }
 
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-            line-height: 1.6
-        }
+    * {
+      box-sizing: border-box
+    }
 
-        img {
-            max-width: 100%;
-            display: block;
-            border-radius: 8px
-        }
+    html,
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
+    }
 
-        a {
-            color: var(--text);
-            text-decoration: none
-        }
+    a {
+      color: inherit;
+      text-decoration: none
+    }
 
-        .container {
-            max-width: var(--max);
-            margin: 0 auto;
-            padding: 0 20px
-        }
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 8px
+    }
 
-        /* --- header/footer identical to cooked section --- */
-        .topbar {
-            background: #fff;
-            border-bottom: 1px solid var(--line);
-            position: sticky;
-            top: 0;
-            z-index: 50
-        }
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px
+    }
 
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 64px;
-            padding: 10px 0
-        }
+    /* --- header/footer identical to breeding.html --- */
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 50
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px
-        }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 10px 0
+    }
 
-        .menu {
-            display: flex;
-            gap: 30px;
-            align-items: center
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
 
-        .menu a {
-            color: #000;
-            font-weight: 600
-        }
+    .menu {
+      display: flex;
+      gap: 30px;
+      align-items: center
+    }
 
-        .cta-btn {
-            background: var(--brand);
-            color: #000;
-            padding: 10px 16px;
-            border-radius: 999px;
-            font-weight: 700
-        }
+    .menu a {
+      color: #000;
+      font-weight: 600
+    }
 
-        .cta-btn:hover {
-            filter: brightness(1.06)
-        }
+    .cta-btn {
+      background: var(--brand);
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700
+    }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            cursor: pointer
-        }
+    .cta-btn:hover {
+      filter: brightness(1.06)
+    }
 
-        .hamburger span {
-            width: 24px;
-            height: 2px;
-            background: #000
-        }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer
+    }
 
-        @media (max-width:900px) {
-            .menu {
-                display: none
-            }
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: #000;
+      display: block
+    }
 
-            .hamburger {
-                display: flex
-            }
-        }
+    /* hero (breeding-like) */
+    .hero {
+      padding: 80px 0 50px;
+      background: #f5faf6
+    }
 
-        /* --- hero --- */
-        .hero {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16/7;
-            background: url("images/feed/hero.jpg") center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid var(--line)
-        }
+    .hero .inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      background: #fff;
+      border-radius: 16px;
+      padding: 50px 30px;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, .08)
+    }
 
-        .hero .inner {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, .86);
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
-            max-width: 900px
-        }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #bfeec8;
+      color: var(--brand-dark);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      font-size: 12px;
+      text-transform: uppercase
+    }
 
-        .eyebrow {
-            display: inline-block;
-            color: var(--brand-dark);
-            background: rgba(47, 191, 74, .12);
-            border: 1px solid rgba(47, 191, 74, .35);
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-size: 12px;
-            letter-spacing: .6px;
-            text-transform: uppercase
-        }
+    h1 {
+      margin: 18px 0 10px;
+      font-size: 56px;
+      line-height: 1.05
+    }
 
-        .hero h1 {
-            margin: 18px auto 12px;
-            font-size: 40px;
-            line-height: 1.2
-        }
+    .sub {
+      color: #444;
+      font-size: 18px;
+      margin: 0 auto;
+      max-width: 720px
+    }
 
-        .hero p {
-            margin: 0 auto 18px;
-            max-width: 820px;
-            color: var(--muted);
-            font-size: 16px
-        }
+/* controls — same scale as breeding */
+.controls {
+  padding: 14px 0 6px;
+}
 
-        section {
-            padding: 56px 0;
-            border-bottom: 1px solid var(--line)
-        }
+.bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
 
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 18px
-        }
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 
-        .bar {
-            width: 32px;
-            height: 3px;
-            background: var(--brand)
-        }
+.chip {
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+}
 
-        /* --- filter/search --- */
-        .toolbar {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 16px
-        }
+.chip.active {
+  border-color: #bfeec8;
+  background: #e9faee;
+  color: var(--brand-dark);
+}
 
-        .chip {
-            border: 1px solid var(--line);
-            padding: .45rem .9rem;
-            border-radius: 999px;
-            background: #fff;
-            cursor: pointer
-        }
+.search {
+  margin-left: auto;
+  min-width: 200px;
+  max-width: 300px;
+  display: flex;
+}
 
-        .chip.active {
-            background: linear-gradient(180deg, rgba(47, 191, 74, .12), transparent);
-            border-color: rgba(47, 191, 74, .45)
-        }
+.search input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 14px;
+  outline: none;
+}
 
-        .search {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-            border: 1px solid var(--line);
-            padding: .45rem .7rem;
-            border-radius: 12px;
-            background: #fff
-        }
 
-        .search input {
-            border: none;
-            outline: none;
-            background: transparent;
-            color: var(--text);
-            min-width: 220px
-        }
+    /* grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding: 22px 0 60px
+    }
 
-        /* --- grid/cards --- */
-        .grid {
-            display: grid;
-            gap: 18px;
-            grid-template-columns: repeat(3, 1fr)
-        }
+    .card {
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      transition: transform .12s ease, box-shadow .12s ease;
+      cursor: pointer;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .06)
+    }
 
-        @media (max-width:1000px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr)
-            }
-        }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .10)
+    }
 
-        @media (max-width:640px) {
-            .grid {
-                grid-template-columns: 1fr
-            }
-        }
+    .imgwrap {
+      position: relative;
+      height: 230px;
+      background: #f2f6f3
+    }
 
-        .card {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 14px;
-            transition: transform .18s ease, box-shadow .18s ease, border-color .18s
-        }
+    .imgwrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
 
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 28px rgba(0, 0, 0, .06);
-            border-color: rgba(47, 191, 74, .45)
-        }
+    .tag {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .10)
+    }
 
-        .badge {
-            display: inline-block;
-            background: rgba(47, 191, 74, .12);
-            border: 1px solid rgba(47, 191, 74, .35);
-            padding: 4px 8px;
-            border-radius: 8px;
-            font-size: 12px
-        }
+    .body {
+      padding: 18px 18px 20px
+    }
 
-        .muted {
-            color: var(--muted)
-        }
+    .title {
+      font-size: 22px;
+      line-height: 1.25;
+      margin: 0 0 8px;
+      font-weight: 800
+    }
 
-        /* --- modal --- */
-        .backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, .45);
-            backdrop-filter: blur(2px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            z-index: 60
-        }
+    .desc {
+      margin: 0 0 18px;
+      color: #555;
+      font-size: 16px
+    }
 
-        .backdrop.open {
-            display: flex
-        }
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px
+    }
 
-        .modal {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            max-width: 980px;
-            width: 100%;
-            overflow: hidden;
-            box-shadow: 0 24px 48px rgba(0, 0, 0, .18)
-        }
+    .cat {
+      color: #111;
+      font-weight: 700
+    }
 
-        .modal header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--line)
-        }
+    .btn {
+      background: var(--brand);
+      color: #000;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 10px 18px;
+      border: none
+    }
 
-        .modal .body {
-            display: grid;
-            grid-template-columns: 1.2fr .8fr;
-            gap: 16px;
-            padding: 16px
-        }
+    /* modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 99
+    }
 
-        @media (max-width:900px) {
-            .modal .body {
-                grid-template-columns: 1fr
-            }
-        }
+    .modal-backdrop.show {
+      display: flex
+    }
 
-        .modal .close {
-            background: #eee;
-            border: none;
-            border-radius: 999px;
-            width: 36px;
-            height: 36px;
-            font-size: 18px;
-            cursor: pointer
-        }
+    .modal {
+      width: min(980px, 96vw);
+      max-height: 92vh;
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 40px 90px rgba(0, 0, 0, .30)
+    }
 
-        /* --- footer --- */
-        footer {
-            background: #000;
-            color: #fff;
-            padding: 50px 10%
-        }
+    .modal .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line)
+    }
 
-        footer .cols {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap
-        }
+    .modal .top strong {
+      font-size: 16px
+    }
 
-        footer .col {
-            flex: 1;
-            min-width: 220px;
-            margin: 20px
-        }
+    .close {
+      border: 1px solid var(--line);
+      background: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 900
+    }
 
-        footer h2 {
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--brand);
-            display: inline-block
-        }
+    .modal .content {
+      padding: 18px
+    }
 
-        footer ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            line-height: 2
-        }
+    .modal img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      background: #f6f7f8
+    }
 
-        footer .social {
-            text-align: center;
-            margin-top: 30px;
-            border-top: 1px solid #222;
-            padding-top: 20px
-        }
+    /* footer */
+    footer {
+      border-top: 1px solid var(--line);
+      background: #fff;
+      padding: 34px 0;
+      color: #333
+    }
 
-        footer .social a {
-            margin: 0 10px;
-            color: #fff
-        }
-    </style>
+    .foot {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 26px
+    }
+
+    .foot h4 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .08em
+    }
+
+    .foot a {
+      color: #333
+    }
+
+    .muted {
+      color: #666;
+      font-size: 14px
+    }
+
+    /* responsive */
+    @media (max-width: 980px) {
+      h1 {
+        font-size: 42px
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media (max-width: 640px) {
+      .menu {
+        display: none
+      }
+
+      .hamburger {
+        display: flex
+      }
+
+      .grid {
+        grid-template-columns: 1fr
+      }
+
+      .hero {
+        padding: 50px 0 34px
+      }
+
+      .hero .inner {
+        padding: 38px 18px
+      }
+
+      h1 {
+        font-size: 34px
+      }
+    }
+    
+  </style>
 </head>
 
 <body>
-    <!-- Shared header -->
-    <div data-include="/partials/header.html"></div>
 
-    <header class="hero">
-        <div class="inner container">
-            <span class="eyebrow">Feed Mill · Equipment Library</span>
-            <h1>Core Equipment from Intake to Outloading</h1>
-            <p>Filter by process and build your RFQ list. Images point to files under <code>images/feed/</code> using
-                your original filenames.</p>
-        </div>
-    </header>
+  <!-- shared header -->
+  <div data-include="partials/header.html"></div>
 
-    <section>
-        <div class="container">
-            <div class="section-title"><span class="bar"></span>
-                <h3>Browse by Process</h3>
-            </div>
-            <div class="toolbar">
-                <button class="chip active" data-cat="All">All</button>
-                <button class="chip" data-cat="Receiving & Cleaning">Receiving & Cleaning</button>
-                <button class="chip" data-cat="Grinding">Grinding</button>
-                <button class="chip" data-cat="Mixing & Conditioning">Mixing & Conditioning</button>
-                <button class="chip" data-cat="Pelleting">Pelleting</button>
-                <button class="chip" data-cat="Cooling & Crumbling">Cooling & Crumbling</button>
-                <button class="chip" data-cat="Conveying">Conveying</button>
-                <button class="chip" data-cat="Dosing & Valves">Dosing & Valves</button>
-                <button class="chip" data-cat="Drying & Dedusting">Drying & Dedusting</button>
-                <button class="chip" data-cat="Sifting & Grading">Sifting & Grading</button>
-                <div class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                    <input id="q" placeholder="Search (English keywords)…" />
-                </div>
-            </div>
-
-            <div id="grid" class="grid"></div>
-        </div>
-    </section>
-
-    <section class="cta">
-        <div class="container">
-            <div class="cta-box"
-                style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:18px;box-shadow:0 8px 24px rgba(0,0,0,.05)">
-                <div>
-                    <h3 style="margin:0 0 6px">Need a turnkey feed line?</h3>
-                    <p class="muted" style="margin:0">Send us your capacity, recipe, and target PDI — we'll design and
-                        quote.</p>
-                </div>
-                <div style="display:flex;gap:12px;flex-wrap:wrap">
-                    <a class="cta-btn" href="mailto:weichaozq@163.com">Email: weichaozq@163.com</a>
-                    <a class="cta-btn" href="https://wa.me/8615965310998" target="_blank">WhatsApp +86 159 6531 0998</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Shared footer -->
-    <div data-include="/partials/footer.html"></div>
-
-    <!-- Modal -->
-    <div id="backdrop" class="backdrop" aria-hidden="true">
-        <div class="modal" role="dialog" aria-modal="true">
-            <header>
-                <strong id="mTitle">Feed Equipment</strong>
-                <button class="close" onclick="closeModal()">✕</button>
-            </header>
-            <div class="body">
-                <img id="mImg" alt="Equipment image" />
-                <div>
-                    <div class="badge" id="mCat">Process</div>
-                    <p class="muted" id="mDesc">High‑quality, engineering‑grade equipment for modern feed mills.</p>
-                    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
-                        <a id="dlBtn" class="cta-btn" target="_blank">Open Original</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="inner">
+        <span class="eyebrow">FEED MILL · EQUIPMENT LIBRARY</span>
+        <h1>Core Equipment from Intake to Outloading</h1>
+        <p class="sub">
+          Filter by process and build your RFQ list. Images point to files under <code>images/feed/</code> using your
+          original filenames.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <script>
-        // Single source of truth. Use YOUR original filenames from images/feed/ (no Chinese text appears on UI).
-        // title = English label; file = exact filename under images/feed/ ; cat = process bucket.
-        const ITEMS = [
-            { title: 'U-type Scraper Conveyor', file: 'U型刮板输送机.png', cat: 'Conveying' },
-            { title: 'Stabilizer', file: '稳压器.png', cat: 'Stabilization' },
-            { title: 'Atmospheric Coating (Oil/Fat)', file: '常压喷涂.png', cat: 'Coating' },
-            { title: 'Ultra-fine Grinder', file: '超微粉碎机.png', cat: 'Grinding' },
-            { title: 'Gear-driven Pellet Mill', file: '齿轮制粒机.png', cat: 'Pelleting' },
-            { title: 'Hammer Mill', file: '锤片粉碎机.png', cat: 'Grinding' },
-            { title: 'Coarse Crusher', file: '粗粉碎机.png', cat: 'Grinding' },
-            { title: 'Single-screw Extruder', file: '单螺杆膨化机.png', cat: 'Extrusion' },
-            { title: 'Single-shaft Mixer', file: '单轴混合机.png', cat: 'Mixing & Conditioning' },
-            { title: 'Twin-shaft Crusher', file: '雾母料破碎机.png', cat: 'Grinding' },
-            { title: 'Conditioner', file: '调质器.png', cat: 'Mixing & Conditioning' },
-            { title: 'Bucket Elevator', file: 'TDTG斗式提升机.png', cat: 'Conveying' },
-            { title: 'Reversible Slide Cooler', file: '翻版式逆流冷却器.png', cat: 'Cooling & Crumbling' },
-            { title: 'Grading Sieve', file: '分级筛.png', cat: 'Sifting & Grading' },
-            { title: 'Pulse Dust Filter (bin top)', file: '风选喂料器.png', cat: 'Drying & Dedusting' },
-            { title: 'Square Bag Filter', file: '高压方形囊袋除尘器.png', cat: 'Drying & Dedusting' },
-            { title: 'Round Pulse Dust Filter', file: '高压圆筒脉冲除尘器.png', cat: 'Drying & Dedusting' },
-            { title: 'Slide Cooler with Sieve', file: '滑槽式逆流冷却器.png', cat: 'Cooling & Crumbling' },
-            { title: 'Vertical Cooler', file: '立式烘干机.png', cat: 'Drying & Dedusting' },
-            { title: 'Screw Conveyor', file: '螺旋输送机.png', cat: 'Conveying' },
-            { title: 'Enclosed Belt Conveyor', file: '埋刮板输送机.png', cat: 'Conveying' },
-            { title: 'Density Control', file: '密度控制仪.png', cat: 'Mixing & Conditioning' },
-            { title: 'Crumbler', file: '破碎机.png', cat: 'Cooling & Crumbling' },
-            { title: 'Pneumatic 3-way Valve', file: '气动三通.png', cat: 'Dosing & Valves' },
-            { title: 'Pneumatic 4-way Valve', file: '气动四通.png', cat: 'Dosing & Valves' },
-            { title: 'High‑efficiency Crusher', file: '双U高性能粉碎机.png', cat: 'Grinding' },
-            { title: 'Dual‑motor Paddle Mixer', file: '双电机直联式双轴混合机.png', cat: 'Mixing & Conditioning' },
-            { title: 'Twin‑screw Extruder (Aqua)', file: '双螺杆膨化机（宠食专用）.png', cat: 'Extrusion' },
-            { title: 'Twin‑screw Extruder', file: '双螺杆膨化机.png', cat: 'Extrusion' },
-            { title: 'Twin‑motor Pellet Mill', file: '双马达制粒机.png', cat: 'Pelleting' },
-            { title: 'Dual‑speed Conditioner', file: '双轴差速调质器.png', cat: 'Mixing & Conditioning' },
-            { title: 'Micro Dosing & Packing', file: '微机控制定量包装秤.png', cat: 'Dosing & Valves' },
-            { title: 'Liquid Spraying System', file: '喷料器.png', cat: 'Coating' },
-            { title: 'Stabilizer Tank', file: '稳压器.png', cat: 'Stabilization' },
-            { title: 'Horizontal Dryer', file: '卧式烘干机.png', cat: 'Drying & Dedusting' },
-            { title: 'Vacuum Double-shaft Mixer', file: '卧式双轴真空喷涂.png', cat: 'Coating' },
-            { title: 'Rotary Distributor', file: '旋转分配器.png', cat: 'Dosing & Valves' },
-            { title: 'Leaf-wheel Feeder', file: '叶轮喂料器.png', cat: 'Conveying' },
-            { title: 'Permanent Magnet', file: '永磁筒.png', cat: 'Receiving & Cleaning' },
-            { title: 'Oil/Fat Spraying', file: '油脂喷涂系统.png', cat: 'Coating' },
-            { title: 'Post‑pellet Stabilizer', file: '原料膨化机.png', cat: 'Stabilization' },
-            { title: 'Pre-cleaner (Drum)', file: '圆筒初清筛.png', cat: 'Receiving & Cleaning' },
-            { title: 'Magnet Sleeve', file: 'TCXT永磁筒套.png', cat: 'Receiving & Cleaning' },
-            { title: 'Cylinder Pre-cleaner', file: 'TCQY圆筒初清筛.png', cat: 'Receiving & Cleaning' },
-            { title: 'Vibration Sifter', file: 'TQLZ振动分级筛.png', cat: 'Sifting & Grading' },
-            { title: 'Plane Rotary Sifter', file: 'SFJH回转分级筛.png', cat: 'Sifting & Grading' },
-            { title: 'Screw Conveyor (TLSS)', file: 'TLSS螺旋输送机.png', cat: 'Conveying' },
-            { title: 'En‑masse Conveyor', file: 'TGSS埋刮板输送机.png', cat: 'Conveying' }
-        ];
+  <!-- controls -->
+  <section class="controls">
+    <div class="container">
+      <div class="bar">
+        <div class="chips" id="chips"></div>
+        <div class="search">
+          <input id="search" type="text" placeholder="Search equipment..." />
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const grid = document.getElementById('grid');
-        function render(list) {
-            grid.innerHTML = '';
-            list.forEach((it, idx) => {
-                const url = `images/feed/${it.file}`;
-                const el = document.createElement('article');
-                el.className = 'card';
-                el.innerHTML = `
-          <img src="${url}" alt="${it.title}">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px">
-            <div>
-              <div class="badge">${it.cat || 'Equipment'}</div>
-              <h4 style="margin:.4rem 0 0">${it.title}</h4>
-              <p class="muted" style="margin:.2rem 0 0">Image: <code>${it.file}</code></p>
-            </div>
-            <a class="cta-btn" href="#" data-idx="${idx}">Details</a>
-          </div>`;
-                el.querySelector('a').addEventListener('click', e => { e.preventDefault(); openModal(it) });
-                grid.appendChild(el);
-            });
+  <!-- grid -->
+  <main>
+    <div class="container">
+      <div class="grid" id="grid"></div>
+    </div>
+  </main>
+
+  <!-- modal -->
+  <div class="modal-backdrop" id="backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Equipment image">
+      <div class="top">
+        <strong id="modalTitle">Image</strong>
+        <button class="close" id="closeBtn" aria-label="Close">×</button>
+      </div>
+      <div class="content">
+        <img id="modalImg" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <!-- shared footer -->
+  <div data-include="partials/footer.html"></div>
+
+  <script>
+    // --- include partials (header/footer) ---
+    async function includePartials() {
+      const slots = document.querySelectorAll("[data-include]");
+      for (const el of slots) {
+        const file = el.getAttribute("data-include");
+        try {
+          const res = await fetch(file);
+          if (!res.ok) throw new Error(`Cannot GET ${file}`);
+          el.innerHTML = await res.text();
+        } catch (err) {
+          console.error(err);
+          el.innerHTML = `<div style="padding:16px;color:#b00020;font-weight:700;">${err}</div>`;
         }
+      }
+    }
 
-        // initial
-        render(ITEMS);
+    // --- feed equipment items ---
+    // NOTE: filenames must exactly match images/feed/ directory (including spaces/punctuation).
+    const ITEMS = [
+      // Conveying
+      { title: 'U-type Scraper Conveyor', file: 'U型刮板输送机.png', cat: 'Conveying', desc: 'Enclosed scraper conveyor for horizontal material transfer.' },
+      { title: 'Screw Conveyor', file: '螺旋输送机.png', cat: 'Conveying', desc: 'Compact conveying for powders and granules.' },
+      { title: 'Embedded Scraper Conveyor', file: '埋刮板输送机.png', cat: 'Conveying', desc: 'Heavy-duty conveying for bulk materials.' },
+      { title: 'Bucket Elevator', file: '斗式提升机.png', cat: 'Conveying', desc: 'Vertical transport with stable output.' },
 
-        // filter chips
-        const chips = [...document.querySelectorAll('.chip')];
-        function apply() {
-            const active = document.querySelector('.chip.active').dataset.cat;
-            const kw = document.getElementById('q').value.trim().toLowerCase();
-            let list = ITEMS.filter(x => active === 'All' || x.cat === active);
-            if (kw) { list = list.filter(x => `${x.title} ${x.file} ${x.cat}`.toLowerCase().includes(kw)); }
-            render(list);
+      // Receiving & Cleaning
+      { title: 'Drum Initial Cleaner', file: '圆筒初清筛.png', cat: 'Receiving & Cleaning', desc: 'Pre-cleaning for raw material intake.' },
+      { title: 'Cylindrical Powder Sieve', file: '圆锥粉料筛.png', cat: 'Receiving & Cleaning', desc: 'Efficient sieving for powder materials.' },
+      { title: 'Permanent Magnet', file: '永磁筒.png', cat: 'Receiving & Cleaning', desc: 'Metal removal to protect downstream equipment.' },
+
+      // Grinding
+      { title: 'Coarse Grinder', file: '粗粉碎机.png', cat: 'Grinding', desc: 'Primary crushing for various grains.' },
+      { title: 'Hammer Mill Grinder', file: '锤片粉碎机.png', cat: 'Grinding', desc: 'Flexible grinding with stable performance.' },
+      { title: 'Ultra-micro Grinder', file: '超微粉碎机.png', cat: 'Grinding', desc: 'Fine grinding for special formulations.' },
+      { title: 'High-performance Grinder (Double-U)', file: '双“U”高性能粉碎机.png', cat: 'Grinding', desc: 'High capacity, stable performance.' },
+      { title: 'Crusher', file: '破碎机.png', cat: 'Grinding', desc: 'Crushing for larger materials.' },
+
+      // Mixing & Conditioning
+      { title: 'Single-shaft Mixer', file: '单轴混合机.png', cat: 'Mixing & Conditioning', desc: 'Uniform mixing and gentle handling.' },
+      { title: 'Self-lubricating Twin-shaft Mixer', file: '自润滑双轴混合机.png', cat: 'Mixing & Conditioning', desc: 'High uniformity mixing with long service life.' },
+      { title: 'Pneumatic 3-way Diverter', file: '气动三通.png', cat: 'Mixing & Conditioning', desc: 'Flexible routing for material handling.' },
+      { title: 'Pneumatic 4-way Diverter', file: '气动四通.png', cat: 'Mixing & Conditioning', desc: 'Multi-route switching for conveying lines.' },
+      { title: "Stabilizer", file: "稳定器.png", cat: "Mixing & Conditioning", desc: "Stabilizing device to ensure steady material flow and consistent processing conditions." },
+      { title: 'Conditioner', file: '调质器.png', cat: 'Mixing & Conditioning', desc: 'Steam conditioning for improved pellet quality.' },
+
+      // Pelleting
+      { title: 'Single Pellet Mill', file: '单马达制粒机.png', cat: 'Pelleting', desc: 'Stable pelleting performance for standard lines.' },
+      { title: 'Gear-type Pellet Mill', file: '齿轮制粒机.png', cat: 'Pelleting', desc: 'High torque transmission for heavy-duty pelleting.' },
+      { title: 'Twin Motor Pellet Mill', file: '双马达制粒机.png', cat: 'Pelleting', desc: 'Higher output for large-scale production.' },
+
+      // Extrusion
+      { title: 'Single-screw Extruder', file: '单螺杆膨化机.png', cat: 'Extrusion', desc: 'Extrusion for special feeds.' },
+      { title: 'Twin-screw Extruder (Pet Food)', file: '双螺杆膨化机（宠食专用）.png', cat: 'Extrusion', desc: 'Specialized for pet food extrusion.' },
+      { title: 'Raw Material Extruder', file: '原料膨化机.png', cat: 'Extrusion', desc: 'Extrusion for raw material expansion.' },
+
+      // Cooling & Crumbling
+      { title: 'Flip-type Counterflow Cooler', file: '翻版式逆流冷却器.png', cat: 'Cooling & Crumbling', desc: 'Efficient pellet cooling.' },
+      { title: 'Sliding-grate Counterflow Cooler', file: '滑栅式逆流冷却器.png', cat: 'Cooling & Crumbling', desc: 'Cooling with stable airflow.' },
+
+      // Dosing & Valves
+      { title: 'Micro-control Dosing & Packing Scale', file: '微机控制定量包装秤.png', cat: 'Dosing & Valves', desc: 'Accurate weighing and packaging.' },
+      { title: 'Gate Valve', file: '闸阀门.png', cat: 'Dosing & Valves', desc: 'Reliable on/off control in conveying lines.' },
+
+      // Coating
+      { title: 'Atmospheric Coating (Oil/Fat)', file: '常压喷涂.png', cat: 'Coating', desc: 'Oil/fat coating for improved nutrition and palatability.' },
+      { title: 'Vacuum Coating', file: '真空喷涂.png', cat: 'Coating', desc: 'Deep coating penetration for high-end feed.' },
+      { title: 'Oil/Fat Coating System', file: '油脂喷涂系统.png', cat: 'Coating', desc: 'Integrated oil dosing and coating system.' },
+
+      // Drying & Dedusting
+      { title: 'Vertical Dryer', file: '立式烘干机.png', cat: 'Drying & Dedusting', desc: 'Drying for stabilized moisture control.' },
+      { title: 'Pulse Bag Dust Collector (Cylindrical)', file: '高压圆筒脉冲除尘器.png', cat: 'Drying & Dedusting', desc: 'High-efficiency dust removal for clean production.' },
+      { title: 'Pulse Bag Dust Collector (Square)', file: '高压方形圆袋除尘器.png', cat: 'Drying & Dedusting', desc: 'Compact dust filtration for workshops.' },
+
+      // Sifting & Grading
+      { title: 'Grading Sieve', file: '分级筛.png', cat: 'Sifting & Grading', desc: 'Particle size grading for consistent output.' },
+      { title: 'Vibration Grading Sieve', file: '震动分级筛.png', cat: 'Sifting & Grading', desc: 'High throughput grading with stable vibration.' },
+      { title: 'Rotary Distributor', file: '旋转分配器.png', cat: 'Sifting & Grading', desc: 'Uniform distribution to multiple bins.' },
+      { title: 'Airlock Feeder', file: '风选喂料器.png', cat: 'Sifting & Grading', desc: 'Airlock feeding for pneumatic lines.' },
+      { title: 'Leaf-wheel Feeder', file: '叶轮喂料器.png', cat: 'Sifting & Grading', desc: 'Consistent feeding with controlled discharge.' },
+      { title: 'Leaf-wheel Feeder (2)', file: '叶轮喂料器 (2).png', cat: 'Sifting & Grading', desc: 'Alternative model for different capacities.' },
+
+      // Extra (keep original filenames)
+      { title: 'Egg Feed Grinder', file: '蛋鸡料破碎机.png', cat: 'Grinding', desc: 'Special grinder for layer feed.' },
+      { title: 'Double-shaft Differential Conditioner', file: '双轴差速调质器.png', cat: 'Mixing & Conditioning', desc: 'Advanced conditioning for higher pellet quality.' },
+      { title: 'Twin-screw Extruder', file: '双螺杆膨化机.png', cat: 'Extrusion', desc: 'High performance twin-screw extrusion.' },
+      { title: 'Twin Motor Direct-coupled Twin-shaft Mixer', file: '双电机直联式双轴混合机.png', cat: 'Mixing & Conditioning', desc: 'Direct-coupled drive for stable mixing.' },
+      { title: 'Twin-screw Extruder for Raw Materials', file: '双螺杆膨化机（宠食专用）.png', cat: 'Extrusion', desc: 'Alternate filename variant kept.' },
+      { title: 'Double-U High-performance Grinder', file: '双“U”高性能粉碎机.png', cat: 'Grinding', desc: 'Duplicate entry (kept for original list).' },
+      { title: 'Single-screw Extruder (Alt)', file: '单螺杆膨化机.png', cat: 'Extrusion', desc: 'Alternate entry (kept).' },
+      { title: 'Twin Motor Pellet Mill (Alt)', file: '双马达制粒机.png', cat: 'Pelleting', desc: 'Alternate entry (kept).' },
+      { title: 'Raw Material Extruder (Alt)', file: '原料膨化机.png', cat: 'Extrusion', desc: 'Alternate entry (kept).' },
+      { title: 'Drum Cleaner (Alt)', file: '保质器.png', cat: 'Mixing & Conditioning', desc: 'Filename kept as-is.' },
+      { title: 'Density Controller', file: '密度控制仪.png', cat: 'Dosing & Valves', desc: 'Density monitoring and control.' }
+    ];
+
+    const CATEGORIES = ["All", ...Array.from(new Set(ITEMS.map(i => i.cat)))];
+
+    const chipsEl = document.getElementById("chips");
+    const gridEl = document.getElementById("grid");
+    const searchEl = document.getElementById("search");
+
+    const backdrop = document.getElementById("backdrop");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const closeBtn = document.getElementById("closeBtn");
+
+    let activeCat = "All";
+    let query = "";
+
+    function makeChip(label) {
+      const b = document.createElement("div");
+      b.className = "chip" + (label === "All" ? " active" : "");
+      b.textContent = label;
+      b.addEventListener("click", () => {
+        document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+        b.classList.add("active");
+        activeCat = label;
+        render();
+      });
+      return b;
+    }
+
+    function makeCard(item) {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.setAttribute("tabindex", "0");
+
+      const imgwrap = document.createElement("div");
+      imgwrap.className = "imgwrap";
+
+      const tag = document.createElement("div");
+      tag.className = "tag";
+      tag.textContent = item.cat;
+
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.alt = item.title;
+      img.src = `images/feed/${item.file}`;
+
+      imgwrap.appendChild(img);
+      imgwrap.appendChild(tag);
+
+      const body = document.createElement("div");
+      body.className = "body";
+
+      const title = document.createElement("h3");
+      title.className = "title";
+      title.textContent = item.title;
+
+      const desc = document.createElement("p");
+      desc.className = "desc";
+      desc.textContent = item.desc;
+
+      const meta = document.createElement("div");
+      meta.className = "meta";
+
+      const cat = document.createElement("div");
+      cat.className = "cat";
+      cat.textContent = item.cat;
+
+      const btn = document.createElement("button");
+      btn.className = "btn";
+      btn.textContent = "Details";
+      btn.type = "button";
+
+      meta.appendChild(cat);
+      meta.appendChild(btn);
+
+      body.appendChild(title);
+      body.appendChild(desc);
+      body.appendChild(meta);
+
+      card.appendChild(imgwrap);
+      card.appendChild(body);
+
+      function open() {
+        modalTitle.textContent = item.title;
+        modalImg.src = `images/feed/${item.file}`;
+        modalImg.alt = item.title;
+        backdrop.classList.add("show");
+        backdrop.setAttribute("aria-hidden", "false");
+      }
+
+      card.addEventListener("click", open);
+      card.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") open();
+      });
+
+      return card;
+    }
+
+    function render() {
+      const q = query.trim().toLowerCase();
+      const filtered = ITEMS.filter(it => {
+        const inCat = (activeCat === "All") || (it.cat === activeCat);
+        const inQ = !q || it.title.toLowerCase().includes(q) || it.file.toLowerCase().includes(q) || it.desc.toLowerCase().includes(q) || it.cat.toLowerCase().includes(q);
+        return inCat && inQ;
+      });
+
+      gridEl.innerHTML = "";
+      filtered.forEach(it => gridEl.appendChild(makeCard(it)));
+    }
+
+    function init() {
+      CATEGORIES.forEach(c => chipsEl.appendChild(makeChip(c)));
+      render();
+
+      searchEl.addEventListener("input", (e) => {
+        query = e.target.value;
+        render();
+      });
+
+      closeBtn.addEventListener("click", () => {
+        backdrop.classList.remove("show");
+        backdrop.setAttribute("aria-hidden", "true");
+        modalImg.src = "";
+      });
+
+      backdrop.addEventListener("click", (e) => {
+        if (e.target === backdrop) {
+          backdrop.classList.remove("show");
+          backdrop.setAttribute("aria-hidden", "true");
+          modalImg.src = "";
         }
-        chips.forEach(c => c.addEventListener('click', () => { chips.forEach(x => x.classList.remove('active')); c.classList.add('active'); apply(); }));
-        document.getElementById('q').addEventListener('input', apply);
+      });
 
-        // modal
-        const backdrop = document.getElementById('backdrop');
-        const mImg = document.getElementById('mImg');
-        const mTitle = document.getElementById('mTitle');
-        const mCat = document.getElementById('mCat');
-        const dlBtn = document.getElementById('dlBtn');
-        function openModal(item) {
-            mImg.src = `images/feed/${item.file}`; mTitle.textContent = item.title; mCat.textContent = item.cat || 'Equipment'; dlBtn.href = `images/feed/${item.file}`; dlBtn.textContent = 'Open Original';
-            backdrop.classList.add('open'); backdrop.setAttribute('aria-hidden', 'false');
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && backdrop.classList.contains("show")) {
+          backdrop.classList.remove("show");
+          backdrop.setAttribute("aria-hidden", "true");
+          modalImg.src = "";
         }
-        function closeModal() { backdrop.classList.remove('open'); backdrop.setAttribute('aria-hidden', 'true'); }
-        window.closeModal = closeModal;
+      });
+    }
 
-        // include shared header/footer
-        document.addEventListener('DOMContentLoaded', async () => {
-            const slots = document.querySelectorAll('[data-include]');
-            for (const el of slots) { const file = el.getAttribute('data-include'); const res = await fetch(file); el.innerHTML = await res.text(); }
-        });
-    </script>
+    // boot
+    includePartials().then(init);
+  </script>
 </body>
 
 </html>

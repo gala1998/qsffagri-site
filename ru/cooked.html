@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Готовые продукты · Основное оборудование | QSFF Agri</title>
+  <meta name="description"
+    content="Библиотека оборудования QSFF Agri для готовых продуктов — предварительная обработка, формование и наполнение, термообработка и стерилизация, копчение, жарка, приготовление на пару/запекание, упаковка и линии транспортировки." />
+
+  <style>
+    :root {
+      --brand: #2fbf4a;
+      --brand-dark: #0f7a2b;
+      --bg: #fff;
+      --text: #000;
+      --muted: #555;
+      --card: #fff;
+      --line: #ddd;
+      --max: 1200px
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 8px
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    /* --- header/footer identical to breeding.html --- */
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 50
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 10px 0
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+      align-items: center
+    }
+
+    .menu a {
+      color: #000;
+      font-weight: 600
+    }
+
+    .cta-btn {
+      background: var(--brand);
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700
+    }
+
+    .cta-btn:hover {
+      filter: brightness(1.06)
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: #000;
+      display: block
+    }
+
+    /* hero (breeding-like) */
+    .hero {
+      padding: 80px 0 50px;
+      background: #f5faf6
+    }
+
+    .hero .inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      background: #fff;
+      border-radius: 16px;
+      padding: 50px 30px;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, .08)
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #bfeec8;
+      color: var(--brand-dark);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      font-size: 12px;
+      text-transform: uppercase
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: 56px;
+      line-height: 1.05
+    }
+
+    .sub {
+      color: #444;
+      font-size: 18px;
+      margin: 0 auto;
+      max-width: 720px
+    }
+
+    /* controls — same scale as breeding */
+    .controls {
+      padding: 14px 0 6px;
+    }
+
+    .bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .chip.active {
+      border-color: #bfeec8;
+      background: #e9faee;
+      color: var(--brand-dark);
+    }
+
+    .search {
+      margin-left: auto;
+      min-width: 200px;
+      max-width: 300px;
+      display: flex;
+    }
+
+    .search input {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    /* grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding: 22px 0 60px
+    }
+
+    .card {
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      transition: transform .12s ease, box-shadow .12s ease;
+      cursor: pointer;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .06)
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .10)
+    }
+
+    .imgwrap {
+      position: relative;
+      height: 230px;
+      background: #f2f6f3
+    }
+
+    .imgwrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .tag {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .10)
+    }
+
+    .body {
+      padding: 18px 18px 20px
+    }
+
+    .title {
+      font-size: 22px;
+      line-height: 1.25;
+      margin: 0 0 8px;
+      font-weight: 800
+    }
+
+    .desc {
+      margin: 0 0 18px;
+      color: #555;
+      font-size: 16px
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px
+    }
+
+    .cat {
+      color: #111;
+      font-weight: 700
+    }
+
+    .btn {
+      background: var(--brand);
+      color: #000;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 10px 18px;
+      border: none
+    }
+
+    /* modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 99
+    }
+
+    .modal-backdrop.show {
+      display: flex
+    }
+
+    .modal {
+      width: min(980px, 96vw);
+      max-height: 92vh;
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 40px 90px rgba(0, 0, 0, .30)
+    }
+
+    .modal .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .modal .top strong {
+      font-size: 16px
+    }
+
+    .close {
+      border: 1px solid var(--line);
+      background: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 900
+    }
+
+    .modal .content {
+      padding: 18px
+    }
+
+    .modal img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      background: #f6f7f8
+    }
+
+    /* footer */
+    footer {
+      border-top: 1px solid var(--line);
+      background: #fff;
+      padding: 34px 0;
+      color: #333
+    }
+
+    .foot {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 26px
+    }
+
+    .foot h4 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .08em
+    }
+
+    .foot a {
+      color: #333
+    }
+
+    .muted {
+      color: #666;
+      font-size: 14px
+    }
+
+    /* responsive */
+    @media (max-width: 980px) {
+      h1 {
+        font-size: 42px
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media (max-width: 640px) {
+      .menu {
+        display: none
+      }
+
+      .hamburger {
+        display: flex
+      }
+
+      .grid {
+        grid-template-columns: 1fr
+      }
+
+      .hero {
+        padding: 50px 0 34px
+      }
+
+      .hero .inner {
+        padding: 38px 18px
+      }
+
+      h1 {
+        font-size: 34px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- shared header -->
+  <div data-include="partials/header.html"></div>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="inner">
+        <span class="eyebrow">ГОТОВЫЕ ПРОДУКТЫ · БИБЛИОТЕКА ОБОРУДОВАНИЯ</span>
+        <h1>Ключевое оборудование для производства готовой продукции</h1>
+        <p class="sub">
+          Фильтруйте по процессам и формируйте список для запроса цен (RFQ). Изображения ссылаются на файлы в папке
+          <code>images/cooked/</code> с исходными именами файлов.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- controls -->
+  <section class="controls">
+    <div class="container">
+      <div class="bar">
+        <div class="chips" id="chips"></div>
+        <div class="search">
+          <input id="search" type="text" placeholder="Поиск оборудования..." />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- grid -->
+  <main>
+    <div class="container">
+      <div class="grid" id="grid"></div>
+    </div>
+  </main>
+
+  <!-- modal -->
+  <div class="modal-backdrop" id="backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Изображение оборудования">
+      <div class="top">
+        <strong id="modalTitle">Изображение</strong>
+        <button class="close" id="closeBtn" aria-label="Закрыть">×</button>
+      </div>
+      <div class="content">
+        <img id="modalImg" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <!-- shared footer -->
+  <div data-include="partials/footer.html"></div>
+
+  <script>
+    // --- include partials (header/footer) ---
+    async function includePartials() {
+      const slots = document.querySelectorAll("[data-include]");
+      for (const el of slots) {
+        const file = el.getAttribute("data-include");
+        try {
+          const res = await fetch(file);
+          if (!res.ok) throw new Error(`Cannot GET ${file}`);
+          el.innerHTML = await res.text();
+        } catch (err) {
+          console.error(err);
+          el.innerHTML = `<div style="padding:16px;color:#b00020;font-weight:700;">${err}</div>`;
+        }
+      }
+    }
+
+    // =========================
+    // Cooked foods equipment
+    // =========================
+    const IMG_BASE = "../images/cooked/";
+
+    // NOTE: filenames must exactly match the directory (including spaces/punctuation).
+    const ITEMS = [
+      // --- Lines ---
+      { title: "Линия варки при атмосферном давлении", file: "常温水煮线.png", cat: "Линии переработки", desc: "Непрерывная линия варки с контролем температуры и времени для стабильного качества." },
+      { title: "Линия производства мясных шариков", file: "丸子类加工线.png", cat: "Линии переработки", desc: "Интегрированная линия для формования и термообработки изделий типа фрикаделек." },
+      { title: "Линия наполнения · перевязки · подвеса", file: "灌装、扭结、挂杆线.png", cat: "Линии переработки", desc: "Интегрированная линия для наполнения, перекрутки/перевязки и подвеса для варки или копчения." },
+
+      // --- Meat Preparation ---
+      { title: "Мясорубка", file: "绞肉机.png", cat: "Подготовка мяса", desc: "Измельчение мяса и жира с равномерной фракцией." },
+      { title: "Куттер (измельчитель-эмульгатор)", file: "斩拌机.png", cat: "Подготовка мяса", desc: "Высокоскоростное измельчение и эмульгирование для колбас и переработанного мяса." },
+      { title: "Смеситель", file: "搅拌机.png", cat: "Подготовка мяса", desc: "Равномерное перемешивание мяса, специй и добавок." },
+      { title: "Костно-мясной сепаратор", file: "骨肉分离机.png", cat: "Подготовка мяса", desc: "Отделение остаточного мяса от костей для повышения выхода." },
+
+      // --- Forming & Filling ---
+      { title: "Формовочная машина", file: "成型机.png", cat: "Формование и наполнение", desc: "Дозирование и формование наггетсов, котлет и фигурных изделий." },
+      { title: "Наполнитель (шприц)", file: "灌装机.png", cat: "Формование и наполнение", desc: "Точное наполнение для колбас и других изделий с начинкой." },
+      { title: "Инъектор", file: "注射机.png", cat: "Формование и наполнение", desc: "Инъецирование рассола для повышения выхода, сочности и стабильности." },
+      { title: "Вакуумный массажёр / тумблер", file: "真空滚揉机.png", cat: "Формование и наполнение", desc: "Вакуумное массирование для лучшей экстракции белка и впитывания маринада." },
+      { title: "Высокоскоростной перекрутчик / клипсатор", file: "高速扭结机.png", cat: "Формование и наполнение", desc: "Высокоскоростная перекрутка/перевязка колбасных изделий." },
+
+      // --- Cooking & Thermal Processing ---
+      { title: "Непрерывный паровой варочный аппарат", file: "连续式蒸煮机.png", cat: "Термообработка", desc: "Непрерывная варка/приготовление на пару для стабильной производительности и равномерного прогрева." },
+      { title: "Непрерывный паро-жарочный аппарат (комби)", file: "连续式蒸烤一体机.png", cat: "Термообработка", desc: "Комбинация пара и запекания в непрерывном режиме для гибкой текстуры продукта." },
+      { title: "Спиральный паро-жарочный аппарат (комби)", file: "螺旋式蒸烤一体机.png", cat: "Термообработка", desc: "Спиральная конвейерная система пар/запекание: высокая производительность при компактных габаритах." },
+      { title: "Непрерывная фритюрная линия", file: "连续式油炸机.png", cat: "Термообработка", desc: "Непрерывная жарка для стабильного цвета, корочки и контроля влажности." },
+      { title: "Котёл для тушения/маринования", file: "卤煮锅.jpg", cat: "Термообработка", desc: "Периодический котёл для тушёных изделий, маринадов и соусов." },
+      { title: "Высокотемпературный стерилизатор (реторт)", file: "高温灭菌机.png", cat: "Термообработка", desc: "Термическая стерилизация для увеличения срока годности и соответствия требованиям безопасности." },
+
+      // --- Smoking ---
+      { title: "Коптильно-варочная камера", file: "熏蒸炉.png", cat: "Копчение", desc: "Копчение и приготовление для формирования вкуса и цвета." },
+
+      // --- Packaging ---
+      { title: "Вакуумная упаковочная машина (1)", file: "真空包装机1.png", cat: "Упаковка", desc: "Вакуумирование для сохранения свежести и увеличения срока годности." },
+      { title: "Вакуумная упаковочная машина (2)", file: "真空包装机2.png", cat: "Упаковка", desc: "Решение для вакуумной упаковки различных форматов пакетов." },
+      { title: "Вакуумная упаковочная машина (3)", file: "真空包装机3.png", cat: "Упаковка", desc: "Вакуумная упаковка для высокопроизводительных линий." },
+      { title: "Вакуумная упаковочная машина (4)", file: "真空包装机4.png", cat: "Упаковка", desc: "Стабильное качество запайки и высокая эффективность вакуумной упаковки." },
+
+      // --- Handling / Misc ---
+      { title: "Маркиратор даты / партии", file: "打卡机.png", cat: "Вспомогательное оборудование", desc: "Нанесение даты/номера партии для прослеживаемости и соответствия требованиям." },
+    ];
+
+    const CATEGORIES = ["Все", ...Array.from(new Set(ITEMS.map(i => i.cat)))];
+
+    const chipsEl = document.getElementById("chips");
+    const gridEl = document.getElementById("grid");
+    const searchEl = document.getElementById("search");
+
+    const backdrop = document.getElementById("backdrop");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const closeBtn = document.getElementById("closeBtn");
+
+    let activeCat = "Все";
+    let query = "";
+
+    function makeChip(label) {
+      const b = document.createElement("div");
+      b.className = "chip" + (label === "Все" ? " active" : "");
+      b.textContent = label;
+      b.addEventListener("click", () => {
+        document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+        b.classList.add("active");
+        activeCat = label;
+        render();
+      });
+      return b;
+    }
+
+    function makeCard(item) {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.setAttribute("tabindex", "0");
+
+      const imgwrap = document.createElement("div");
+      imgwrap.className = "imgwrap";
+
+      const tag = document.createElement("div");
+      tag.className = "tag";
+      tag.textContent = item.cat;
+
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.alt = item.title;
+      img.src = IMG_BASE + item.file;
+
+      imgwrap.appendChild(img);
+      imgwrap.appendChild(tag);
+
+      const body = document.createElement("div");
+      body.className = "body";
+
+      const title = document.createElement("h3");
+      title.className = "title";
+      title.textContent = item.title;
+
+      const desc = document.createElement("p");
+      desc.className = "desc";
+      desc.textContent = item.desc;
+
+      const meta = document.createElement("div");
+      meta.className = "meta";
+
+      const cat = document.createElement("div");
+      cat.className = "cat";
+      cat.textContent = item.cat;
+
+      const btn = document.createElement("button");
+      btn.className = "btn";
+      btn.textContent = "Подробнее";
+      btn.type = "button";
+
+      meta.appendChild(cat);
+      meta.appendChild(btn);
+
+      body.appendChild(title);
+      body.appendChild(desc);
+      body.appendChild(meta);
+
+      card.appendChild(imgwrap);
+      card.appendChild(body);
+
+      function open() {
+        modalTitle.textContent = item.title;
+        modalImg.src = IMG_BASE + item.file;
+        modalImg.alt = item.title;
+        backdrop.classList.add("show");
+        backdrop.setAttribute("aria-hidden", "false");
+      }
+
+      card.addEventListener("click", open);
+      card.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") open();
+      });
+
+      return card;
+    }
+
+    function render() {
+      const q = query.trim().toLowerCase();
+      const filtered = ITEMS.filter(it => {
+        const inCat = (activeCat === "Все") || (it.cat === activeCat);
+        const inQ = !q
+          || it.title.toLowerCase().includes(q)
+          || it.file.toLowerCase().includes(q)
+          || it.desc.toLowerCase().includes(q)
+          || it.cat.toLowerCase().includes(q);
+        return inCat && inQ;
+      });
+
+      gridEl.innerHTML = "";
+      filtered.forEach(it => gridEl.appendChild(makeCard(it)));
+    }
+
+    function init() {
+      CATEGORIES.forEach(c => chipsEl.appendChild(makeChip(c)));
+      render();
+
+      searchEl.addEventListener("input", (e) => {
+        query = e.target.value;
+        render();
+      });
+
+      closeBtn.addEventListener("click", () => {
+        backdrop.classList.remove("show");
+        backdrop.setAttribute("aria-hidden", "true");
+        modalImg.src = "";
+      });
+
+      backdrop.addEventListener("click", (e) => {
+        if (e.target === backdrop) {
+          backdrop.classList.remove("show");
+          backdrop.setAttribute("aria-hidden", "true");
+          modalImg.src = "";
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && backdrop.classList.contains("show")) {
+          backdrop.classList.remove("show");
+          backdrop.setAttribute("aria-hidden", "true");
+          modalImg.src = "";
+        }
+      });
+    }
+
+    // boot
+    includePartials().then(init);
+  </script>
+</body>
+
+</html>

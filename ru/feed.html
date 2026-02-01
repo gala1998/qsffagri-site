@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кормовой завод · Ключевое оборудование | QSFF Agri</title>
+  <meta name="description"
+    content="Библиотека оборудования кормового завода QSFF Agri — приём/очистка, дробление, смешивание и кондиционирование, гранулирование, охлаждение и крошение, транспортирование, дозирование и клапаны, нанесение покрытий, сушка и обеспыливание, просеивание и классификация." />
+
+  <style>
+    :root {
+      --brand: #2fbf4a;
+      --brand-dark: #0f7a2b;
+      --bg: #fff;
+      --text: #000;
+      --muted: #555;
+      --card: #fff;
+      --line: #ddd;
+      --max: 1200px
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 8px
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    /* --- header/footer identical to breeding.html --- */
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 50
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 10px 0
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+      align-items: center
+    }
+
+    .menu a {
+      color: #000;
+      font-weight: 600
+    }
+
+    .cta-btn {
+      background: var(--brand);
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700
+    }
+
+    .cta-btn:hover {
+      filter: brightness(1.06)
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: #000;
+      display: block
+    }
+
+    /* hero (breeding-like) */
+    .hero {
+      padding: 80px 0 50px;
+      background: #f5faf6
+    }
+
+    .hero .inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      background: #fff;
+      border-radius: 16px;
+      padding: 50px 30px;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, .08)
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #bfeec8;
+      color: var(--brand-dark);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      font-size: 12px;
+      text-transform: uppercase
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: 56px;
+      line-height: 1.05
+    }
+
+    .sub {
+      color: #444;
+      font-size: 18px;
+      margin: 0 auto;
+      max-width: 720px
+    }
+
+    /* controls — same scale as breeding */
+    .controls {
+      padding: 14px 0 6px;
+    }
+
+    .bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .chip.active {
+      border-color: #bfeec8;
+      background: #e9faee;
+      color: var(--brand-dark);
+    }
+
+    .search {
+      margin-left: auto;
+      min-width: 200px;
+      max-width: 300px;
+      display: flex;
+    }
+
+    .search input {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    /* grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding: 22px 0 60px
+    }
+
+    .card {
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      transition: transform .12s ease, box-shadow .12s ease;
+      cursor: pointer;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .06)
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .10)
+    }
+
+    .imgwrap {
+      position: relative;
+      height: 230px;
+      background: #f2f6f3
+    }
+
+    .imgwrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .tag {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .10)
+    }
+
+    .body {
+      padding: 18px 18px 20px
+    }
+
+    .title {
+      font-size: 22px;
+      line-height: 1.25;
+      margin: 0 0 8px;
+      font-weight: 800
+    }
+
+    .desc {
+      margin: 0 0 18px;
+      color: #555;
+      font-size: 16px
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px
+    }
+
+    .cat {
+      color: #111;
+      font-weight: 700
+    }
+
+    .btn {
+      background: var(--brand);
+      color: #000;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 10px 18px;
+      border: none
+    }
+
+    /* modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 99
+    }
+
+    .modal-backdrop.show {
+      display: flex
+    }
+
+    .modal {
+      width: min(980px, 96vw);
+      max-height: 92vh;
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 40px 90px rgba(0, 0, 0, .30)
+    }
+
+    .modal .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .modal .top strong {
+      font-size: 16px
+    }
+
+    .close {
+      border: 1px solid var(--line);
+      background: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 900
+    }
+
+    .modal .content {
+      padding: 18px
+    }
+
+    .modal img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      background: #f6f7f8
+    }
+
+    /* footer */
+    footer {
+      border-top: 1px solid var(--line);
+      background: #fff;
+      padding: 34px 0;
+      color: #333
+    }
+
+    .foot {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 26px
+    }
+
+    .foot h4 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .08em
+    }
+
+    .foot a {
+      color: #333
+    }
+
+    .muted {
+      color: #666;
+      font-size: 14px
+    }
+
+    /* responsive */
+    @media (max-width: 980px) {
+      h1 {
+        font-size: 42px
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media (max-width: 640px) {
+      .menu {
+        display: none
+      }
+
+      .hamburger {
+        display: flex
+      }
+
+      .grid {
+        grid-template-columns: 1fr
+      }
+
+      .hero {
+        padding: 50px 0 34px
+      }
+
+      .hero .inner {
+        padding: 38px 18px
+      }
+
+      h1 {
+        font-size: 34px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- shared header -->
+  <div data-include="partials/header.html"></div>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="inner">
+        <span class="eyebrow">КОРМОВОЙ ЗАВОД · БИБЛИОТЕКА ОБОРУДОВАНИЯ</span>
+        <h1>Ключевое оборудование — от приёмки до отгрузки</h1>
+        <p class="sub">
+          Фильтруйте по процессам и формируйте список для запроса цен (RFQ). Изображения ссылаются на файлы в папке
+          <code>images/feed/</code> с исходными именами файлов.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- controls -->
+  <section class="controls">
+    <div class="container">
+      <div class="bar">
+        <div class="chips" id="chips"></div>
+        <div class="search">
+          <input id="search" type="text" placeholder="Поиск оборудования..." />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- grid -->
+  <main>
+    <div class="container">
+      <div class="grid" id="grid"></div>
+    </div>
+  </main>
+
+  <!-- modal -->
+  <div class="modal-backdrop" id="backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Изображение оборудования">
+      <div class="top">
+        <strong id="modalTitle">Изображение</strong>
+        <button class="close" id="closeBtn" aria-label="Закрыть">×</button>
+      </div>
+      <div class="content">
+        <img id="modalImg" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <!-- shared footer -->
+  <div data-include="partials/footer.html"></div>
+
+  <script>
+    // --- include partials (header/footer) ---
+    async function includePartials() {
+      const slots = document.querySelectorAll("[data-include]");
+      for (const el of slots) {
+        const file = el.getAttribute("data-include");
+        try {
+          const res = await fetch(file);
+          if (!res.ok) throw new Error(`Cannot GET ${file}`);
+          el.innerHTML = await res.text();
+        } catch (err) {
+          console.error(err);
+          el.innerHTML = `<div style="padding:16px;color:#b00020;font-weight:700;">${err}</div>`;
+        }
+      }
+    }
+
+    // --- feed equipment items ---
+    // NOTE: filenames must exactly match images/feed/ directory (including spaces/punctuation).
+    const ITEMS = [
+      // Conveying
+      { title: 'U-образный скребковый конвейер', file: 'U型刮板输送机.png', cat: 'Транспортирование', desc: 'Закрытый скребковый конвейер для горизонтального перемещения материала.' },
+      { title: 'Шнековый конвейер', file: '螺旋输送机.png', cat: 'Транспортирование', desc: 'Компактная подача для порошков и гранул.' },
+      { title: 'Скребковый конвейер (закрытый, в канале)', file: '埋刮板输送机.png', cat: 'Транспортирование', desc: 'Тяжёлый режим работы для сыпучих материалов.' },
+      { title: 'Ковшовый элеватор', file: '斗式提升机.png', cat: 'Транспортирование', desc: 'Вертикальный подъём со стабильной производительностью.' },
+
+      // Receiving & Cleaning
+      { title: 'Барабанный предварительный очиститель', file: '圆筒初清筛.png', cat: 'Приёмка и очистка', desc: 'Предварительная очистка при приёме сырья.' },
+      { title: 'Коническое сито для порошков', file: '圆锥粉料筛.png', cat: 'Приёмка и очистка', desc: 'Эффективное просеивание порошкообразных материалов.' },
+      { title: 'Постоянный магнит (магнитный сепаратор)', file: '永磁筒.png', cat: 'Приёмка и очистка', desc: 'Удаление металла для защиты оборудования на следующих этапах.' },
+
+      // Grinding
+      { title: 'Дробилка грубого помола', file: '粗粉碎机.png', cat: 'Дробление', desc: 'Первичное дробление различных зерновых.' },
+      { title: 'Молотковая дробилка', file: '锤片粉碎机.png', cat: 'Дробление', desc: 'Гибкий помол со стабильной работой.' },
+      { title: 'Ультратонкая мельница', file: '超微粉碎机.png', cat: 'Дробление', desc: 'Тонкий помол для специальных рецептур.' },
+      { title: 'Высокопроизводительная дробилка (Double-U)', file: '双“U”高性能粉碎机.png', cat: 'Дробление', desc: 'Высокая производительность и стабильная работа.' },
+      { title: 'Дробилка', file: '破碎机.png', cat: 'Дробление', desc: 'Дробление крупнофракционных материалов.' },
+
+      // Mixing & Conditioning
+      { title: 'Одновальный смеситель', file: '单轴混合机.png', cat: 'Смешивание и кондиционирование', desc: 'Равномерное смешивание и бережная обработка.' },
+      { title: 'Самосмазывающийся двухвальный смеситель', file: '自润滑双轴混合机.png', cat: 'Смешивание и кондиционирование', desc: 'Высокая однородность и длительный срок службы.' },
+      { title: 'Пневматический трёхходовой переключатель', file: '气动三通.png', cat: 'Смешивание и кондиционирование', desc: 'Гибкая маршрутизация потоков материала.' },
+      { title: 'Пневматический четырёхходовой переключатель', file: '气动四通.png', cat: 'Смешивание и кондиционирование', desc: 'Переключение нескольких маршрутов на линиях транспортирования.' },
+      { title: "Стабилизатор", file: "稳定器.png", cat: "Смешивание и кондиционирование", desc: "Устройство стабилизации для ровного потока материала и стабильных условий процесса." },
+      { title: 'Кондиционер', file: '调质器.png', cat: 'Смешивание и кондиционирование', desc: 'Паровое кондиционирование для повышения качества гранул.' },
+
+      // Pelleting
+      { title: 'Гранулятор с одним двигателем', file: '单马达制粒机.png', cat: 'Гранулирование', desc: 'Стабильная работа для стандартных линий.' },
+      { title: 'Гранулятор с зубчатой передачей', file: '齿轮制粒机.png', cat: 'Гранулирование', desc: 'Высокий крутящий момент для тяжёлого режима гранулирования.' },
+      { title: 'Гранулятор с двумя двигателями', file: '双马达制粒机.png', cat: 'Гранулирование', desc: 'Повышенная производительность для крупных производств.' },
+
+      // Extrusion
+      { title: 'Одношнековый экструдер', file: '单螺杆膨化机.png', cat: 'Экструзия', desc: 'Экструзия для специальных кормов.' },
+      { title: 'Двухшнековый экструдер (корма для животных)', file: '双螺杆膨化机（宠食专用）.png', cat: 'Экструзия', desc: 'Специализированное решение для производства кормов для домашних животных.' },
+      { title: 'Экструдер для сырья', file: '原料膨化机.png', cat: 'Экструзия', desc: 'Экструзия для расширения (вспучивания) сырья.' },
+
+      // Cooling & Crumbling
+      { title: 'Противоточный охладитель (откидного типа)', file: '翻版式逆流冷却器.png', cat: 'Охлаждение и крошение', desc: 'Эффективное охлаждение гранул.' },
+      { title: 'Противоточный охладитель (с решётчатым затвором)', file: '滑栅式逆流冷却器.png', cat: 'Охлаждение и крошение', desc: 'Охлаждение со стабильным воздушным потоком.' },
+
+      // Dosing & Valves
+      { title: 'Дозатор-упаковочные весы с микроконтроллером', file: '微机控制定量包装秤.png', cat: 'Дозирование и клапаны', desc: 'Точное взвешивание и упаковка.' },
+      { title: 'Шиберная задвижка', file: '闸阀门.png', cat: 'Дозирование и клапаны', desc: 'Надёжное перекрытие потока на транспортных линиях.' },
+
+      // Coating
+      { title: 'Распыление при атмосферном давлении (масло/жир)', file: '常压喷涂.png', cat: 'Нанесение покрытий', desc: 'Нанесение масел/жиров для улучшения питательности и поедаемости.' },
+      { title: 'Вакуумное распыление (вакуумное покрытие)', file: '真空喷涂.png', cat: 'Нанесение покрытий', desc: 'Глубокое проникновение покрытия для премиальных кормов.' },
+      { title: 'Система распыления масла/жира', file: '油脂喷涂系统.png', cat: 'Нанесение покрытий', desc: 'Интегрированная система дозирования и распыления масел.' },
+
+      // Drying & Dedusting
+      { title: 'Вертикальная сушилка', file: '立式烘干机.png', cat: 'Сушка и обеспыливание', desc: 'Сушка для стабилизации влажности.' },
+      { title: 'Импульсный рукавный фильтр (цилиндрический)', file: '高压圆筒脉冲除尘器.png', cat: 'Сушка и обеспыливание', desc: 'Высокоэффективное удаление пыли для чистого производства.' },
+      { title: 'Импульсный рукавный фильтр (квадратный)', file: '高压方形圆袋除尘器.png', cat: 'Сушка и обеспыливание', desc: 'Компактная фильтрация пыли для цехов.' },
+
+      // Sifting & Grading
+      { title: 'Классификационное сито', file: '分级筛.png', cat: 'Просеивание и классификация', desc: 'Классификация по фракции для стабильного качества продукта.' },
+      { title: 'Вибрационное классификационное сито', file: '震动分级筛.png', cat: 'Просеивание и классификация', desc: 'Высокая производительность и стабильная вибрация.' },
+      { title: 'Роторный распределитель', file: '旋转分配器.png', cat: 'Просеивание и классификация', desc: 'Равномерное распределение в несколько бункеров.' },
+      { title: 'Шлюзовый питатель (роторный клапан)', file: '风选喂料器.png', cat: 'Просеивание и классификация', desc: 'Подача с герметизацией для пневмотранспорта.' },
+      { title: 'Лопастной питатель', file: '叶轮喂料器.png', cat: 'Просеивание и классификация', desc: 'Стабильная подача с контролируемым разгрузом.' },
+      { title: 'Лопастной питатель (2)', file: '叶轮喂料器 (2).png', cat: 'Просеивание и классификация', desc: 'Альтернативная модель для разных производительностей.' },
+
+      // Extra (keep original filenames)
+      { title: 'Дробилка для корма несушек', file: '蛋鸡料破碎机.png', cat: 'Дробление', desc: 'Специализированная дробилка для кормов несушек.' },
+      { title: 'Двухвальный дифференциальный кондиционер', file: '双轴差速调质器.png', cat: 'Смешивание и кондиционирование', desc: 'Продвинутое кондиционирование для повышения качества гранул.' },
+      { title: 'Двухшнековый экструдер', file: '双螺杆膨化机.png', cat: 'Экструзия', desc: 'Высокопроизводительная двухшнековая экструзия.' },
+      { title: 'Двухвальный смеситель с прямым приводом (2 двигателя)', file: '双电机直联式双轴混合机.png', cat: 'Смешивание и кондиционирование', desc: 'Прямой привод для стабильного смешивания.' },
+      { title: 'Двухшнековый экструдер для сырья', file: '双螺杆膨化机（宠食专用）.png', cat: 'Экструзия', desc: 'Сохранён вариант имени файла.' },
+      { title: 'Высокопроизводительная дробилка Double-U', file: '双“U”高性能粉碎机.png', cat: 'Дробление', desc: 'Дублирующая позиция (оставлено как в исходном списке).' },
+      { title: 'Одношнековый экструдер (альт.)', file: '单螺杆膨化机.png', cat: 'Экструзия', desc: 'Альтернативная позиция (оставлено).' },
+      { title: 'Гранулятор с двумя двигателями (альт.)', file: '双马达制粒机.png', cat: 'Гранулирование', desc: 'Альтернативная позиция (оставлено).' },
+      { title: 'Экструдер для сырья (альт.)', file: '原料膨化机.png', cat: 'Экструзия', desc: 'Альтернативная позиция (оставлено).' },
+      { title: 'Очиститель барабанный (альт.)', file: '保质器.png', cat: 'Смешивание и кондиционирование', desc: 'Имя файла сохранено без изменений.' },
+      { title: 'Контроллер плотности', file: '密度控制仪.png', cat: 'Дозирование и клапаны', desc: 'Мониторинг и регулирование плотности.' }
+    ];
+
+    const CATEGORIES = ["Все", ...Array.from(new Set(ITEMS.map(i => i.cat)))];
+
+    const chipsEl = document.getElementById("chips");
+    const gridEl = document.getElementById("grid");
+    const searchEl = document.getElementById("search");
+
+    const backdrop = document.getElementById("backdrop");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const closeBtn = document.getElementById("closeBtn");
+
+    let activeCat = "Все";
+    let query = "";
+
+    function makeChip(label) {
+      const b = document.createElement("div");
+      b.className = "chip" + (label === "Все" ? " active" : "");
+      b.textContent = label;
+      b.addEventListener("click", () => {
+        document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+        b.classList.add("active");
+        activeCat = label;
+        render();
+      });
+      return b;
+    }
+
+    function makeCard(item) {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.setAttribute("tabindex", "0");
+
+      const imgwrap = document.createElement("div");
+      imgwrap.className = "imgwrap";
+
+      const tag = document.createElement("div");
+      tag.className = "tag";
+      tag.textContent = item.cat;
+
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.alt = item.title;
+      img.src = `../images/feed/${item.file}`;
+
+      imgwrap.appendChild(img);
+      imgwrap.appendChild(tag);
+
+      const body = document.createElement("div");
+      body.className = "body";
+
+      const title = document.createElement("h3");
+      title.className = "title";
+      title.textContent = item.title;
+
+      const desc = document.createElement("p");
+      desc.className = "desc";
+      desc.textContent = item.desc;
+
+      const meta = document.createElement("div");
+      meta.className = "meta";
+
+      const cat = document.createElement("div");
+      cat.className = "cat";
+      cat.textContent = item.cat;
+
+      const btn = document.createElement("button");
+      btn.className = "btn";
+      btn.textContent = "Подробнее";
+      btn.type = "button";
+
+      meta.appendChild(cat);
+      meta.appendChild(btn);
+
+      body.appendChild(title);
+      body.appendChild(desc);
+      body.appendChild(meta);
+
+      card.appendChild(imgwrap);
+      card.appendChild(body);
+
+      function open() {
+        modalTitle.textContent = item.title;
+        modalImg.src = `images/feed/${item.file}`;
+        modalImg.alt = item.title;
+        backdrop.classList.add("show");
+        backdrop.setAttribute("aria-hidden", "false");
+      }
+
+      card.addEventListener("click", open);
+      card.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") open();
+      });
+
+      return card;
+    }
+
+    function render() {
+      const q = query.trim().toLowerCase();
+      const filtered = ITEMS.filter(it => {
+        const inCat = (activeCat === "Все") || (it.cat === activeCat);
+        const inQ = !q || it.title.toLowerCase().includes(q) || it.file.toLowerCase().includes(q) || it.desc.toLowerCase().includes(q) || it.cat.toLowerCase().includes(q);
+        return inCat && inQ;
+      });
+
+      gridEl.innerHTML = "";
+      filtered.forEach(it => gridEl.appendChild(makeCard(it)));
+    }
+
+    function init() {
+      CATEGORIES.forEach(c => chipsEl.appendChild(makeChip(c)));
+      render();
+
+      searchEl.addEventListener("input", (e) => {
+        query = e.target.value;
+        render();
+      });
+
+      closeBtn.addEventListener("click", () => {
+        backdrop.classList.remove("show");
+        backdrop.setAttribute("aria-hidden", "true");
+        modalImg.src = "";
+      });
+
+      backdrop.addEventListener("click", (e) => {
+        if (e.target === backdrop) {
+          backdrop.classList.remove("show");
+          backdrop.setAttribute("aria-hidden", "true");
+          modalImg.src = "";
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && backdrop.classList.contains("show")) {
+          backdrop.classList.remove("show");
+          backdrop.setAttribute("aria-hidden", "true");
+          modalImg.src = "";
+        }
+      });
+    }
+
+    // boot
+    includePartials().then(init);
+  </script>
+</body>
+
+</html>

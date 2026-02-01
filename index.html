@@ -144,8 +144,6 @@
       /* 水平居中 */
     }
 
-
-
     .hero .inner {
       text-align: center;
       padding: 40px 20px;
@@ -499,7 +497,7 @@
 <body>
 
   <!-- 顶部导航（白底黑字 + Logo 图/文） -->
-  <div data-include="/partials/header.html"></div>
+  <div data-include="partials/header.html"></div>
 
   <!-- Hero Banner -->
   <header class="hero" id="home">
@@ -612,7 +610,6 @@
 
       </div>
 
-      <!-- EPCO Scope（六大板块） -->
       <!-- EPCO Scope（六大板块） -->
       <div id="products">
         <div class="pillars-head">
@@ -736,7 +733,6 @@
     </div>
   </section>
 
-  <!-- 项目/新闻 -->
   <!-- Projects & News (6 items) -->
   <section id="news">
     <div class="container">
@@ -745,7 +741,6 @@
       </div>
 
       <div class="cards">
-        <!-- 1) Pingdu -->
         <article class="news-card">
           <img src="images/pingdu18wt.png" alt="Pingdu 180,000-Ton Feed Production Line">
           <div class="body">
@@ -755,7 +750,6 @@
           </div>
         </article>
 
-        <!-- 2) Senegal -->
         <article class="news-card">
           <img src="images/siliaochang1.jpg" alt="Senegal Feedmill Construction">
           <div class="body">
@@ -765,7 +759,6 @@
           </div>
         </article>
 
-        <!-- 3) Guizhou -->
         <article class="news-card">
           <img src="images/guizhou6wtzhusiliaoshengchanxian.png" alt="Guizhou 60,000-Ton Pig Feed Production Line">
           <div class="body">
@@ -775,7 +768,6 @@
           </div>
         </article>
 
-        <!-- 4) Guangxi feedmill 150k -->
         <article class="news-card">
           <img src="images/guangxi15wtsiliao.jpg" alt="Guangxi 150,000-Ton Feed Production Line">
           <div class="body">
@@ -785,7 +777,6 @@
           </div>
         </article>
 
-        <!-- 5) Guangxi broiler processing & prepared foods -->
         <article class="news-card">
           <img src="images/guangxishushijiagong.jpg"
             alt="Guangxi Integrated Broiler Processing & Prepared Foods Project">
@@ -796,7 +787,6 @@
           </div>
         </article>
 
-        <!-- 6) Shandong slaughter 40M birds -->
         <article class="news-card">
           <img src="images/shandong4000wtuzai.jpg" alt="Shandong 40-Million Birds Per Year Broiler Slaughter Project">
           <div class="body">
@@ -808,7 +798,6 @@
       </div>
     </div>
   </section>
-
 
   <!-- 联系 CTA -->
   <section id="contact" class="cta">
@@ -826,18 +815,27 @@
     </div>
   </section>
 
-  <!-- 页脚（黑底保留） -->
-  <div data-include="/partials/footer.html"></div>
+  <!-- 页脚 -->
+  <div data-include="partials/footer.html"></div>
 
+  <!-- include partials (same robust loader as sub-pages) -->
   <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      const slots = document.querySelectorAll('[data-include]');
+    async function includePartials() {
+      const slots = document.querySelectorAll("[data-include]");
       for (const el of slots) {
-        const file = el.getAttribute('data-include');
-        const res = await fetch(file);
-        el.innerHTML = await res.text();
+        const file = el.getAttribute("data-include");
+        try {
+          const res = await fetch(file);
+          if (!res.ok) throw new Error(`Cannot GET ${file}`);
+          el.innerHTML = await res.text();
+        } catch (err) {
+          console.error(err);
+          el.innerHTML = `<div style="padding:16px;color:#b00020;font-weight:700;">${err}</div>`;
+        }
       }
-    });
+    }
+
+    document.addEventListener("DOMContentLoaded", includePartials);
   </script>
 
 </body>
